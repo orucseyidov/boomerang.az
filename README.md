@@ -1,0 +1,2 @@
+# boomerang.az
+Avtomatik qapilar
