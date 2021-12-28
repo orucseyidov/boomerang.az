@@ -66,8 +66,22 @@ $route['category/(:any)']			= 'Category/index/$1';
 //Static pages
 $route['404']						= 'Pages/error_404';
 $route['about']						= 'Pages/about';
+$route['about-company']				= 'Pages/aboutCompany';
+$route['windows']					= 'Pages/windows';
+$route['doors']					    = 'Pages/doors';
 $route['contact']					= 'Pages/contact';
-$route['services/(:any)']			= 'Pages/services/$1';
+$route['services']			        = 'Pages/services';
+$route['service-details']			= 'Pages/serviceDetails';
+$route['case-study']			    = 'Pages/caseStudy';
+$route['study-details']			    = 'Pages/studyDetails';
+$route['gallery']					= 'Pages/gallery';
+$route['request-caculator']			= 'Pages/requestCaculator';
+$route['blog-standard']				= 'Pages/blogStandard';
+$route['blog-details']				= 'Pages/blogDetails';
+
+
+
+// $route['services/(:any)']			= 'Pages/services/$1';
 $route['services/(:any)/(:any)']	= 'Pages/service_single/$1/$1';
 
 $route['subjects/(:any)']			= 'Pages/subjects/$1';

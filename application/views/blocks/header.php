@@ -1,57 +1,139 @@
-<body>
-   <!-- Preloader -->
-   <div id="preloader"></div>
-   <!-- Progress scroll totop -->
-   <div class="progress-wrap cursor-pointer">
-      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-      </svg>
-   </div>
-   <!-- Navbar -->
-   <nav class="navbar navbar-expand-lg">
-      <!-- Logo -->
-      <div class="logo-wrapper valign">
-         <div class="logo">
-            <a href="/">
-               <img src="<?=$logo ?>" class="logo-img" alt="">
-               <!-- <h2>CORTEX<span>INNOVATE CONSULTING</span></h2> -->
+<body class="counter-scroll header_sticky_style2">
+  <div class="animsition boxed blog">
+    <div class="top-bar-style2 clearfix">
+      <div class="container-fluid">
+        <ul class="top-content">
+          <li class="adress">
+            <a href="#">
+              <i class="icon-iconmap"></i> 2072 Pinnickinick Street, WA 98370 </a>
+          </li>
+          <li class="email">
+            <i class="icon-iconmail"></i>
+            <a href="#">
+              <span>testemail</span>
             </a>
-         </div>
+          </li>
+        </ul>
+        <div class="topbar-socials">
+          <span class="icons">
+            <a href="#">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-google-plus-g"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </span>
+        </div>
       </div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="icon-bar"><i class="ti-line-double"></i></span> </button>
-      <!-- Navbar links -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-         <ul class="navbar-nav ml-auto">
-            <?php 
-               $countmenu = 0;
-               $submenu = '';
-               foreach ($menu as $key => $value):
-                  $slug = $value['slug'] == '/' ? '/'.$value['slug'] : $value['slug'];
-                  $countmenu++;
-                  if ($this->uri->segment(1) != false) {
-                     $active = $this->uri->segment(1) == $value['slug'] ? 'active' : null;
-                  }
-                  else{
-                     $active = $countmenu == 1 ? 'active' : null;
-                  }
-                  if ($value['slug'] == 'services') {
-                     echo get_category_menu($service_category,$value['name'],$value['slug']);
-                  }
-                  else if ($value['slug'] == 'subjects') {
-                     echo get_category_menu($subjects_category,$value['name'],$value['slug']);
-                  }
-                  else{
+    </div>
 
-            ?>
-               <li class="nav-item">
-                  <a class="nav-link <?=$active ?>" href="<?=$slug ?>">
-                     <?=$value['name'] ?>
-                  </a>
-               </li>
-            <?php 
-                  }
-               endforeach
-            ?>
-         </ul>
+<header class="header-style2 bg-color-style2 bg-color" id="header">
+  <div class="container-fluid container-fixel">
+    <div class="flex-header d-lg-flex">
+      <div class="logo logo-style2">
+        <a href="<?= base_url(); ?>">
+          <img src="/assets/images/LogoDark.png" data-retina="/assets/images/LogoDark@2x.png" alt="images">
+        </a>
       </div>
-   </nav>
+      <div class="content-menu d-lg-flex">
+        <div class="nav-wrap">
+          <div class="btn-menu">
+            <span></span>
+          </div>
+          <nav id="mainnav" class="mainnav fixed-mainnav">
+            <ul class="menu menustyle2">
+              <li class="menu-item-has-children current-menu current-menu-item current-menu-ancestor ">
+                <a href="<?= base_url(); ?>">Home</a>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="<?= base_url(); ?>">Home 1</a>
+                  </li>
+                  <li class="current-menu-item">
+                    <a href="<?= base_url(); ?>">Home 2</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="<?= base_url("windows"); ?>">Windows</a>
+              </li>
+              <li>
+                <a href="<?= base_url("doors"); ?>">Doors</a>
+              </li>
+              <li class="menu-item-has-children">
+                <a href="#">Pages</a>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="<?= base_url("about"); ?>">About Us</a>
+                  </li>
+                  <li>
+                    <a href="<?= base_url("about-company"); ?>">Company Infomation</a>
+                  </li>
+                  <li>
+                    <a href="<?= base_url("services"); ?>">Services</a>
+                  </li>
+                  <li>
+                    <a href="<?= base_url("service-details"); ?>">Service Details</a>
+                  </li>
+                  <li>
+                    <a href="<?= base_url("case-study"); ?>">Case Study</a>
+                  </li>
+                  <li>
+                    <a href="<?= base_url("study-details"); ?>">Case Study Details</a>
+                  </li>
+                  <li>
+                    <a href="<?= base_url("gallery"); ?>">Gallery</a>
+                  </li>
+                  <li>
+                    <a href="<?= base_url("request-caculator"); ?>">Cost Caculator</a>
+                  </li>
+                  <li class="menu-item-has-children">
+                    <a href="<?= base_url("blog-standard"); ?>">Blog</a>
+                    <ul class="sub-menu">
+                      <li>
+                        <a href="<?= base_url("blog-standard"); ?>">Blog Standard</a>
+                      </li>
+                      <li>
+                        <a href="<?= base_url("blog-details"); ?>">Blog Details</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="<?= base_url("contact"); ?>">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="search-btn">
+          <div class="btn-top">
+            <a href="<?= base_url("contact"); ?>" class="themesflat-button-style2 btn-style-4">
+              <span class="btn-title">Get A Quote</span>
+            </a>
+          </div>
+          <div class="flat-show-search">
+            <div class="show-search">
+              <a href="#">
+                <i class="fa fa-search"></i>
+              </a>
+            </div>
+            <div class="top-search">
+              <form action="#" id="searchform-all" method="get">
+                <div>
+                  <input type="text" id="s" class="sss" placeholder="Search...">
+                  <input type="submit" value="" id="searchsubmit">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

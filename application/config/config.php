@@ -31,7 +31,7 @@ date_default_timezone_set('Asia/Baku');
 */
 
 
-// $config['base_url'] = 'https://site.az/';
+// $config['base_url'] = 'https://boomerang.loc/';
 $config['base_url'] = 'http://'.$_SERVER['SERVER_NAME'];
 
 /*

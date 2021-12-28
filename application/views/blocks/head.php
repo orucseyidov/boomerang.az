@@ -24,14 +24,12 @@
     <meta name="token" content="<?=$token ?>">
     <meta name="device" content="<?=$device ?>">
     <link rel="canonical" href="<?=base_url($_SERVER['REQUEST_URI']) ?>" />
-    <!--Favicon-->
-    <link rel="icon" href="images/favicon.png" type="image/x-icon">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/plugins.css" />
-    <link rel="stylesheet" href="/assets/css/style.css?v=<?=time() ?>" />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="/assets/style.css?v=<?=time() ?>">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/shortcodes.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/color.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <?php 
         if (!empty($headdata)) {echo $headdata;}
         if (!empty($loadstyle)) {$this->load->view($loadstyle);}

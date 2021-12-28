@@ -54,8 +54,6 @@ class GO_Controller extends MX_Controller {
 			$this->data['logo']     		= $settings['image'];
 			$this->data['lang'] 			= $this->lang;
 			$this->data['settings'] 		= $settings;
-			$this->data['service_category'] = $this->core->service_category();
-			$this->data['subjects_category']= $this->core->subjects_category();
 			$this->data['social'] 			= $this->core->social();
 			$this->data['contacts'] 		= $this->core->contact();
 			$this->data['menu'] 			= $this->core->menu();

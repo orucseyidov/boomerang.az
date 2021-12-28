@@ -48,7 +48,7 @@ function chekbox_change($inputs){
 }
 
 
-function cut($str,$size=null,$start,$stop){
+function cut($str,$size,$start,$stop){
 	$size = $size == null ? 50 : $size;
 	if(strlen($str) > $size){
 		$str = mb_substr($str, $start, $stop).'...';

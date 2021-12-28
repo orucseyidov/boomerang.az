@@ -17,7 +17,7 @@ class Home extends GO_Controller {
 	}
 
 	public function index(){
-		$this->data['slider']					= $this->home->slider();
+		// $this->data['slider']					= $this->home->slider();
 		$this->render("home",$this->data);
 	}
 
