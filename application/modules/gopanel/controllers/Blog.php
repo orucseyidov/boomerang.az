@@ -1,17 +1,18 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Adventure_activity extends Gopanel {
+class Blog extends Gopanel {
 	
 
 	
 	function __construct(){
 		parent::__construct();
 		$this->admin_control();
+		$this->load->helper("goweb/category");
 		$this->load->helper("filter");
 		$this->load->helper("seflink");
-		$this->load->helper("goweb/category");
 		$this->load->helper("file_upload");
-		$this->data['btitle']	= ' Əlavə aktivliklər';
+		$this->data['btitle']	= 'Xəbərlər';
+
 	}
 
 	public function index(){
@@ -24,17 +25,22 @@ class Adventure_activity extends Gopanel {
 		if (isset($_POST['token'])) {
 			unset($_POST['token']);
 
-			$img = seflink($_POST['title_en']);
 
-			$_POST['image'] = file_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$img);
+			$_POST['slug'] 		= seflink($_POST['title']);
+			$_POST['image'] 	= file_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$_POST['slug']);
+			$image 				= ltrim($_POST['image'],"/");
+			$_POST['thumb'] 	= "/".resize(340,230,str_replace("/news/", '/thumb/', $image),$image);
 
-			if ($id = $this->core->add($this->table,$_POST)) {
+
+
+			if ($news = $this->core->add_last_id($this->table,$_POST)) {
+				$this->addMatch($news,$_POST['category']);
 				$this->session->set_flashdata('success', "Məlumat Uğurla Əlavə edildi");
 			}
 			else{
 				$this->session->set_flashdata('error', "Sistem xətası baş verdi.");
 			}
-			redirect("{$this->app}/{$this->table}/add");
+			redirect($this->app."/".$this->table."/add/");
 		}
 
 		$this->render($this->table.'/add',$this->data);
@@ -52,10 +58,12 @@ class Adventure_activity extends Gopanel {
 
 		if (isset($_POST['token'])) {
 			unset($_POST['token']);
-
+			
+			$_POST['slug'] 		= seflink($_POST['title_az']);
 			if (isset($_FILES['image']) && strlen($_FILES['image']['name'])>1) {
-				$img = seflink($_POST['title_en']);
-				$_POST['image'] = image_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$img);
+				$_POST['image'] = image_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$_POST['slug']);
+				$image 				= ltrim($_POST['image'],"/");
+				$_POST['thumb'] 	= "/".resize(340,230,str_replace("/news/", '/thumb/', $image),$image);
 			}
 			else{
 				unset($_POST['image']);
@@ -68,14 +76,22 @@ class Adventure_activity extends Gopanel {
 			else{
 				$this->session->set_flashdata('error', "Sistem xətası baş verdi.");
 			}
-			
-			redirect("/gopanel/{$this->table}/edit/?id={$id}");
+			redirect($this->app."/".$this->table."/edit/?id=".$id);
 		}
 
 		$this->data['id'] 		= $id;
 		$this->render($this->table.'/edit',$this->data);
 	}
 
+	public function addMatch($news,$category){
+		$sql = '';
+		foreach ($category as $key => $value) {
+			// $sql .= "('{$news}', '{$value}'), ";
+		}
+		$sql = substr($sql, 0,-2);
+		$sql = "INSERT INTO `news_category` (`news`, `category`) VALUES ('{$news}', '{$category}')";
+		$this->core->myquery($sql);
+	}
 
 
 }

@@ -7,14 +7,14 @@
                     <h4 class="page-title"><?=$btitle ?></h4>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="<?=base_url("gopanel") ?>">Əsas Panel</a></li>
-                        <li class="breadcrumb-item"><a href="<?=base_url("gopanel/{$class}/manage/") ?>"><?=$btitle ?></a></li>
+                        <li class="breadcrumb-item"><a href="<?=base_url("gopanel/".$class) ?>/manage"><?=$btitle ?></a></li>
                         <li class="breadcrumb-item active"><?=$bactive ?></li>
                     </ol>
                 </div>
                 <div class="col-sm-6">
                     <div class="float-right d-none d-md-block">
                         <div class="dropdown">
-                            <a class="btn btn-outline-success waves-effect waves-light" href="<?=base_url("gopanel/{$class}/manage/") ?>">
+                            <a class="btn btn-outline-success waves-effect waves-light" href="/gopanel/<?=$table ?>/manage">
                                 <i class="fas fa-list-ol mr-2"></i> Bütün Siyahı
                             </a>
                         </div>
@@ -27,33 +27,56 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <form action="<?=base_url("gopanel/{$class}/{$method}/") ?>" method="POST" enctype="multipart/form-data">
+                        <form action="" method="POST" enctype="multipart/form-data">
                             <div class="row">
 
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                                    <label>Başlıq EN</label>
-                                    <input type="text" name="title_en" class="form-control" required>
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Başlıq </label>
+                                    <input type="text" name="title" class="form-control" required>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Kategoriya </label>
+                                    <select class="form-control select2" name="category">
+                                        <option value="">Kategoriya Seçin</option>
+                                        <?=category_view(0) ?>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Ətraflı Məlumat </label>
+                                    <textarea class="form-control ckeditor" name="description" required></textarea>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Açar sözlər </label>
+                                    <input type="text" name="tags" class="form-control tags" required>
                                 </div>
 
                                 <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                                    <label>Başlıq RU</label>
-                                    <input type="text" name="title_ru" class="form-control" required>
+                                    <label>Tarix</label>
+                                    <input type="date" name="date" class="form-control" required>
                                 </div>
 
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                                    <label>Alt text EN</label>
-                                    <input type="text" name="text_en" class="form-control" required>
+                                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                                    <label>Status</label>
+                                    <select name="status" class="form-control">
+                                        <option value="1">Aktiv</option>
+                                        <option value="0">Deaktiv</option>
+                                    </select>
                                 </div>
 
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                                    <label>Alt text RU</label>
-                                    <input type="text" name="text_ru" class="form-control" required>
+                                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                                    <label>Slider</label>
+                                    <select name="slider" class="form-control">
+                                        <option value="0">Xeyr</option>
+                                        <option value="1">Bəli</option>
+                                    </select>
                                 </div>
-
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Şəkil </label>
-                                    <small class="pull-right imgnotfiy">Ölçü 92 x 74</small>
+                                    <small class="pull-right imgnotfiy">Ölçü 825 x 550</small>
                                     <input type="file" name="image" class="filestyle" data-buttonname="btn-secondary" data-buttonText="Şəkil Seçi" data-classIcon="fas fa-file-import" data-buttonBefore="false">
                                 </div>
 

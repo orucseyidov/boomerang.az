@@ -30,36 +30,32 @@
                         <form action="<?=$class."/".$method ?>?id=<?=$id ?>" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>Kategoriya</label>
-                                    <select class="form-control" name="category">
-                                        <?php 
-                                            foreach ($category as $key => $value):
-                                                $select = $value['id'] == $values['category'] ? 'selected' : null;
-                                        ?>
-                                            <option value="<?=$value['id'] ?>" <?=$select ?>>
-                                                <?=$value['title'] ?>
-                                            </option>
-                                        <?php endforeach ?>
+                                    <label>Başlıq</label>
+                                    <input type="text" name="title" class="form-control" value="<?=$values['title'] ?>" required>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Kategoriya </label>
+                                    <select class="form-control select2" name="category">
+                                        <option value="">Kategoriya Seçin</option>
+                                        <?=category_view(0,0,$values['category']) ?>
                                     </select>
                                 </div>
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                                    <label>Başlıq <small>EN</small></label>
-                                    <input type="text" name="title_en" class="form-control" value="<?=$values['title_en'] ?>" required>
-                                </div>
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                                    <label>Başlıq <small>RU</small></label>
-                                    <input type="text" name="title_ru" class="form-control" value="<?=$values['title_ru'] ?>" required>
-                                </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>Ətraflı məlumat <small>EN</small></label>
-                                    <textarea class="form-control ckeditor" name="description_ru" required><?=$values['description_ru'] ?></textarea>
+                                    <label>Ətraflı məlumat</label>
+                                    <textarea class="form-control ckeditor" name="description" required><?=$values['description'] ?></textarea>
                                 </div>
+                                
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>Ətraflı məlumat <small>RU</small></label>
-                                    <textarea class="form-control ckeditor" name="description_ru" required><?=$values['description_ru'] ?></textarea>
+                                    <label>Açar sözlər</label>
+                                    <input type="text" name="tags" class="form-control tags" value="<?=$values['tags'] ?>" required>
+                                </div>
+                                
+                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                    <label>Tarix</label>
+                                    <input type="date" name="date" class="form-control" value="<?=$values['date'] ?>" required>
                                 </div>
 
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                                     <label>
                                         Status 
                                         <small><?=$values['status'] == 1 ? 'Hal hazırda aktivdir' : 'Hal hazırda deaktivdir' ?></small> 
@@ -69,10 +65,21 @@
                                         <option value="0" <?=s($values['status'],0) ?> >Deaktiv</option>
                                     </select>
                                 </div>
+
+                                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                                    <label>
+                                        Slider 
+                                        <small><?=$values['slider'] == 1 ? 'Hal hazırda Slider' : 'Hal hazırda slider deyil' ?></small> 
+                                    </label>
+                                    <select class="form-control" name="slider">
+                                        <option value="1" <?=s($values['slider'],1) ?> >Bəli</option>
+                                        <option value="0" <?=s($values['slider'],0) ?> >Xeyr</option>
+                                    </select>
+                                </div>
                                 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Şəkil</label>
-                                    <small class="pull-right imgnotfiy">Ölçü 200 x 140</small>
+                                    <small class="pull-right imgnotfiy">Ölçü 825 x 550</small>
                                     <input type="file" name="image" class="filestyle" data-buttonname="btn-secondary" data-buttonText="Şəkil Seçi" data-classIcon="fas fa-file-import" data-buttonBefore="false">
                                     <a class="imgarea" target="_blank" href="<?=$values['image'] ?>">
                                         <img style="max-width: 250px;" src="<?=base_url($values['image']) ?>">

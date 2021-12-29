@@ -7,14 +7,14 @@
                     <h4 class="page-title"><?=$btitle ?></h4>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="<?=base_url("gopanel") ?>">Əsas Panel</a></li>
-                        <li class="breadcrumb-item"><a href="<?=base_url("gopanel/".$class) ?>/manage"><?=$btitle ?></a></li>
+                        <li class="breadcrumb-item"><a href="<?=base_url("gopanel/{$class}/manage") ?>"><?=$btitle ?></a></li>
                         <li class="breadcrumb-item active"><?=$bactive ?></li>
                     </ol>
                 </div>
                 <div class="col-sm-6">
                     <div class="float-right d-none d-md-block">
                         <div class="dropdown">
-                            <a class="btn btn-outline-success waves-effect waves-light" href="/gopanel/<?=$class ?>/add">
+                            <a class="btn btn-outline-success waves-effect waves-light" href="<?=base_url("gopanel/{$class}/add?parent={$parent}") ?>">
                                 <i class="fas fa-plus mr-2"></i> Əlavə et
                             </a>
                         </div>
@@ -35,31 +35,34 @@ value=""
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body table-responsive">
-                        <table id="datatable" class="table table-bordered dt-responsive" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                        <table class="table table-bordered dt-responsive table-center" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
                                 <tr>
+                                    <th><i class="fas fa-expand-arrows-alt"></i></th>
                                     <th>№</th>
-                                    <th>Şəkil</th>
-                                    <th>Başlıq</th>
-                                    <th>Məlumat</th>
+                                    <th>Başlığ</th>
+                                    <th>Alt Kateqoriya</th>
                                     <th>Status</th>
                                     <th>Əməliyyatlar</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="sortable" class="sortableIcon" data-table="<?=$class ?>">
 <?php
 foreach ($manage as $key => $value): 
-    $editlink = base_url("gopanel/{$class}/edit/?id=").$value['id'];
+    $id         = $value['id'];
+    $editlink   = base_url("gopanel/{$class}/edit/?id={$id}");
+    $alt        = '?parent='.$value['id'];
 ?>
-                                <tr>
+                                <tr id="ord-<?=$value['id']?>">
+                                    <td class="sort-td"><i class="fas fa-arrows-alt-v"></i></td>
                                     <td><?=$counter++ ?></td>
+                                    <td><?=$value['title'] ?></td>
                                     <td>
-                                        <a target="_blank" href="<?=$value['image'] ?>">
-                                            <img width="100" src="<?=$value['image'] ?>">
+                                        <a class="btn btn-outline-success waves-effect waves-light" href="<?=$alt ?>">
+                                            <i class="fas fa-list-ol mr-2"></i> 
+                                            Alt Kateqoriyaları [ <?=$value['childs'] ?> ]
                                         </a>
                                     </td>
-                                    <td><?=$value['title_en'] ?></td>
-                                    <td><?=mb_substr(strip_tags($value['description_en']), 0,50) ?></td>
                                     <td>
                                     <input
                                       class         ="status"
