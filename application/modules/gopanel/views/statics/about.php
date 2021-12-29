@@ -30,15 +30,24 @@
                         <form action="/gopanel/<?=$class."/".$table ?>" method="POST" enctype="multipart/form-data">
                             <div class="row">
 
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                    <label>Başlıq <small>AZ</small></label>
+                                    <input type="text" name="title_az" class="form-control" value="<?=$values['title_az'] ?>" required>
+                                </div>
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                     <label>Başlıq <small>EN</small></label>
                                     <input type="text" name="title_en" class="form-control" value="<?=$values['title_en'] ?>" required>
                                 </div>
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                     <label>Başlıq <small>RU</small></label>
                                     <input type="text" name="title_ru" class="form-control" value="<?=$values['title_ru'] ?>" required>
                                 </div>
 
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Haqqında <small>AZ</small></label>
+                                    <textarea class="form-control ckeditor" rows="5" name="description_az"><?=$values['description_az'] ?></textarea>
+                                </div> 
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Haqqında <small>EN</small></label>

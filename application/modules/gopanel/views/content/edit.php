@@ -30,14 +30,27 @@
                         <form action="<?=$class."/".$method ?>?id=<?=$id ?>" method="POST" enctype="multipart/form-data">
                             <div class="row">
 
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Açar söz</label>
+                                    <input type="text" name="keyword" class="form-control" value="<?=$values['keyword'] ?>" required>
+                                </div>
+
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                    <label>Azərbaycan dilində</label>
+                                    <input type="text" name="title_az" class="form-control" value="<?=$values['title_az'] ?>" required>
+                                </div>
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                     <label>İngilis dilində</label>
                                     <input type="text" name="title_en" class="form-control" value="<?=$values['title_en'] ?>" required>
                                 </div>
 
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                     <label>Rus dilində</label>
                                     <input type="text" name="title_ru" class="form-control" value="<?=$values['title_ru'] ?>" required>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Kontent AZ</label>
+                                    <textarea class="form-control ckeditor" name="value_az"><?=$values['value_az'] ?></textarea>
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Kontent EN</label>

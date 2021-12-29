@@ -27,11 +27,15 @@
                     <div class="card-body">
                         <form action="/gopanel/<?=$class."/".$table ?>" method="POST" enctype="multipart/form-data">
                             <div class="row">
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                    <label>Ünvan Az</label>
+                                    <input type="text" name="adress_az" class="form-control" value="<?=$values['adress_az'] ?>" required>
+                                </div>
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                     <label>Ünvan En</label>
                                     <input type="text" name="adress_en" class="form-control" value="<?=$values['adress_en'] ?>" required>
                                 </div>
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                     <label>Ünvan Ru</label>
                                     <input type="text" name="adress_ru" class="form-control" value="<?=$values['adress_ru'] ?>" required>
                                 </div>

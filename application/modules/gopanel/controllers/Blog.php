@@ -2,17 +2,13 @@
 
 class Blog extends Gopanel {
 	
-
-	
 	function __construct(){
 		parent::__construct();
 		$this->admin_control();
-		$this->load->helper("goweb/category");
 		$this->load->helper("filter");
 		$this->load->helper("seflink");
 		$this->load->helper("file_upload");
-		$this->data['btitle']	= 'Xəbərlər';
-
+		$this->data['btitle']	= ' Xəbərlər';
 	}
 
 	public function index(){
@@ -24,17 +20,9 @@ class Blog extends Gopanel {
 		// core
 		if (isset($_POST['token'])) {
 			unset($_POST['token']);
-
-
-			$_POST['slug'] 		= seflink($_POST['title']);
-			$_POST['image'] 	= file_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$_POST['slug']);
-			$image 				= ltrim($_POST['image'],"/");
-			$_POST['thumb'] 	= "/".resize(340,230,str_replace("/news/", '/thumb/', $image),$image);
-
-
-
-			if ($news = $this->core->add_last_id($this->table,$_POST)) {
-				$this->addMatch($news,$_POST['category']);
+			
+			$_POST['image'] = file_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$_POST['title_en']);
+			if ($this->core->add($this->table,$_POST)) {
 				$this->session->set_flashdata('success', "Məlumat Uğurla Əlavə edildi");
 			}
 			else{
@@ -48,7 +36,7 @@ class Blog extends Gopanel {
 
 	public function manage(){
 		$this->data['datatable'] = true;
-		$this->data['manage'] 	 = $this->core->get_select_all($this->table);
+		$this->data['manage'] 	 = $this->gopanel->get_select_all($this->table);
 		$this->render($this->table.'/manage',$this->data);
 	}
 
@@ -58,12 +46,10 @@ class Blog extends Gopanel {
 
 		if (isset($_POST['token'])) {
 			unset($_POST['token']);
-			
-			$_POST['slug'] 		= seflink($_POST['title_az']);
+
 			if (isset($_FILES['image']) && strlen($_FILES['image']['name'])>1) {
-				$_POST['image'] = image_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$_POST['slug']);
-				$image 				= ltrim($_POST['image'],"/");
-				$_POST['thumb'] 	= "/".resize(340,230,str_replace("/news/", '/thumb/', $image),$image);
+				$img = seflink($_POST['name']);
+				$_POST['image'] = image_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$img);
 			}
 			else{
 				unset($_POST['image']);
@@ -76,22 +62,11 @@ class Blog extends Gopanel {
 			else{
 				$this->session->set_flashdata('error', "Sistem xətası baş verdi.");
 			}
-			redirect($this->app."/".$this->table."/edit/?id=".$id);
+			
+			redirect("/gopanel/{$this->table}/edit/?id={$id}");
 		}
 
 		$this->data['id'] 		= $id;
 		$this->render($this->table.'/edit',$this->data);
 	}
-
-	public function addMatch($news,$category){
-		$sql = '';
-		foreach ($category as $key => $value) {
-			// $sql .= "('{$news}', '{$value}'), ";
-		}
-		$sql = substr($sql, 0,-2);
-		$sql = "INSERT INTO `news_category` (`news`, `category`) VALUES ('{$news}', '{$category}')";
-		$this->core->myquery($sql);
-	}
-
-
 }

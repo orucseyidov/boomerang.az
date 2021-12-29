@@ -35,6 +35,11 @@
                                 </div>
                                 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Azərbaycan dilində</label>
+                                    <input type="text" name="value_az" class="form-control" required>
+                                </div>
+                                
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>İngilis dilində</label>
                                     <input type="text" name="value_en" class="form-control" required>
                                 </div>

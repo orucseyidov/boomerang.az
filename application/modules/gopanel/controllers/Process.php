@@ -20,9 +20,6 @@ class Process extends Gopanel {
 		$table 		= $this->input->post('table',true);
 		if ($this->gopanel->delete($table,$id)) {
 			echo "1";
-			if ($table == 'products') {
-				$this->deleteProducts($id);
-			}
 		}
 		else{
 			echo "0";
@@ -80,13 +77,7 @@ class Process extends Gopanel {
 	}
 
 
-	public function deleteProducts($product){
-		$this->gopanel->delete_where("product_category",['product' => $product]);
-		$this->gopanel->delete_where("product_delivery_countries",['product' => $product]);
-		$this->gopanel->delete_where("product_parametr",['product' => $product]);
-		$this->gopanel->delete_where("product_translate",['product' => $product]);
-		$this->gopanel->delete_where("products",['parent' => $product]);
-	}
+
 
 
 }

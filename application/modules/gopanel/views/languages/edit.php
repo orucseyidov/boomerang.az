@@ -30,6 +30,11 @@
                         <form action="<?=$class."/".$method ?>?id=<?=$id ?>" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Azərbaycan dilində</label>
+                                    <input type="text" name="value_az" class="form-control" value="<?=$values['value_az'] ?>" required>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>İngilis dilində</label>
                                     <input type="text" name="value_en" class="form-control" value="<?=$values['value_en'] ?>" required>
                                 </div>

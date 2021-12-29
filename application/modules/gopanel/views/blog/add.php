@@ -30,53 +30,57 @@
                         <form action="" method="POST" enctype="multipart/form-data">
                             <div class="row">
 
-                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>Başlıq </label>
-                                    <input type="text" name="title" class="form-control" required>
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                    <label>Başlığ AZ</label>
+                                    <input type="text" name="title_az" class="form-control" >
+                                </div>
+
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                    <label>Başlığ EN</label>
+                                    <input type="text" name="title_en" class="form-control" >
+                                </div>
+
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                    <label>Başlığ RU</label>
+                                    <input type="text" name="title_ru" class="form-control" >
                                 </div>
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>Kategoriya </label>
-                                    <select class="form-control select2" name="category">
-                                        <option value="">Kategoriya Seçin</option>
-                                        <?=category_view(0) ?>
-                                    </select>
+                                    <label>Haqqında AZ</label>
+                                    <textarea class="form-control" rows="5" name="description_az" ></textarea>
                                 </div>
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>Ətraflı Məlumat </label>
-                                    <textarea class="form-control ckeditor" name="description" required></textarea>
+                                    <label>Haqqında EN</label>
+                                    <textarea class="form-control" rows="5" name="description_en" ></textarea>
                                 </div>
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>Açar sözlər </label>
-                                    <input type="text" name="tags" class="form-control tags" required>
+                                    <label>Haqqında RU</label>
+                                    <textarea class="form-control" rows="5" name="description_ru" ></textarea>
                                 </div>
 
                                 <div class="col-md-6 col-sm-12 col-xs-12 form-group">
                                     <label>Tarix</label>
-                                    <input type="date" name="date" class="form-control" required>
+                                    <input type="date" name="date" class="form-control">
                                 </div>
 
-                                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                    <label>Link <small>Linkyoxdursa boş saxlaya bilərsiz</small></label>
+                                    <input type="text" name="slug" class="form-control" placeholder="Nümunə : <?=base_url() ?>">
+                                </div>
+
+                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
                                     <label>Status</label>
-                                    <select name="status" class="form-control">
+                                    <select class="form-control" name="status">
                                         <option value="1">Aktiv</option>
                                         <option value="0">Deaktiv</option>
                                     </select>
                                 </div>
 
-                                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                                    <label>Slider</label>
-                                    <select name="slider" class="form-control">
-                                        <option value="0">Xeyr</option>
-                                        <option value="1">Bəli</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>Şəkil </label>
-                                    <small class="pull-right imgnotfiy">Ölçü 825 x 550</small>
+                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                    <label>SLaydın şəkli</label>
+                                    <small class="pull-right imgnotfiy">Ölçü 1550 x 950</small>
                                     <input type="file" name="image" class="filestyle" data-buttonname="btn-secondary" data-buttonText="Şəkil Seçi" data-classIcon="fas fa-file-import" data-buttonBefore="false">
                                 </div>
 

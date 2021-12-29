@@ -29,33 +29,50 @@
                     <div class="card-body">
                         <form action="<?=$class."/".$method ?>?id=<?=$id ?>" method="POST" enctype="multipart/form-data">
                             <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>Başlıq</label>
-                                    <input type="text" name="title" class="form-control" value="<?=$values['title'] ?>" required>
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>Kategoriya </label>
-                                    <select class="form-control select2" name="category">
-                                        <option value="">Kategoriya Seçin</option>
-                                        <?=category_view(0,0,$values['category']) ?>
-                                    </select>
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>Ətraflı məlumat</label>
-                                    <textarea class="form-control ckeditor" name="description" required><?=$values['description'] ?></textarea>
-                                </div>
-                                
-                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>Açar sözlər</label>
-                                    <input type="text" name="tags" class="form-control tags" value="<?=$values['tags'] ?>" required>
-                                </div>
-                                
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                                    <label>Tarix</label>
-                                    <input type="date" name="date" class="form-control" value="<?=$values['date'] ?>" required>
+
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                    <label>Başlığ AZ</label>
+                                    <input type="text" name="title_az" class="form-control" value="<?=$values['title_az'] ?>" >
                                 </div>
 
-                                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                    <label>Başlığ EN</label>
+                                    <input type="text" name="title_en" class="form-control" value="<?=$values['title_en'] ?>" >
+                                </div>
+
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                    <label>Başlığ RU</label>
+                                    <input type="text" name="title_ru" class="form-control" value="<?=$values['title_ru'] ?>" >
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Haqqında AZ</label>
+                                    <textarea class="form-control" rows="5" name="description_az" ><?=$values['description_az'] ?></textarea>
+                                </div>
+                                
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Haqqında EN</label>
+                                    <textarea class="form-control" rows="5" name="description_en" ><?=$values['description_en'] ?></textarea>
+                                </div>
+                                
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Haqqında RU</label>
+                                    <textarea class="form-control" rows="5" name="description_ru" ><?=$values['description_ru'] ?></textarea>
+                                </div>
+
+                                <?php $newDate = date("Y-m-d", strtotime($values['date']));?>
+
+                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                    <label>Tarix</label>
+                                    <input type="date" name="date" class="form-control" value="<?=$newDate ?>">
+                                </div>
+
+                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                    <label>Link <small>Linkyoxdursa boş saxlaya bilərsiz</small></label>
+                                    <input type="text" name="slug" class="form-control" placeholder="Nümunə : <?=base_url() ?>" value="<?=$values['slug'] ?>" >
+                                </div>
+
+                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
                                     <label>
                                         Status 
                                         <small><?=$values['status'] == 1 ? 'Hal hazırda aktivdir' : 'Hal hazırda deaktivdir' ?></small> 
@@ -66,25 +83,15 @@
                                     </select>
                                 </div>
 
-                                <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-                                    <label>
-                                        Slider 
-                                        <small><?=$values['slider'] == 1 ? 'Hal hazırda Slider' : 'Hal hazırda slider deyil' ?></small> 
-                                    </label>
-                                    <select class="form-control" name="slider">
-                                        <option value="1" <?=s($values['slider'],1) ?> >Bəli</option>
-                                        <option value="0" <?=s($values['slider'],0) ?> >Xeyr</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>Şəkil</label>
-                                    <small class="pull-right imgnotfiy">Ölçü 825 x 550</small>
+                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                    <label>Slaydın şəkli</label>
+                                    <small class="pull-right imgnotfiy">Ölçü 1550 x 950</small>
                                     <input type="file" name="image" class="filestyle" data-buttonname="btn-secondary" data-buttonText="Şəkil Seçi" data-classIcon="fas fa-file-import" data-buttonBefore="false">
                                     <a class="imgarea" target="_blank" href="<?=$values['image'] ?>">
                                         <img style="max-width: 250px;" src="<?=base_url($values['image']) ?>">
                                     </a>
                                 </div>
+
                                 <div class="hidden-inputs">
                                     <input type="hidden" name="token" value="<?=$token ?>">
                                 </div>

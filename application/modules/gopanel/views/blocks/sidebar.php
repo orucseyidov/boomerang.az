@@ -133,6 +133,17 @@
 
                 <li>
                     <a href="javascript:void(0);" class="waves-effect">
+                        <i class="fas fa-newspaper"></i> <span> Bloq</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="/gopanel/blog/add"><i class="fas fa-plus"></i> Əlavə et</a></li>
+                        <li><a href="/gopanel/blog/manage"><i class="fas fa-fas fa-table"></i> İdarə et</a></li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect">
                         <i class="fas fa-comments"></i><span> Rəylər</span>
                     </a>
                     <ul class="submenu">

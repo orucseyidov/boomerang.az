@@ -30,34 +30,49 @@
                         <form action="<?=$class."/".$method ?>?id=<?=$id ?>" method="POST" enctype="multipart/form-data">
                             <div class="row">
 
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                    <label>Səhifə başlığı AZ</label>
+                                    <input type="text" name="title_az" class="form-control" value="<?=$values['title_az'] ?>" required>
+                                </div>
+
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                     <label>Səhifə başlığı EN</label>
                                     <input type="text" name="title_en" class="form-control" value="<?=$values['title_en'] ?>" required>
                                 </div>
 
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                     <label>Səhifə başlığı RU</label>
                                     <input type="text" name="title_ru" class="form-control" value="<?=$values['title_ru'] ?>" required>
                                 </div>
 
 
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>SƏhifə haqqında <small>AZ</small></label>
+                                    <textarea class="form-control" rows="5" name="description_az" maxlength="300" placeholder="Səhifə haqqında məlumatmaksimum 300 simvol" ><?=$values['description_az'] ?></textarea>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>SƏhifə haqqında <small>EN</small></label>
                                     <textarea class="form-control" rows="5" name="description_en" maxlength="300" placeholder="Səhifə haqqında məlumatmaksimum 300 simvol" ><?=$values['description_en'] ?></textarea>
-                                </div> 
+                                </div>
 
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>SƏhifə haqqında <small>RU</small></label>
                                     <textarea class="form-control" rows="5" name="description_ru" maxlength="300" placeholder="Səhifə haqqında məlumatmaksimum 300 simvol" ><?=$values['description_ru'] ?></textarea>
                                 </div>
 
 
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Açar sözlər <small>AZ</small></label>
+                                    <input type="text" name="keywords_az" class="form-control tags" value="<?=$values['keywords_az'] ?>" required>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Açar sözlər <small>EN</small></label>
                                     <input type="text" name="keywords_en" class="form-control tags" value="<?=$values['keywords_en'] ?>" required>
                                 </div>
 
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Açar sözlər <small>RU</small></label>
                                     <input type="text" name="keywords_ru" class="form-control tags" value="<?=$values['keywords_ru'] ?>" required>
                                 </div>

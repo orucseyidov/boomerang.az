@@ -40,53 +40,45 @@ value=""
                                 <tr>
                                     <th>№</th>
                                     <th>Şəkil</th>
-                                    <th>Başlıq</th>
-                                    <th>Tarix</th>
-                                    <th>Məlumat</th>
+                                    <th>Başlığ</th>
+                                    <th>Haqqında</th>
                                     <th>Status</th>
                                     <th>Əməliyyatlar</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="sortable" class="sortableIcon" data-table="<?=$table ?>">
 <?php
 foreach ($manage as $key => $value): 
     $editlink = base_url("gopanel/").$class."/edit/?id=".$value['id'];
-    $viewlink = base_url("news/{$value['slug']}");
 ?>
-                                <tr>
+                                <tr id="ord-<?=$value['id']?>">
                                     <td><?=$counter++ ?></td>
                                     <td>
                                         <a target="_blank" href="<?=$value['image'] ?>">
-                                            <img width="100" src="<?=$value['thumb'] ?>">
+                                            <img width="100" src="<?=$value['image'] ?>">
                                         </a>
                                     </td>
-                                    <td><?=$value['title'] ?></td>
-                                    <td><?=$value['date'] ?></td>
-                                    <td><?=mb_substr(strip_tags($value['description']), 0,50) ?></td>
+                                    <td><?=$value['title_en'] ?></td>
+                                    <td><?=mb_substr(strip_tags($value['description_en']), 0,50) ?></td>
                                     <td>
-                                    <input
-                                      class         ="status"
-                                      type          ="checkbox"
-                                      data-size     ="small"
-                                      data-toggle   ="toggle"
-                                      data-on       ="Aktiv"
-                                      data-off      ="Deaktiv"
-                                      data-onstyle  ="success"
-                                      data-offstyle ="danger"
-                                      dataROW       ="status"
-                                      dataID        ="<?=$value['id']; ?>"
-                                      dataTable     ="<?=$table; ?>"
-                                      <?php echo ($value['status'] == 1) ? "checked" : " " ; ?>
-                                      >
+                                        <input
+                                        class         ="status"
+                                        type          ="checkbox"
+                                        data-size     ="small"
+                                        data-toggle   ="toggle"
+                                        data-on       ="Aktiv"
+                                        data-off      ="Deaktiv"
+                                        data-onstyle  ="success"
+                                        data-offstyle ="danger"
+                                        dataROW       ="status"
+                                        dataID        ="<?=$value['id']; ?>"
+                                        dataTable     ="<?=$table; ?>"
+                                        <?php echo ($value['status'] == 1) ? "checked" : " " ; ?>
+                                        >
                                     </td>
                                     <td>
                                         <div class="manage">
-                                            <a target="_blank" class="btn btn-success" href="<?=$viewlink?>" data-toggle="tooltip" data-placement="top" title="Məlumatı Yenilə" >
-                                                <i class="fas fa-eye"></i>
-                                            </a>
-                                            <a class="btn btn-success" href="<?=$editlink?>" data-toggle="tooltip" data-placement="top" title="Məlumatı Yenilə" >
-                                                <i class="fas fa-edit"></i>
-                                            </a>
+                                            <a class="btn btn-success" href="<?=$editlink?>" data-toggle="tooltip" data-placement="top" title="Məlumatı Yenilə" ><i class="fas fa-edit"></i></a>
                                             <a class="btn btn-danger delete" href="" unit_id="<?=$value['id']?>" table_name="<?=$table ?>" data-toggle="tooltip" data-placement="top" title="Məlumatı Sil" ><i class="fas fa-trash-alt"></i></a>
                                         </div>
                                     </td>

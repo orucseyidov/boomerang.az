@@ -40,6 +40,7 @@ value=""
                                 <tr>
                                     <th>№</th>
                                     <th>Açar söz</th>
+                                    <th>Başlığ AZ</th>
                                     <th>Başlığ EN</th>
                                     <th>Başlığ RU</th>
                                     <th>Əməliyyatlar</th>
@@ -53,6 +54,7 @@ foreach ($manage as $key => $value):
                                 <tr>
                                     <td><?=$counter++ ?></td>
                                     <td><?=$value['keyword'] ?></td>
+                                    <td><?=$value['value_az'] ?></td>
                                     <td><?=$value['value_en'] ?></td>
                                     <td><?=$value['value_ru'] ?></td>
                                     <td>

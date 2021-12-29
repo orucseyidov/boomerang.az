@@ -29,20 +29,32 @@
                     <div class="card-body">
                         <form action="" method="POST" enctype="multipart/form-data">
                             <div class="row">
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                    <label>Başlığ AZ</label>
+                                    <input type="text" name="title_az" class="form-control" >
+                                </div>
+
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                     <label>Başlığ EN</label>
                                     <input type="text" name="title_en" class="form-control" >
                                 </div>
 
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                     <label>Başlığ RU</label>
                                     <input type="text" name="title_ru" class="form-control" >
                                 </div>
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Alt yazı AZ</label>
+                                    <textarea class="form-control" rows="5" name="description_az" ></textarea>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Alt yazı EN</label>
                                     <textarea class="form-control" rows="5" name="description_en" ></textarea>
                                 </div>
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Alt yazı RU</label>
                                     <textarea class="form-control" rows="5" name="description_ru" ></textarea>
                                 </div>

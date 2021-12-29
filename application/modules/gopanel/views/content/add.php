@@ -34,26 +34,40 @@
                                     <input type="text" name="keyword" class="form-control" required>
                                 </div>
 
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                    <label>Başlığ AZ</label>
+                                    <input type="text" name="title_az" class="form-control" required>
+                                </div>
+
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                     <label>Başlığ EN</label>
                                     <input type="text" name="title_en" class="form-control" required>
                                 </div>
 
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                     <label>Başlığ RU</label>
                                     <input type="text" name="title_ru" class="form-control" required>
                                 </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Kontent AZ</label>
+                                    <textarea class="form-control ckeditor" name="value_az"></textarea>
+                                </div>
+
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Kontent EN</label>
                                     <textarea class="form-control ckeditor" name="value_en"></textarea>
                                 </div>
+
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Kontent RU</label>
                                     <textarea class="form-control ckeditor" name="value_ru"></textarea>
                                 </div>
+
                                 <div class="hidden-inputs">
                                     <input type="hidden" name="token" value="<?=$token ?>">
                                 </div>
+
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group mb-0">
                                     <div class="pull-right">
                                         <button type="submit" class="btn btn-primary waves-effect waves-light mr-1 ">

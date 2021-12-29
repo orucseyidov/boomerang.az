@@ -28,17 +28,27 @@
                         <form action="/gopanel/<?=$class."/".$table ?>" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                    <label>Saytın Adı AZ</label>
+                                    <input type="text" name="site_title_az" class="form-control" value="<?=$values['site_title_az'] ?>" required>
+                                </div>
+                                
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                     <label>Saytın Adı EN</label>
                                     <input type="text" name="site_title_en" class="form-control" value="<?=$values['site_title_en'] ?>" required>
                                 </div>
 
 
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                     <label>Saytın Adı RU</label>
                                     <input type="text" name="site_title_ru" class="form-control" value="<?=$values['site_title_ru'] ?>" required>
                                 </div>
                                
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Sayt haqqında AZ</label>
+                                    <textarea class="form-control" rows="5" name="description_az"><?=$values['description_az'] ?></textarea>
+                                </div>
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Sayt haqqında EN</label>
@@ -51,6 +61,11 @@
                                 </div>
 
                                 
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Açar sözlər AZ</label>
+                                    <input type="text" name="tags_az" class="form-control tags" value="<?=$values['tags_az'] ?>" required>
+                                </div>
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Açar sözlər EN</label>

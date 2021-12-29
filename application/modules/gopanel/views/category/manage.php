@@ -46,7 +46,7 @@ value=""
                                     <th>Əməliyyatlar</th>
                                 </tr>
                             </thead>
-                            <tbody id="sortable" class="sortableIcon" data-table="<?=$class ?>">
+                            <tbody id="sortable" class="sortableIcon" data-table="<?=$table ?>">
 <?php
 foreach ($manage as $key => $value): 
     $id         = $value['id'];
@@ -56,7 +56,7 @@ foreach ($manage as $key => $value):
                                 <tr id="ord-<?=$value['id']?>">
                                     <td class="sort-td"><i class="fas fa-arrows-alt-v"></i></td>
                                     <td><?=$counter++ ?></td>
-                                    <td><?=$value['title'] ?></td>
+                                    <td><?=$value['title_az'] ?></td>
                                     <td>
                                         <a class="btn btn-outline-success waves-effect waves-light" href="<?=$alt ?>">
                                             <i class="fas fa-list-ol mr-2"></i> 
