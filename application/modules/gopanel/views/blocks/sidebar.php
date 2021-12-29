@@ -79,32 +79,24 @@
 
                 <li class="menu-title">Digər</li>
 
-
                 <li>
                     <a href="javascript:void(0);" class="waves-effect">
-                        <i class="far fa-star"></i><span> Xidmətlər</span>
+                        <i class="fas fa-list-ol"></i><span> Kateqoriyalar</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="/gopanel/services/add"><i class="fas fa-plus"></i> Əlavə et</a></li>
-                        <li><a href="/gopanel/services/manage"><i class="fas fa-fas fa-table"></i> İdarə et</a></li>
-                        <li>
-                            <a href="/gopanel/service_category/manage">
-                                <i class="fas fa-fas fa-list"></i> Kategoriyalar
-                            </a>
-                        </li>
+                        <li><a href="/gopanel/category/add"><i class="fas fa-plus"></i> Əlavə et</a></li>
+                        <li><a href="/gopanel/category/manage"><i class="fas fa-fas fa-table"></i> İdarə et</a></li>
                     </ul>
                 </li>
 
                 <li>
                     <a href="javascript:void(0);" class="waves-effect">
-                        <i class="far fa-star"></i><span> Subjects</span>
+                        <i class="fas fa-home"></i> <span> Ana Səhifə</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="/gopanel/subjects/add"><i class="fas fa-plus"></i> Əlavə et</a></li>
-                        <li><a href="/gopanel/subjects/manage"><i class="fas fa-fas fa-table"></i> İdarə et</a></li>
                         <li>
-                            <a href="/gopanel/subjects_category/manage">
-                                <i class="fas fa-fas fa-list"></i> Kategoriyalar
+                            <a href="/gopanel/slider/manage">
+                                <i class="fab fa-slideshare"></i> Slayder
                             </a>
                         </li>
                     </ul>
@@ -119,18 +111,29 @@
 
                 <li>
                     <a href="javascript:void(0);" class="waves-effect">
-                        <i class="far fa-star"></i><span> Slider</span>
+                        <i class="fas fa-user-tie"></i><span> Xidmətlər</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="/gopanel/slider/add"><i class="fas fa-plus"></i> Əlavə et</a></li>
-                        <li><a href="/gopanel/slider/manage"><i class="fas fa-fas fa-table"></i> İdarə et</a></li>
+                        <li><a href="/gopanel/services/add"><i class="fas fa-plus"></i> Əlavə et</a></li>
+                        <li><a href="/gopanel/services/manage"><i class="fas fa-fas fa-table"></i> İdarə et</a></li>
                     </ul>
                 </li>
 
 
                 <li>
                     <a href="javascript:void(0);" class="waves-effect">
-                        <i class="far fa-users"></i><span> Rəylər</span>
+                        <i class="fas fa-project-diagram"></i> <span> Layihələr</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="/gopanel/projects/add"><i class="fas fa-plus"></i> Əlavə et</a></li>
+                        <li><a href="/gopanel/projects/manage"><i class="fas fa-fas fa-table"></i> İdarə et</a></li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect">
+                        <i class="fas fa-comments"></i><span> Rəylər</span>
                     </a>
                     <ul class="submenu">
                         <li><a href="/gopanel/testimonial/add"><i class="fas fa-plus"></i> Əlavə et</a></li>
