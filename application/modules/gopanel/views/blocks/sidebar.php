@@ -61,7 +61,12 @@
                                 Seo Ayarları
                             </a>
                         </li>
-                        
+                        <li>
+                            <a href="/gopanel/menu/manage">
+                                <i class="fas fa-list"></i> 
+                                Menyular
+                            </a>
+                        </li>
                         <li>
                             <a href="/gopanel/newsletter/manage">
                                 <i class="far fa-star"></i>

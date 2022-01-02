@@ -64,6 +64,7 @@ class Core extends GO_Model {
 			slug,id
 		');
         $this->db->from('menu');
+        $this->db->order_by("rank","asc");
         return $this->db->get()->result_array();
 	}
 

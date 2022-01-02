@@ -48,66 +48,20 @@
           </div>
           <nav id="mainnav" class="mainnav fixed-mainnav">
             <ul class="menu menustyle2">
-              <li class="menu-item-has-children current-menu current-menu-item current-menu-ancestor ">
+              <!-- <li class="current-menu">
                 <a href="<?= base_url(); ?>">Home</a>
-                <ul class="sub-menu">
-                  <li>
-                    <a href="<?= base_url(); ?>">Home 1</a>
-                  </li>
-                  <li class="current-menu-item">
-                    <a href="<?= base_url(); ?>">Home 2</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="<?= base_url("windows"); ?>">Windows</a>
-              </li>
-              <li>
-                <a href="<?= base_url("doors"); ?>">Doors</a>
-              </li>
-              <li class="menu-item-has-children">
-                <a href="#">Pages</a>
-                <ul class="sub-menu">
-                  <li>
-                    <a href="<?= base_url("about"); ?>">About Us</a>
-                  </li>
-                  <li>
-                    <a href="<?= base_url("about-company"); ?>">Company Infomation</a>
-                  </li>
-                  <li>
-                    <a href="<?= base_url("services"); ?>">Services</a>
-                  </li>
-                  <li>
-                    <a href="<?= base_url("service-details"); ?>">Service Details</a>
-                  </li>
-                  <li>
-                    <a href="<?= base_url("case-study"); ?>">Case Study</a>
-                  </li>
-                  <li>
-                    <a href="<?= base_url("study-details"); ?>">Case Study Details</a>
-                  </li>
-                  <li>
-                    <a href="<?= base_url("gallery"); ?>">Gallery</a>
-                  </li>
-                  <li>
-                    <a href="<?= base_url("request-caculator"); ?>">Cost Caculator</a>
-                  </li>
-                  <li class="menu-item-has-children">
-                    <a href="<?= base_url("blog-standard"); ?>">Blog</a>
-                    <ul class="sub-menu">
-                      <li>
-                        <a href="<?= base_url("blog-standard"); ?>">Blog Standard</a>
-                      </li>
-                      <li>
-                        <a href="<?= base_url("blog-details"); ?>">Blog Details</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="<?= base_url("contact"); ?>">Contact</a>
-              </li>
+              </li> -->
+              <?php 
+                  $c = 1;
+                  foreach ($menu as $key => $value):
+                    $active = $c == 1 ? 'current-menu' : null;
+                    $c++;
+              ?>
+                <li class="<?=$active ?>">
+                  <a href="<?= base_url($value['slug']); ?>"><?=$value['name'] ?></a>
+                </li>
+              <?php endforeach ?>
+
             </ul>
           </nav>
         </div>

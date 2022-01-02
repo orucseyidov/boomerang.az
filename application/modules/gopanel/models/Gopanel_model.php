@@ -133,87 +133,19 @@ class Gopanel_model extends GO_Model {
         return $this->db->get()->result_array();
 	}
 
-	public function slider(){
-		$this->db->select('*');
-        $this->db->from('slider');
-        $this->db->order_by("rank","ASC");
-        return $this->db->get()->result_array();
-	}
-
-	public function browsing_carousel(){
-		$this->db->select('*');
-        $this->db->from('browsing_carousel');
-        $this->db->order_by("rank","ASC");
-        return $this->db->get()->result_array();
-	}
-
-
-	public function get_parametrs(){
-		$this->db->select('title_az,id,key');
-        $this->db->from('parametrs');
-        return $this->db->get()->result_array();
-	}
-
-
-	public function get_orders(){
-		$this->db->select('
-			orders.*,
-			users.fullname,
-			countries.name as country,
-			(SELECT COUNT(id) FROM order_details ord WHERE ord.order_id=orders.id) as productCount
-		');
-        $this->db->from('orders');
-        $this->db->join("users","users.id=orders.user","left");
-        $this->db->join("countries","countries.id=orders.country","left");
-        $this->db->order_by("id","DESC");
-        return $this->db->get()->result_array();
-	}
-
-	public function get_order($id){
-		$this->db->select('
-			orders.*,
-			users.fullname,
-			countries.name as country,
-			(SELECT COUNT(id) FROM order_details ord WHERE ord.order_id=orders.id) as productCount
-		');
-        $this->db->from('orders');
-        $this->db->join("users","users.id=orders.user","left");
-        $this->db->join("countries","countries.id=orders.country","left");
-        $this->db->where("orders.id",$id);
-        $this->db->order_by("id","DESC");
-        return $this->db->get()->row_array();
-	}
-
-	public function get_order_detail($id){
-		$this->db->select('*');
-        $this->db->from('order_details');
-        $this->db->where("order_details.order_id",$id);
-        $this->db->order_by("id","DESC");
-        return $this->db->get()->result_array();
-	}
-
-
-	public function category_ads($category){
-		$this->db->select('*');
-        $this->db->from('category_ads');
-        $this->db->where("category",$category);
-        $this->db->order_by("id","DESC");
-        return $this->db->get()->result_array();
-	}
-
-	public function get_category_main(){
-		$this->db->select('*');
-        $this->db->from('category');
-        $this->db->where("parent",0);
-        $this->db->order_by("id","DESC");
-        return $this->db->get()->result_array();
-	}
 
 	public function get_delete_product_id($product){
 		$this->db->select('*');
         $this->db->from('products');
         $this->db->where("parent",0);
         return $this->db->get()->row_array();
+	}
+
+	public function get_menu(){
+		$this->db->select('*');
+        $this->db->from('menu');
+        $this->db->order_by("rank","ASC");
+        return $this->db->get()->result_array();
 	}
 
 }
