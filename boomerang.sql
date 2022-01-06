@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Hazırlanma Vaxtı: 29 Dek, 2021 saat 10:38
+-- Hazırlanma Vaxtı: 06 Yan, 2022 saat 10:08
 -- Server versiyası: 5.6.47
 -- PHP Versiyası: 7.2.29
 
@@ -253,19 +253,22 @@ CREATE TABLE `menu` (
   `name_en` varchar(100) NOT NULL,
   `name_ru` varchar(100) NOT NULL,
   `slug` varchar(100) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '1'
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `rank` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Sxemi çıxarılan cedvel `menu`
 --
 
-INSERT INTO `menu` (`id`, `name_az`, `name_en`, `name_ru`, `slug`, `status`) VALUES
-(1, '', 'Home', 'Home', '/', 1),
-(2, '', 'About', 'About', 'about', 1),
-(4, '', 'Services', 'Services', 'services', 1),
-(5, '', 'Subjects', 'Subjects', 'subjects', 1),
-(7, '', 'Contact', 'Contact', 'contact', 1);
+INSERT INTO `menu` (`id`, `name_az`, `name_en`, `name_ru`, `slug`, `status`, `rank`) VALUES
+(1, 'Ana Səhifə', 'Home', 'Home', '/', 1, 0),
+(2, 'Haqqımızda', 'About', 'About', 'about', 1, 1),
+(4, 'Xidmətlər', 'Services', 'Services', 'services', 1, 2),
+(5, 'Layihələr', 'Projects', 'Projects', 'projects', 1, 3),
+(7, 'Əlaqə', 'Contact', 'Contact', 'contact', 1, 6),
+(8, 'Blog', 'Blog', 'Blog', 'blog', 1, 5),
+(9, 'Məhsullar', 'Məhsullar', 'Məhsullar', 'products', 1, 4);
 
 -- --------------------------------------------------------
 
@@ -358,10 +361,9 @@ CREATE TABLE `seo_settings` (
 --
 
 INSERT INTO `seo_settings` (`id`, `page`, `title_az`, `title_en`, `title_ru`, `description_az`, `description_en`, `description_ru`, `keywords_az`, `keywords_en`, `keywords_ru`, `image`) VALUES
-(1, 'about', '', 'About', 'About', '', 'About', 'About', '', 'test_az,test', 'About', '/uploads/images/seo_settings/891feab4dabanner.jpg'),
-(8, 'services', '', 'Services', 'Services', '', 'Services', 'Services', '', 'Services', 'Services', '/uploads/images/seo_settings/73d8940b63banner.jpg'),
-(11, 'contact', '', 'Contact', 'Contact', '', 'Contact', 'Contact', '', 'Contact', 'Contact', '/uploads/images/seo_settings/ca806b4761bannersdsddssd.jpg'),
-(12, 'subjects', '', 'Subjects', 'Subjects', '', 'Subjects', 'Subjects', '', 'Subjects', 'Subjects', '/uploads/images/seo_settings/0bbc11694dbanner.jpg');
+(1, 'about', 'Haqqımızda', 'About', 'About', '', 'About', 'About', 'test', 'test_az,test', 'About', '/uploads/images/seo_settings/f20e31b3aeimgheader.jpg'),
+(8, 'services', 'Xidmətlər', 'Services', 'Services', '', 'Services', 'Services', '', 'Services', 'Services', '/uploads/images/seo_settings/f20e31b3aeimgheader.jpg'),
+(11, 'contact', 'Əlaqə', 'Contact', 'Contact', '', 'Contact', 'Contact', '', 'Contact', 'Contact', '/uploads/images/seo_settings/ca806b4761bannersdsddssd.jpg/uploads/images/seo_settings/f20e31b3aeimgheader.jpg');
 
 -- --------------------------------------------------------
 
@@ -646,7 +648,7 @@ ALTER TABLE `languages`
 -- Cədvəl üçün AUTO_INCREMENT `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Cədvəl üçün AUTO_INCREMENT `newsletter`
@@ -664,7 +666,7 @@ ALTER TABLE `projects`
 -- Cədvəl üçün AUTO_INCREMENT `seo_settings`
 --
 ALTER TABLE `seo_settings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Cədvəl üçün AUTO_INCREMENT `services`

@@ -1,92 +1,4 @@
-<div class="page-title page-title-inner padding-bottom9">
-  <div class="overlay-page-tile"></div>
-  <div class="page-title-content">
-    <div class="container">
-      <div class="blog-title color-white">
-        <h2>About Us</h2>
-        <span>
-          <a href="<?= base_url(); ?>" class="hv-color-st1 color-white"> Home </a>About Us </span>
-      </div>
-    </div>
-  </div>
-</div>
-<section class="about-us-style2">
-  <div class="themesflat-spacer clearfix" data-desktop="120" data-mobile="60" data-smobile="50"></div>
-  <div class="container">
-    <div class="row">
-      <div class="tf-about">
-        <div class="title-section title-style text-center wow fadeInDown">
-          <div class="sub-title">About Us</div>
-          <div class="flat-title">Janelas Corporation</div>
-          <p>The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick</p>
-        </div>
-        <div class="what-we-do-content">
-          <div class="col-sm-4">
-            <div class="image-box wow fadeInUp  animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-              <div class="image">
-                <img src="/assets/images/about/imgabout1.jpg" alt="images" />
-              </div>
-              <div class="title-imagebox clearfix">
-                <h4 class="text-center">
-                  <a href="<?= base_url("about-company"); ?>">Company Information</a>
-                </h4>
-              </div>
-              <div class="content-imagebox">
-                <p class="text-center"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </p>
-              </div>
-              <div class="button-imagebox">
-                <a href="<?= base_url("about-company"); ?>">
-                  <i class="icon-iconarrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="image-box wow fadeInUp  animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-              <div class="image">
-                <img src="/assets/images/about/imgabout2.jpg" alt="images" />
-              </div>
-              <div class="title-imagebox clearfix">
-                <h4 class="text-center">
-                  <a href="<?= base_url("about-company"); ?>">Company Information</a>
-                </h4>
-              </div>
-              <div class="content-imagebox">
-                <p class="text-center"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </p>
-              </div>
-              <div class="button-imagebox">
-                <a href="<?= base_url("about-company"); ?>">
-                  <i class="icon-iconarrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="image-box wow fadeInUp  animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-              <div class="image">
-                <img src="/assets/images/about/imgabout3.jpg" alt="images" />
-              </div>
-              <div class="title-imagebox">
-                <h4 class="text-center">
-                  <a href="<?= base_url("about-company"); ?>">Industry Leadership</a>
-                </h4>
-              </div>
-              <div class="content-imagebox">
-                <p class="text-center clearfix"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </p>
-              </div>
-              <div class="button-imagebox">
-                <a href="<?= base_url("about-company"); ?>">
-                  <i class="icon-iconarrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="themesflat-spacer  clearfix" data-desktop="59" data-mobile="30" data-smobile="20"></div>
-</section>
+<?php $this->load->view("blocks/breadcrumb") ?>
 <section class="about-us about-us-style" id="about-us">
   <div class="container">
     <div class="row">
@@ -108,20 +20,6 @@
           <div class="flat-title margin5-28 padding-right100"> A Trendy Doors for Trendy Home </div>
         </div>
         <p> The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick </p>
-        <ul class="icon-box tf-icon-box-style wow jackInTheBox animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-          <li class="">
-            <span class="color-style2">Malesuada dictum</span>
-          </li>
-          <li class="padding-left20">
-            <span class="color-style2">Tempor commodo</span>
-          </li>
-          <li class="">
-            <span class="color-style2">Dictum neque</span>
-          </li>
-          <li class="padding-left20">
-            <span class="color-style2">Tempor commodo</span>
-          </li>
-        </ul>
       </div>
     </div>
   </div>

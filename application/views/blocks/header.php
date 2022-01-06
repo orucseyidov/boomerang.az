@@ -65,7 +65,7 @@
             </ul>
           </nav>
         </div>
-        <div class="search-btn">
+        <!-- <div class="search-btn">
           <div class="btn-top">
             <a href="<?= base_url("contact"); ?>" class="themesflat-button-style2 btn-style-4">
               <span class="btn-title">Get A Quote</span>
@@ -86,7 +86,7 @@
               </form>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

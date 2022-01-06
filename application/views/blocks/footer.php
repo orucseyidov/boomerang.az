@@ -93,31 +93,30 @@ Get the latest updates via email. Any time you may unsubscribe
 </div>
 
 <script src="/assets/js/jquery.min.js"></script>
-<script src="/assets/js/plugins.js"></script>
-<script src="/assets/js/bootstrap.min.js"></script>
-<script src="/assets/js/parallax.js"></script>
-<script type="text/javascript" src="/assets/js/jquery-countTo.js"></script>
-<script type="text/javascript" src="/assets/js/jquery.easing.js"></script>
-<script type="text/javascript" src="/assets/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="/assets/js/waypoints.min.js"></script>
-<script type="text/javascript" src="/assets/js/wow.min.js"></script>
+    <script src="/assets/js/plugins.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/parallax.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery-countTo.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.easing.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/assets/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+    <script type="text/javascript" src="/assets/js/wow.min.js"></script>
+    <script type="text/javascript" src="/assets/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="/assets/js/animsition.js"></script>
+    
+    <script src="/assets/js/rev-slider/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="rev-slider/js/jquery.themepunch.tools.min.js"></script>
+    <script src="/assets/js/rev-slider.js"></script>
+    <script src="/assets/js/rev-slider/js/extensions/extensionsrevolution.extension.actions.min.js"></script>
+    <script src="/assets/js/rev-slider/js/extensions/extensionsrevolution.extension.carousel.min.js"></script>
+    <script src="/assets/js/rev-slider/js/extensions/extensionsrevolution.extension.kenburn.min.js"></script>
+    <script src="/assets/js/rev-slider/js/extensions/extensionsrevolution.extension.layeranimation.min.js"></script>
+    <script src="/assets/js/rev-slider/js/extensions/extensionsrevolution.extension.migration.min.js"></script>
+    <script src="/assets/js/rev-slider/js/extensions/extensionsrevolution.extension.navigation.min.js"></script>
+    <script src="/assets/js/rev-slider/js/extensions/extensionsrevolution.extension.parallax.min.js"></script>
+    <script src="/assets/js/rev-slider/js/extensions/extensionsrevolution.extension.slideanims.min.js"></script>
+    <script src="/assets/js/rev-slider/js/extensions/extensionsrevolution.extension.video.min.js"></script>
 
-<script type="text/javascript" src="/assets/js/jsipt/owl.carousel.min.js"></script>
-<script type="text/javascript" src="/assets/js/animsition.js"></script>
-
-<script src="/assets/js/rev-slider/js/jquery.themepunch.revolution.min.js"></script>
-<script src="/assets/js/rev-slider/js/jquery.themepunch.tools.min.js"></script>
-<script src="/assets/js/rev-slider.js"></script>
-
-<script src="/assets/js/rev-slider/js/extensions/extensionsrevolution.extension.actions.min.js"></script>
-<script src="/assets/js/rev-slider/js/extensions/extensionsrevolution.extension.carousel.min.js"></script>
-<script src="/assets/js/rev-slider/js/extensions/extensionsrevolution.extension.kenburn.min.js"></script>
-<script src="/assets/js/rev-slider/js/extensions/extensionsrevolution.extension.layeranimation.min.js"></script>
-<script src="/assets/js/rev-slider/js/extensions/extensionsrevolution.extension.migration.min.js"></script>
-<script src="/assets/js/rev-slider/js/extensions/extensionsrevolution.extension.navigation.min.js"></script>
-<script src="/assets/js/rev-slider/js/extensions/extensionsrevolution.extension.parallax.min.js"></script>
-<script src="/assets/js/rev-slider/js/extensions/extensionsrevolution.extension.slideanims.min.js"></script>
-<script src="/assets/js/rev-slider/js/extensions/extensionsrevolution.extension.video.min.js"></script>
-<script type="text/javascript" src="/assets/js/main.js"></script>
 </body>
 </html>
