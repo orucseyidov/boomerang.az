@@ -3,6 +3,7 @@
   <div class="page-title-content">
     <div class="container">
       <div class="blog-title color-white">
+        <?php print_r($blogDetails); ?>
         <h2>Blog Details</h2>
         <span>
           <a href="<?= base_url(); ?>" class="hv-color-st1 color-white"> Home </a>Blog Details </span>
@@ -18,7 +19,7 @@
         <article class="main-post main-post-style2">
           <div class="featured-post featured-post-style2">
             <div class="entry-image wow fadeInUp animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-              <img src="/assets/images/Blog/img2blogdetails.jpg" alt="images" />
+              <img src="<?= $blogDetails['image']; ?>" alt="images" />
             </div>
           </div>
           <div class="content-post flat-row1">
@@ -30,17 +31,18 @@
               <li class="font-date">
                 <span>
                   <span>
-                    <i class="far fa-calendar-alt"></i>28 JANUARY, 2020 </span>
+                    <i class="far fa-calendar-alt"></i><?= ($blogDetails['date'] == "0000-00-00") ? date("d.m.Y", strtotime($blogDetails['created_at'])): date("d.m.Y", strtotime($blogDetails['date'])); ?></span>
                 </span>
               </li>
             </ul>
           </div>
           <div class="title-post">
             <h3>
-              <span>Deniam quis norud exerciton ullamco laboris nisiquip commodo lokate</span>
+              <span><?= $blogDetails['title']; ?></span>
             </h3>
           </div>
-          <p class="paddingright5 ">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum </p>
+          <p><?= $blogDetails['description']; ?></p>
+          <!-- <p class="paddingright5 ">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum </p>
           <p class="paddingright5">dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus </p>
           <div class="vertical-bar margin-top41 clearfix">
             <div class="bar bar-style2"></div>
@@ -58,9 +60,9 @@
               <span>Fparks calls for scrutiny</span>
             </h3>
           </div>
-          <p class="padding-left2">labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor </p>
+          <p class="padding-left2">labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor </p> -->
         </article>
-        <article class="main-post main-post-style1">
+        <!-- <article class="main-post main-post-style1">
           <div class="featured-post">
             <div class="entry-image margin-img wow fadeInUp animated" data-wow-delay="0ms" data-wow-duration="1500ms">
               <img src="/assets/images/Blog/imgblogdetails.jpg" alt="images" />
@@ -73,9 +75,9 @@
           </div>
           <p class="padding-left2">labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam</p>
           <p class="end-p padding-left2">labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum</p>
-        </article>
+        </article> -->
       </div>
-      <div class="tag-socical">
+      <!-- <div class="tag-socical">
         <div class="tag">
           <ul>
             <li class="text1">
@@ -117,7 +119,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
       <div id="comments" class="comments-area">
         <h2 class="comments-title">Comments</h2>
         <ol class="comment-list">
@@ -236,7 +238,23 @@
               <span>Recent News</span>
             </h2>
             <ul class="lastest-posts data-effect margintop3 clearfix">
-              <li class="lastest-box clearfix">
+              <?php foreach($recent_blogs as $b) { ?>
+                <li class="lastest-box clearfix">
+                <div class="thumb">
+                  <img style="width: 75px; height: 70px;" src="<?= $b['image']; ?>" alt="Image" />
+                  <div class="overlay-effect"></div>
+                </div>
+                <div class="text">
+                  <h5>
+                    <a href="<?= base_url("blog-standard"); ?>"><?= strlen($b['title']) > 75 ? substr($b['title'],0,70)."..." : $b['title']; ?></a>
+                  </h5>
+                  <span class="post-date">
+                    <i class="far fa-calendar-alt"> <?= ($b['date'] == "0000-00-00") ? date("d.m.Y", strtotime($b['created_at'])): date("d.m.Y", strtotime($b['date'])); ?> </i>
+                  </span>
+                </div>
+              </li>
+              <?php } ?>
+              <!-- <li class="lastest-box clearfix">
                 <div class="thumb">
                   <img src="/assets/images/Blog/imgrencen3.jpg" alt="Image" />
                   <div class="overlay-effect"></div>
@@ -280,14 +298,14 @@
                     <span class="entry-date">21 December</span>
                   </span>
                 </div>
-              </li>
+              </li> -->
             </ul>
           </div>
           <div class="blog-contact wow fadeInRight animated" data-wow-delay="0ms" data-wow-duration="1500ms">
             <img src="/assets/images/Blog/imgwigetcontact.jpg" alt="" />
             <div class="contact-info">
               <div class="call-us">
-                <div class="icon-call-us"></div>
+                <i style="padding-top: 13px; color: #e3cca1;" class="fas fa-phone-alt"></i>
                 <div class="content-call-us">
                   <div class="text-body">
                     <span>Call Us</span>
@@ -298,7 +316,7 @@
                 </div>
               </div>
               <div class="mail">
-                <div class="icon-mail"></div>
+                <i style="padding-top: 5px; color: #e3cca1;" class="fas fa-envelope"></i>
                 <div class="content-mail">
                   <div class="text-body">
                     <span>Our Mail</span>

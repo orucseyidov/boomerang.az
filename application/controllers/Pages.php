@@ -8,6 +8,7 @@ class Pages extends GO_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model("Pages_model","pages");
+		$this->load->model("Blog_model","blog");
 		$this->load->helper("filter");
 		
 	}
@@ -96,6 +97,7 @@ class Pages extends GO_Controller {
 		$this->render("/pages/request-caculator",$this->data);
 	}
 	
+	
 	public function blogStandard(){
 		// $this->data['blogStandard'] 		= $this->pages->blogStandard();
 		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
@@ -103,13 +105,13 @@ class Pages extends GO_Controller {
 		$this->render("/pages/blog-standard",$this->data);
 	}
 	
-	public function blogDetails(){
-		// $this->data['blogDetails'] 		= $this->pages->blogDetails();
+	public function blogDetails($id){
+		$this->data['blogDetails'] 		= $this->blog->blog_details($id);
+		$this->data['recent_blogs']		= $this->blog->blog_sidebar(3);
 		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
 		// debug($this->data);
 		$this->render("/pages/blog-details",$this->data);
 	}
-	
 	
 	
 

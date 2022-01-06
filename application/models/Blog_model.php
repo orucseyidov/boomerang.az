@@ -36,11 +36,10 @@ class Blog_model extends GO_Model {
 	}
 
 	public function blog_sidebar($limit){
-			$this->db->select('
+			$this->db->select('*,
 				title_'.$this->dil.' as title,
-				tags_'.$this->dil.' as tags,
-				image,date,slug
-			');
+				description_'.$this->dil.' as description
+			'); //tags_'.$this->dil.' as tags,
 	        $this->db->from('blog');
 	        $this->db->where("status",1);
 	        $this->db->order_by("id","RANDOM");
@@ -49,4 +48,15 @@ class Blog_model extends GO_Model {
 	}
 	/* End blog area */
 
+	public function blog_details($id){
+		$this->db->select('*,
+			title_'.$this->dil.' as title,
+			description_'.$this->dil.' as description
+		');
+		$this->db->from('blog');
+		$this->db->where("status",1);
+		$this->db->where("id",$id);
+		$this->db->order_by("id","RANDOM");
+		return $this->db->get()->row_array();
+	}
 }

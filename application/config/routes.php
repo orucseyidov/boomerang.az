@@ -77,7 +77,7 @@ $route['study-details']			    = 'Pages/studyDetails';
 $route['gallery']					= 'Pages/gallery';
 $route['request-caculator']			= 'Pages/requestCaculator';
 $route['blog-standard']				= 'Pages/blogStandard';
-$route['blog-details']				= 'Pages/blogDetails';
+$route['blog-details/(:any)']		= 'Pages/blogDetails/$1';
 
 
 

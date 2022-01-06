@@ -617,45 +617,19 @@
   <div class="container">
     <div class="row">
       <div class="tf-coutor bg-color-style3 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="3s">
+        <?php foreach($info_site as $i) { ?>
         <div class="box">
           <div class="icon-wrap margin-right15">
-            <i class="icon-iconcoutor1"></i>
+            <!-- <i class="icon-iconcoutor1"></i> -->
+            <i class="<?= $i['icon_class']; ?>"></i>
           </div>
           <div class="coutor-box margin-left120">
-            <span class="number" data-from="0" data-to="35" data-speed="3000" data-inviewport="yes">35</span>
-            <span class="item-firt">,000</span>
-            <p class="elementor-counter-title">Happy Customers</p>
+            <span class="number" data-from="0" data-to="<?= $i['count']; ?>" data-speed="3000" data-inviewport="yes"><?= $i['count']; ?></span>
+            <span class="item-firt"><?= $i['count_side']; ?></span>
+            <p class="elementor-counter-title"><?= $i['title']; ?></p>
           </div>
         </div>
-        <div class="box  magin-left43">
-          <div class="icon-wrap margin-right11">
-            <i class="icon-iconcoutor2"></i>
-          </div>
-          <div class="coutor-box magin-left115">
-            <span class="number" data-from="0" data-to="541" data-speed="3000" data-inviewport="yes">541</span>
-            <span class="item">+</span>
-            <p>Project Done</p>
-          </div>
-        </div>
-        <div class="box  magin-left56">
-          <div class="icon-wrap icon-wrap-style2">
-            <i class="icon-iconcoutor3"></i>
-          </div>
-          <div class="coutor-box magin-left115">
-            <span class="number" data-from="0" data-to="40" data-speed="3000" data-inviewport="yes">40 </span>
-            <span class="item">+</span>
-            <p>Awards Win</p>
-          </div>
-        </div>
-        <div class="box magin-left51">
-          <div class="icon-wrap">
-            <i class="icon-iconcoutor4"></i>
-          </div>
-          <div class="coutor-box magin-left115">
-            <span class="number" data-from="0" data-to="678" data-speed="5000" data-inviewport="yes">678</span>
-            <p>Client Works</p>
-          </div>
-        </div>
+        <?php } ?>
       </div>
     </div>
   </div>
@@ -673,7 +647,31 @@
     <div class="blog-new">
       <div class="flat-carousel-box data-effect clearfix" data-zero="0" data-gap="30" data-column="3" data-column2="1" data-column3="1" data-dots="false" data-auto="true" data-nav="false" data-loop="true">
         <div class="owl-carousel wow fadeInRight animated" data-wow-delay="0ms" data-wow-duration="1500ms">
+        <?php foreach($blog_sidebar as $b){ ?>
           <div class="image-box">
+            <div class="image">
+              <img style="height: 250px;" src="<?= $b['image']; ?>" alt="" />
+            </div>
+            <div class="meta-blog-style2">
+              <span class="entry-calendar">
+                <a href="<?= base_url("blog-details/{$b['id']}"); ?>">
+                <i class="far fa-clock"></i><?= $b['date'] == "0000-00-00" ? date("d.m.Y", strtotime($b['created_at'])): date("d.m.Y", strtotime($b['date'])); ?> </a>
+              </span>
+            </div>
+            <div class="content-blog-style2 bg-color">
+              <span class="admin tf-text-hv">
+                <a href="<?= base_url("blog-details/{$b['id']}"); ?>">
+                  <i class="far fa-eye"></i><?= $b['view']; ?>
+                </a>
+              </span>
+              <div class="title-blog tf-text-hv">
+                <a href="<?= base_url("blog-details/{$b['id']}"); ?>"><?= strlen($b['title']) > 60 ? substr($b['title'],0,58)."..." : $b['title']; ?></a>
+              </div>
+            </div>
+          </div>
+          <?php } ?>
+          
+          <!-- <div class="image-box">
             <div class="image">
               <img src="/assets/images/Blog/imgblog1.jpg" alt="" />
             </div>
@@ -735,90 +733,11 @@
               </div>
               <div class="date"> 28 JANUARY, 2020 </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
   </div>
   <div class="themesflat-spacer  clearfix" data-desktop="120" data-mobile="60" data-smobile="50"></div>
 </section>
-<section class="questions">
-  <div class="container">
-    <div class="questions-style questions-style2">
-      <div class="themesflat-spacer clearfix" data-desktop="106" data-mobile="60" data-smobile="50"></div>
-      <div class="title-section text-center wow fadeInDown">
-        <div class="sub-title">Get Quote</div>
-        <div class="themesflat-spacer clearfix" data-desktop="16" data-mobile="16" data-smobile="16"></div>
-        <div class="flat-title"> Do You Have Any Questions? We’ll Be Happy To Assist! </div>
-      </div>
-      <div class="themesflat-spacer clearfix" data-desktop="64" data-mobile="40" data-smobile="30"></div>
-      <div class="image-form wow fadeInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-        <div class="image-hoverstyle2">
-          <div class="image">
-            <img src="/assets/images/Secsion/imgquestion.jpg" alt="images" />
-          </div>
-          <div class="contact">
-            <div class="time">
-              <span class="iconclock bg-color-style5">
-                <i class="fas fa-clock"></i>
-              </span>
-              <div class="content">
-                <div class="text">
-                  <span>Working Hours</span>
-                </div>
-                <div class="text-time">
-                  <span>Mon - Sat 9.00 to 17.00</span>
-                </div>
-              </div>
-            </div>
-            <div class="phone margin-top14">
-              <span class="icon-phone icon-phone-style2"></span>
-              <div class="content padding-top7">
-                <div class="text">
-                  <span>Call Us</span>
-                </div>
-                <div class="text-time">
-                  <span>360-779-2228</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="form-questions boxshadow bg-white wow fadeInRight animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-        <div id="respond" class="comment-respond">
-          <form action="#" method="post" id="commentform" class="commentform">
-            <div class="text-wrap clearfix">
-              <fieldset class="name-wrap">
-                <input type="text" id="author" class="tb-my-input" name="author" tabindex="1" placeholder="Full Name" value="" size="32" aria-required="true" required />
-              </fieldset>
-              <fieldset class="phone-wrap">
-                <input type="number" id="phone" class="tb-my-input" name="phone" tabindex="2" placeholder="Phone Number" value="" aria-required="true" required />
-              </fieldset>
-              <fieldset class="mail-wrap">
-                <input type="email" id="email" class="tb-my-input" name="phone" tabindex="2" placeholder="Email Address" value="" size="32" aria-required="true" required />
-              </fieldset>
-              <fieldset class="select-wrap">
-                <div class="select">
-                  <select>
-                    <option value="services">Choose services</option>
-                    <option value="services1">Choose services 01</option>
-                    <option value="services2">Choose services 02</option>
-                  </select>
-                </div>
-              </fieldset>
-            </div>
-            <fieldset class="message-wrap">
-              <textarea id="comment-message" name="comment" rows="8" tabindex="4" placeholder="Your Message" aria-required="true" required></textarea>
-            </fieldset>
-            <p class="form-submit">
-              <button type="submit" class="themesflat-button-style3 btn-style-5 no-boder">
-                <span class="btn-title">Send message</span>
-              </button>
-            </p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<?php $this->load->view("blocks/request"); ?>

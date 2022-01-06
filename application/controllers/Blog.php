@@ -67,4 +67,5 @@ class Blog extends GO_Controller {
 	public function sidebar(){
 
 	}
+
 }
