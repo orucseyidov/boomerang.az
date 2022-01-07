@@ -40,7 +40,7 @@ value=""
                                 <tr>
                                     <th>№</th>
                                     <th>Şəkil</th>
-                                    <th>Başlığ</th>
+                                    <th>Başlıq</th>
                                     <th>Haqqında</th>
                                     <th>Status</th>
                                     <th>Əməliyyatlar</th>

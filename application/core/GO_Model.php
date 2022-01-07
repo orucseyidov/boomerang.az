@@ -99,6 +99,16 @@ class GO_Model extends CI_Model {
         return $query->result_array();
 	}
 
+	public function get_info_site(){
+		$this->db->select('
+		title_'.$this->dil.' as title,
+		icon_class, count, count_side
+		');
+        $this->db->from('info_site');
+        $query  = $this->db->get();
+        return $query->result_array();
+	}
+
 	public function view_update($table,$id){
 		$this->db->query("UPDATE `$table` SET `view` = view+1 WHERE `$table`.`id` ='$id'");
 	}

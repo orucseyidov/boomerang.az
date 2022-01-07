@@ -7,117 +7,35 @@
         <div class="content-style2 clearfix">
           <div class="content-service-title">
             <div class="title-section wow fadeInDown">
-              <div class="sub-title">What we do</div>
-              <div class="flat-title">Services for You</div>
+              <div class="flat-title"><?= $content['services_home']['title']; ?></div>
             </div>
           </div>
           <div class="content-service">
-            <p class="content-p color-style1"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd </p>
+            <p class="content-p color-style1"><?= $content['services_home']['desc']; ?></p>
           </div>
         </div>
         <div class="themesflat-spacer clearfix" data-desktop="43" data-mobile="43" data-smobile="43"></div>
-        <div class="image-box">
-          <div class="image">
-            <img src="/assets/images/Services/imgservice1.jpg" alt="">
+        <?php $i=1; foreach($services as $s) { ?>
+          <div class="image-box">
+            <div class="image">
+              <img src="<?= $s['image']; ?>" alt="">
+            </div>
+            <span class="number"><?= $i < 10 ? "0".$i++ : $i++; ?></span>
+            <div class="icon-window">
+              <img src="<?= $s['icon']; ?>" alt="images">
+            </div>
+            <div class="title-imagebox">
+              <h4>
+                <a href="<?= base_url("service/" . $s['slug']); ?>"><?= $s['title']; ?></a>
+              </h4>
+            </div>
+            <div class="content-imagebox">
+              <p>
+                <?= strlen($s['description']) > 134 ? substr($s['description'],0,132)."..." : $s['description']; ?>
+              </p>
+            </div>
           </div>
-          <span class="number">01</span>
-          <div class="icon-window">
-            <img src="/assets/images/Blog/Ellipsewindow.png" alt="images">
-          </div>
-          <div class="title-imagebox">
-            <h4>
-              <a href="<?= base_url("service-details"); ?>">WINDOWS SERVICES</a>
-            </h4>
-          </div>
-          <div class="content-imagebox">
-            <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </p>
-          </div>
-        </div>
-        <div class="image-box ">
-          <div class="image">
-            <img src="/assets/images/Services/imgservice2.jpg" alt="">
-          </div>
-          <span class="number">02</span>
-          <div class="icon-window icon-window-style2">
-            <img src="/assets/images/Blog/halfmoonwindow.png" alt="images">
-          </div>
-          <div class="title-imagebox">
-            <h4>
-              <a href="<?= base_url("service-details"); ?>">Doors Services</a>
-            </h4>
-          </div>
-          <div class="content-imagebox">
-            <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </p>
-          </div>
-        </div>
-        <div class="image-box">
-          <div class="image">
-            <img src="/assets/images/Services/imgservice3.jpg" alt="">
-          </div>
-          <span class="number">03</span>
-          <div class="icon-window">
-            <img src="/assets/images/Blog/sixpaneldoor.png" alt="images">
-          </div>
-          <div class="title-imagebox">
-            <h4>
-              <a href="<?= base_url("service-details"); ?>">Planning & Projects</a>
-            </h4>
-          </div>
-          <div class="content-imagebox">
-            <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </p>
-          </div>
-        </div>
-        <div class="image-box">
-          <div class="image">
-            <img src="/assets/images/Services/imgservice4.jpg" alt="">
-          </div>
-          <span class="number">04</span>
-          <div class="icon-window">
-            <img src="/assets/images/Blog/archedwindow.png" alt="images">
-          </div>
-          <div class="title-imagebox">
-            <h4>
-              <a href="<?= base_url("service-details"); ?>">Replace accessories</a>
-            </h4>
-          </div>
-          <div class="content-imagebox">
-            <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </p>
-          </div>
-        </div>
-        <div class="image-box">
-          <div class="image">
-            <img src="/assets/images/Services/imgservice5.jpg" alt="">
-          </div>
-          <span class="number">05</span>
-          <div class="icon-window">
-            <img src="/assets/images/Blog/servicedoor.png" alt="images">
-          </div>
-          <div class="title-imagebox">
-            <h4>
-              <a href="<?= base_url("service-details"); ?>">Door Maintenance Repair</a>
-            </h4>
-          </div>
-          <div class="content-imagebox">
-            <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </p>
-          </div>
-        </div>
-        <div class="image-box">
-          <div class="image">
-            <img src="/assets/images/Services/imgservice6.jpg" alt="">
-          </div>
-          <span class="number">06</span>
-          <div class="icon-window">
-            <img src="/assets/images/Blog/wooddoor.png" alt="images">
-          </div>
-          <div class="title-imagebox">
-            <h4>
-              <a href="<?= base_url("service-details"); ?>">Selling Door Accessories</a>
-            </h4>
-          </div>
-          <div class="content-imagebox">
-            <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </p>
-          </div>
-        </div>
+        <?php } ?>
       </div>
     </div>
   </div>

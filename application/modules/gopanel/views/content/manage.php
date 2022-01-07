@@ -46,22 +46,22 @@ value=""
                                 </tr>
                             </thead>
                             <tbody>
-<?php
-foreach ($manage as $key => $value): 
-    $editlink = base_url("gopanel/").$class."/edit/?id=".$value['id'];
-?>
-                                <tr>
-                                    <td><?=$counter++ ?></td>
-                                    <td><?=$value['keyword'] ?></td>
-                                    <td><?=$value['title_en'] ?></td>
-                                    <td><?=$value['value_en'] ?></td>
-                                    <td>
-                                        <div class="manage">
-                                            <a class="btn btn-success" href="<?=$editlink?>" data-toggle="tooltip" data-placement="top" title="Məlumatı Yenilə" ><i class="fas fa-edit"></i> Yenilə</a>
-                                        </div>
-                                    </td>
-                                </tr>
-<?php endforeach ?>
+                                <?php
+                                foreach ($manage as $key => $value): 
+                                    $editlink = base_url("gopanel/").$class."/edit/?id=".$value['id'];
+                                ?>
+                                    <tr>
+                                        <td><?=$counter++ ?></td>
+                                        <td><?=$value['keyword'] ?></td>
+                                        <td><?=$value['title_en'] ?></td>
+                                        <td><?=$value['value_en'] ?></td>
+                                        <td>
+                                            <div class="manage">
+                                                <a class="btn btn-success" href="<?=$editlink?>" data-toggle="tooltip" data-placement="top" title="Məlumatı Yenilə" ><i class="fas fa-edit"></i> Yenilə</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php endforeach ?>
                             </tbody>
                         </table>
                     </div>

@@ -44,6 +44,12 @@
                             </a>
                         </li>
                         <li>
+                            <a href="/gopanel/info_site/manage">
+                                <i class="fas fa-align-left"></i>
+                                Sayt haqqında
+                            </a>
+                        </li>
+                        <li>
                             <a href="/gopanel/info_msg/manage">
                                 <i class="fas fa-bell"></i> 
                                 İnfo Mesajlar

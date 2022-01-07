@@ -53,12 +53,11 @@
         <div class="content-style2 clearfix">
           <div class="content-service-title">
             <div class="title-section wow fadeInDown">
-              <div class="sub-title">What we do</div>
-              <div class="flat-title">Services for You</div>
+              <div class="flat-title"><?= $content['services_home']['title']; ?></div>
             </div>
           </div>
           <div class="content-service">
-            <p class="content-p color-style1"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd </p>
+            <p class="content-p color-style1"><?= $content['services_home']['desc']; ?></p>
           </div>
         </div>
         <div class="themesflat-spacer clearfix" data-desktop="43" data-mobile="43" data-smobile="43"></div>
@@ -139,10 +138,9 @@
       <div class="col-sm-6 clearfix no-padding-right">
         <div class="content-about">
           <div class="title-section wow fadeInDown">
-            <div class="sub-title">ABOUT US</div>
-            <div class="flat-title margin5-8 padding-right100"> A Trendy Doors for Trendy Home </div>
+            <div class="flat-title margin5-8 padding-right100"><?= $content['about_home']['title']; ?></div>
           </div>
-          <p> The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs </p>
+          <?= $content['about_home']['desc']; ?>
         </div>
         <ul class="iconlist-about iconlist-about-style2 wow fadeInRight animated" data-wow-delay="0ms" data-wow-duration="1500ms">
           <li>
@@ -174,311 +172,13 @@
     <div class="themesflat-spacer clearfix" data-desktop="108" data-mobile="60" data-smobile="50"></div>
   </div>
 </section>
-<section class="window-services-style2">
-  <div class="container">
-    <div class="themesflat-spacer clearfix" data-desktop="117" data-mobile="60" data-smobile="50"></div>
-    <div class="row clearfix">
-      <div class="col-sm-6 clearfix">
-        <div class="content-service-title content-service0-style1">
-          <div class="title-section wow fadeInDown">
-            <div class="sub-title">window services</div>
-            <div class="flat-title margin15-11">Explore Premium Windows</div>
-          </div>
-          <p class="paddingright30"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam </p>
-        </div>
-      </div>
-      <div class="col-sm-6 clearfix">
-        <div class="iconbox-service iconbox-service-style2">
-          <ul class="icon-box tf-icon-box-style">
-            <li>
-              <span class="color-style2">Malesuada dictum</span>
-            </li>
-            <li class="no-margin-r padding-left23">
-              <span class="color-style2">Tempor commodo</span>
-            </li>
-            <li>
-              <span class="color-style2">Dictum neque</span>
-            </li>
-            <li class="no-margin-r padding-left23">
-              <span class="color-style2">Tempor commodo</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="themesflat-spacer clearfix" data-desktop="53" data-mobile="40" data-smobile="30"></div>
-    <div class="flat-tabs flat-tabs-type4">
-      <ul class="menu-tab">
-        <li class="active">
-          <a href="#"> Window Services</a>
-        </li>
-        <li>
-          <a href="#">door services</a>
-        </li>
-      </ul>
-      <div class="content-tab">
-        <div class="content-inner">
-          <div class="col-tab align-items-center">
-            <div class="case-tab clearfix window">
-              <div class="case">
-                <div class="featured-post">
-                  <div class="entry-image bg-linear-gradient position-relative">
-                    <img src="/assets/images/Tab/img2tab.png" alt="images" />
-                    <div class="title">
-                      <a href="page-window.html">Casement</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="case-tab clearfix window">
-              <div class="case">
-                <div class="featured-post">
-                  <div class="entry-image bg-linear-gradient position-relative">
-                    <img src="/assets/images/Tab/img3tab.png" alt="images" />
-                    <div class="title">
-                      <a href="page-window.html">Sash</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="case-tab clearfix window">
-              <div class="case">
-                <div class="featured-post featured-post-style">
-                  <div class="entry-image bg-linear-gradient position-relative">
-                    <img src="/assets/images/Tab/imgtab1.png" alt="images" />
-                    <div class="title">
-                      <a href="page-window.html">Louvered</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="case-tab clearfix window">
-              <div class="case">
-                <div class="featured-post">
-                  <div class="entry-image bg-linear-gradient position-relative">
-                    <img src="/assets/images/Tab/img4tab.png" alt="images" />
-                    <div class="title">
-                      <a href="page-window.html">Pivoted</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="case-tab clearfix window">
-              <div class="case">
-                <div class="featured-post">
-                  <div class="entry-image bg-linear-gradient position-relative">
-                    <img src="/assets/images/Tab/img5tab.png" alt="images" />
-                    <div class="title">
-                      <a href="page-window.html">Fixed</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="case-tab clearfix window">
-              <div class="case">
-                <div class="featured-post">
-                  <div class="entry-image bg-linear-gradient position-relative">
-                    <img src="/assets/images/Tab/img6tab.png" alt="images" />
-                    <div class="title">
-                      <a href="page-window.html">Double</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="content-inner">
-          <div class="col-tab align-items-center">
-            <div class="case-tab clearfix window">
-              <div class="case">
-                <div class="featured-post">
-                  <div class="entry-image bg-linear-gradient position-relative">
-                    <img src="/assets/images/Tab/img2tab.png" alt="images" />
-                    <div class="title">
-                      <a href="page-door.html">Casement</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="case-tab clearfix window">
-              <div class="case">
-                <div class="featured-post">
-                  <div class="entry-image bg-linear-gradient position-relative">
-                    <img src="/assets/images/Tab/img3tab.png" alt="images" />
-                    <div class="title">
-                      <a href="page-door.html">Sash</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="case-tab clearfix window">
-              <div class="case">
-                <div class="featured-post featured-post-style">
-                  <div class="entry-image bg-linear-gradient position-relative">
-                    <img src="/assets/images/Tab/img4tab.png" alt="images" />
-                    <div class="title">
-                      <a href="page-door.html">Pivoted</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="themesflat-spacer clearfix" data-desktop="85" data-mobile="40" data-smobile="30"></div>
-    <div class="subscribe sub-style2 clearfix wow">
-      <div class="box1-subscribe no-padding-right">
-        <div class="title-section">
-          <div class="sub-title">newslatter</div>
-          <div class="flat-title-style2 margin-top15"> sign up for newslatter & get lattest news & update </div>
-        </div>
-      </div>
-      <div class="box2-subscribe no-padding-left padding-top29 ">
-        <form action="#" class="form-email" id="formsubsribe">
-          <input type="text" id="inpsub" class="email-here" placeholder="Email Address" required />
-          <button type="submit" class="themesflat-button-style2 btn-style-6">
-            <span class="btn-title">Subscribe</span>
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="newslatter tfnewslatter-style bg-color-style2">
-  <div class="newslatter-style">
-    <div class="themesflat-spacer clearfix" data-desktop="755" data-mobile="755" data-smobile="755"></div>
-  </div>
-</section>
-<section class="features">
-  <div class="themesflat-spacer clearfix" data-desktop="120" data-mobile="60" data-smobile="50"></div>
-  <div class="title-section margin-botom62 text-center wow fadeInDown">
-    <div class="sub-title sub-title-style3">Let’s Work</div>
-    <div class="flat-title flat-style3"> Pricing Plans </div>
-  </div>
-  <div class="container d-lg-flex iconbox-features-bg wow fadeIn animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-    <div class="iconbox-features iconbox-features-hv margintop25 hv-background-before">
-      <div class="iconbox-icon">
-        <span class="icon-protection"></span>
-      </div>
-      <div class="iconbox-content">
-        <h3 class="title">$45.00</h3>
-        <p> Small business </p>
-        <ul class="icon-list text-left padding-left67">
-          <li class="icon-iconcheck">
-            <span>Branding graphics design</span>
-          </li>
-          <li class="icon-iconcheck">
-            <span>Lifetime free support</span>
-          </li>
-          <li class="icon-iconcheck">
-            <span>Web devolopment course</span>
-          </li>
-          <li class="icon-iconcheck">
-            <span>Unlimited free revision </span>
-          </li>
-          <li class="icon-iconx">
-            <span>Web Lifetime devolopment</span>
-          </li>
-          <li class="icon-iconx">
-            <span>Unlimited free revision</span>
-          </li>
-        </ul>
-        <div class="btn-discover">
-          <a href="page-Request-caculator.html" class="themesflat-button-style2 btn-style-4">
-            <span class="btn-title">get started</span>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="iconbox-features iconbox-features-style2 hv-background-before active has-scale">
-      <div class="iconbox-icon">
-        <span class="icon-best"></span>
-      </div>
-      <div class="iconbox-content">
-        <h3 class="title">$65.00</h3>
-        <p class="color-style5"> Medium business </p>
-        <ul class="icon-list text-left padding-left67">
-          <li class="icon-iconcheck">
-            <span>Branding graphics design</span>
-          </li>
-          <li class="icon-iconcheck">
-            <span>Lifetime free support</span>
-          </li>
-          <li class="icon-iconcheck">
-            <span>Web devolopment course</span>
-          </li>
-          <li class="icon-iconcheck">
-            <span>Unlimited free revision </span>
-          </li>
-          <li class="icon-iconx">
-            <span>Web Lifetime devolopment</span>
-          </li>
-          <li class="icon-iconx">
-            <span>Unlimited free revision</span>
-          </li>
-        </ul>
-        <div class="btn-discover btn-discover-style2">
-          <a href="page-Request-caculator.html" class="themesflat-button-style2 btn-style-4">
-            <span class="btn-title">get started</span>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="iconbox-features iconbox-features-hv margintop25 hv-background-before">
-      <div class="iconbox-icon">
-        <span class="icon-guarantee"></span>
-      </div>
-      <div class="iconbox-content">
-        <h3 class="title">$99.00</h3>
-        <p> Corporate business </p>
-        <ul class="icon-list text-left padding-left76">
-          <li class="icon-iconcheck">
-            <span>Branding graphics design</span>
-          </li>
-          <li class="icon-iconcheck">
-            <span>Lifetime free support</span>
-          </li>
-          <li class="icon-iconcheck">
-            <span>Web devolopment course</span>
-          </li>
-          <li class="icon-iconcheck">
-            <span>Unlimited free revision </span>
-          </li>
-          <li class="icon-iconx">
-            <span>Web Lifetime devolopment</span>
-          </li>
-          <li class="icon-iconx">
-            <span>Unlimited free revision</span>
-          </li>
-        </ul>
-        <div class="btn-discover">
-          <a href="page-Request-caculator.html" class="themesflat-button-style2 btn-style-4">
-            <span class="btn-title">get started</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="themesflat-spacer clearfix" data-desktop="119" data-mobile="60" data-smobile="50"></div>
-</section>
 <section class="portfolio-slider">
   <div class="portfolio-nav bg-color-style3 clearfix">
     <div class="themesflat-spacer clearfix" data-desktop="93" data-mobile="20" data-smobile="20"></div>
     <div class="container ">
       <div class="title-nav flex">
         <div class="title-section wow fadeInDown">
-          <div class="sub-title color-style1">Portfolio</div>
-          <div class="flat-title color-style1">Case Study</div>
+          <div class="flat-title color-style1"><?= $content['portfolio_home']['title']; ?></div>
         </div>
       </div>
     </div>
@@ -569,8 +269,7 @@
   <div class="container">
     <div class="themesflat-spacer clearfix" data-desktop="120" data-mobile="60" data-smobile="50"></div>
     <div class="title-section text-center wow fadeInDown">
-      <div class="sub-title margin5-16-5">Client Testimonials</div>
-      <div class="flat-title flat-style3">What our clients say </div>
+      <div class="flat-title flat-style3"><?= $content['client_home']['title']; ?> </div>
     </div>
     <div class="themesflat-spacer clearfix" data-desktop="46" data-mobile="15" data-smobile="15"></div>
     <div class="flat-carousel-box data-effect clearfix" data-zero="0" data-gap="30" data-column="3" data-column2="1" data-column3="1" data-column4="1" data-dots="false" data-auto="true" data-nav="false" data-loop="true">
@@ -624,7 +323,7 @@
             <i class="<?= $i['icon_class']; ?>"></i>
           </div>
           <div class="coutor-box margin-left120">
-            <span class="number" data-from="0" data-to="<?= $i['count']; ?>" data-speed="3000" data-inviewport="yes"><?= $i['count']; ?></span>
+            <span class="number" data-from="0" data-to="<?= $i['count']; ?>" data-speed="3000" data-inviewport="yes"><?= number_format($i['count']); ?></span>
             <span class="item-firt"><?= $i['count_side']; ?></span>
             <p class="elementor-counter-title"><?= $i['title']; ?></p>
           </div>
@@ -639,8 +338,7 @@
   <div class="container">
     <div class="tf-blog">
       <div class="title-section text-center wow fadeInDown">
-        <div class="sub-title">Latest News</div>
-        <div class="flat-title">Our Insights & Articles</div>
+        <div class="flat-title"><?= $content['blog_home']['title']; ?></div>
       </div>
       <div class="themesflat-spacer  clearfix" data-desktop="61" data-mobile="40" data-smobile="30"></div>
     </div>

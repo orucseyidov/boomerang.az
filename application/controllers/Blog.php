@@ -18,7 +18,7 @@ class Blog extends GO_Controller {
 		$this->load->helper("seflink");
 		$this->load->helper("filter");
 		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
-		$this->sidebar_g();
+		// $this->sidebar_g();
 	}
 
 	public function index(){

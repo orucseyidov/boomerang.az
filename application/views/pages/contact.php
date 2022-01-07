@@ -23,12 +23,12 @@
         <ul class="contact-us-style flex clearfix">
           <li class="location-icon">
             <span>
-              <i class="icon-iconadrees"></i>
+              <i class="fas fa-map-marker-alt"></i>
             </span>
           </li>
           <li class="content-style">
-            <h6 class="tftitle-style3">Our Address</h6>
-            <p>PSD Building, 2 AlBahr St, Loskia sripur, jamukara.</p>
+            <h6 class="tftitle-style3"><?= $content['address_word']['title']; ?></h6>
+            <p><?= $contacts['adress']; ?></p>
           </li>
         </ul>
       </div>
@@ -36,12 +36,12 @@
         <ul class="contact-us-style flex clearfix">
           <li class="location-icon location-icon-style2">
             <span>
-              <i class="icon-iconbtnphone"></i>
+              <i class="fas fa-phone-alt"></i>
             </span>
           </li>
           <li class="content-style content-contact-us">
-            <h6 class="tftitle-style3">Our Phone</h6>
-            <p>Office Telephone : 0029129102320 Mobile : 000 2324 39493</p>
+            <h6 class="tftitle-style3"><?= $content['phone_word']['title']; ?></h6>
+            <p><?= $contacts['phone'] . "<br />" . $contacts['mobile']; ?></p>
           </li>
         </ul>
       </div>
@@ -49,13 +49,12 @@
         <ul class="contact-us-style flex clearfix">
           <li class="location-icon location-icon-style3">
             <span>
-              <i class="icon-iconmailcontact"></i>
+              <i class="fas fa-envelope"></i>
             </span>
           </li>
           <li class="content-style">
-            <h6 class="tftitle-style3">Our Email</h6>
-            <p>Main Email : <a href="https://themesflat.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c5aba4a8a085b2a0a7b6acb1a0eba6aaa8">[email&#160;protected]</a> Inquiries : <a href="https://themesflat.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f9b0979f96b9968b9c81d79a9694">[email&#160;protected]</a>
-            </p>
+            <h6 class="tftitle-style3"><?= $content['mail_word']['title']; ?></h6>
+            <a href="mailto:<?= $contacts['mail']; ?>" class="__cf_email__" data-cfemail="f9b0979f96b9968b9c81d79a9694"><?= $contacts['mail']; ?></a>
           </li>
         </ul>
       </div>
@@ -65,7 +64,7 @@
 </section>
 <div>
   <div class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d86077.66255184308!2d-122.40402224079803!3d47.60810999586645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906ab3f905c4b1%3A0x96bf575ff75ab1aa!2s411%20University%20St%2C%20Seattle%2C%20WA%2098101%2C%20Hoa%20K%E1%BB%B3!5e0!3m2!1svi!2s!4v1584084043716!5m2!1svi!2s" height="600" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    <?= $contacts['map']; ?>
   </div>
 </div>
 <section class="questions questions-location">
@@ -74,26 +73,14 @@
     <div class="questions-style questions-contact questions-style2">
       <div class="content-form bg-color wow fadeInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms">
         <div class="title-section">
-          <div class="sub-title">Get in touch</div>
-          <div class="flat-title flat-title-contact"> Write Us a Message </div>
-          <p class="color-white">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo</p>
+          <div class="flat-title flat-title-contact"><?= $content['send_msg_contact']['title']; ?></div>
+          <p class="color-white"><?= $content['send_msg_contact']['desc']; ?></p>
         </div>
         <div class="topbar-socials">
-          <a href="#">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="#">
-            <i class="icon-Icons"></i>
-          </a>
-          <a href="#">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="#">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
+        <?php foreach($social as $s) { ?>
+          <a href="<?= $s['link']; ?>">
+            <i class="fab fa-<?= $s['name']; ?>"></i>
+          </a> <?php } ?>
         </div>
       </div>
       <div class="form-questions boxshadow bg-white wow fadeInRight  animated" data-wow-delay="0ms" data-wow-duration="1500ms">

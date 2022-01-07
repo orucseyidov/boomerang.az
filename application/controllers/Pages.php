@@ -56,18 +56,27 @@ class Pages extends GO_Controller {
 	}
 
 	public function services(){
-		// $this->data['services'] 		= $this->pages->services();
+		$this->data['services'] 		= $this->pages->services();
 		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
 		// debug($this->data);
 		$this->render("/pages/services",$this->data);
 	}
 	
-	public function serviceDetails(){
-		// $this->data['serviceDetails'] 		= $this->pages->serviceDetails();
+	public function service_single($slug){
+		$service = $this->pages->service_single($slug);
 		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
-		// debug($this->data);
+		$this->data['title'] 	= $service['title'];
+		$this->data['desc'] 	= mb_substr(strip_tags($service['description']), 0,300);
+		$this->data['service'] 	= $service;
 		$this->render("/pages/service-details",$this->data);
 	}
+
+	// public function serviceDetails(){
+	// 	// $this->data['serviceDetails'] 		= $this->pages->serviceDetails();
+	// 	$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
+	// 	// debug($this->data);
+	// 	$this->render("/pages/service-details",$this->data);
+	// }
 	
 	public function caseStudy(){
 		// $this->data['caseStudy'] 		= $this->pages->caseStudy();

@@ -3,9 +3,8 @@
     <div class="questions-style questions-style2">
       <div class="themesflat-spacer clearfix" data-desktop="106" data-mobile="60" data-smobile="50"></div>
       <div class="title-section text-center wow fadeInDown">
-        <div class="sub-title">Get Quote</div>
         <div class="themesflat-spacer clearfix" data-desktop="16" data-mobile="16" data-smobile="16"></div>
-        <div class="flat-title"> Do You Have Any Questions? We’ll Be Happy To Assist! </div>
+        <div class="flat-title"> <?= $content['contact_home']['title']; ?> </div>
       </div>
       <div class="themesflat-spacer clearfix" data-desktop="64" data-mobile="40" data-smobile="30"></div>
       <div class="image-form wow fadeInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms">

@@ -36,16 +36,13 @@
         </div>
         <div class="col-sm-3 footer-widget-style1">
           <div class="footer-contact">
-            <div class="title-ft">Contact</div>
+            <div class="title-ft"><?= $content['contact_word']['title']; ?></div>
             <div class="tf-info call-us">
               <!-- <i class="icon-call-us margintop-3"></i> -->
               <i style="padding-top: 7px; color: #e3cca1;" class="fas fa-map-marker-alt"></i>
               <div class="content-call-us">
                 <div class="text">
-                  <span>2416 Mapleview Drive</span>
-                </div>
-                <div class="text">
-                  <span>Tampa, FL 33634</span>
+                  <span><?= $contacts['adress']; ?></span>
                 </div>
               </div>
             </div>
@@ -55,12 +52,7 @@
               <div class="content-mail">
                 <div class="text">
                   <span>
-                    <a href="https://themesflat.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="05666a6b7164667145726067766c71602b666a68">[email&#160;protected]</a>
-                  </span>
-                </div>
-                <div class="text">
-                  <span>
-                    <a href="https://themesflat.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e6af888089a68b878f8ac885898b">[email&#160;protected]</a>
+                    <a href="mailto:<?= $contacts['mail']; ?>" class="__cf_email__" data-cfemail="f9b0979f96b9968b9c81d79a9694"><?= $contacts['mail']; ?></a>
                   </span>
                 </div>
               </div>
@@ -70,10 +62,10 @@
               <!-- <i class="icon-phone"></i> -->
               <div class="content-phone">
                 <div class="text">
-                  <span>0029129102320</span>
+                  <span><?= $contacts['phone']; ?></span>
                 </div>
                 <div class="text">
-                  <span>000 2324 39493</span>
+                  <span><?= $contacts['mobile']; ?></span>
                 </div>
               </div>
             </div>
@@ -81,26 +73,13 @@
         </div>
         <div class="col-sm-3 footer-widget-style1">
           <div class="link">
-            <div class="title-ft">Useful Links</div>
+            <div class="title-ft"><?= $content['footer_title']['title']; ?></div>
             <ul>
-              <li>
-                <a href="service.html">Conditions</a>
-              </li>
-              <li>
-                <a href="service.html">Terms of Use</a>
-              </li>
-              <li>
-                <a href="service.html">Our Services</a>
-              </li>
-              <li>
-                <a href="service.html">Join as a Doctor</a>
-              </li>
-              <li>
-                <a href="service.html">New Guests List</a>
-              </li>
-              <li>
-                <a href="service.html">The Team List</a>
-              </li>
+              <?php foreach($menu as $m) { ?>
+                <li>
+                  <a href="<?= base_url() . $m['slug']; ?>"><?= $m['name']; ?></a>
+                </li>
+              <?php } ?>
             </ul>
           </div>
         </div>
