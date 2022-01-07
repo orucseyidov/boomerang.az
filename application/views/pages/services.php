@@ -31,7 +31,7 @@
             </div>
             <div class="content-imagebox">
               <p>
-                <?= strlen($s['description']) > 134 ? substr($s['description'],0,132)."..." : $s['description']; ?>
+                <?= cut(strip_tags($s['description']),134,0,132); ?>
               </p>
             </div>
           </div>

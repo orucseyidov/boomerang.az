@@ -61,7 +61,30 @@
           </div>
         </div>
         <div class="themesflat-spacer clearfix" data-desktop="43" data-mobile="43" data-smobile="43"></div>
-        <div class="col-sm-4">
+        <?php $i=1; foreach($services as $s) { ?>
+          <div class="col-sm-4">
+            <div class="image-box wow fadeInUp animated" data-wow-delay="0ms" data-wow-duration="1500ms">
+              <div class="image">
+                <img src="<?= $s['image']; ?>" alt="">
+              </div>
+              <span class="number"><?= $i < 10 ? "0".$i++ : $i++; ?></span>
+              <div class="icon-window">
+                <img src="<?= $s['icon']; ?>" alt="images">
+              </div>
+              <div class="title-imagebox">
+                <h4>
+                  <a href="<?= base_url("service/" . $s['slug']); ?>"><?= $s['title']; ?></a>
+                </h4>
+              </div>
+              <div class="content-imagebox">
+              <p>
+                <?= cut(strip_tags($s['description']),134,0,132); ?>
+              </p>
+              </div>
+            </div>
+          </div>
+        <?php } ?>
+        <!-- <div class="col-sm-4">
           <div class="image-box wow fadeInUp animated" data-wow-delay="0ms" data-wow-duration="1500ms">
             <div class="image">
               <img src="/assets/images/Services/imgservice1.jpg" alt="">
@@ -117,7 +140,7 @@
               <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </p>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -130,7 +153,7 @@
       <div class="col-sm-6 no-padding-right clearfix">
         <div class="image-hover about-image">
           <div class="image">
-            <img src="/assets/images/Secsion/imgabouth2.jpg" alt="images">
+            <img src="<?= $about['image']; ?>" alt="images">
           </div>
           <span class="bg-img"></span>
         </div>
@@ -138,34 +161,11 @@
       <div class="col-sm-6 clearfix no-padding-right">
         <div class="content-about">
           <div class="title-section wow fadeInDown">
-            <div class="flat-title margin5-8 padding-right100"><?= $content['about_home']['title']; ?></div>
+            <div class="flat-title margin5-8 padding-right100">
+              <?= $about['title']; ?>
+            </div>
           </div>
-          <?= $content['about_home']['desc']; ?>
-        </div>
-        <ul class="iconlist-about iconlist-about-style2 wow fadeInRight animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-          <li>
-            <span class="color-style2">Metus interdum metus </span>
-          </li>
-          <li>
-            <span class="color-style2">Nec dapibus sit </span>
-          </li>
-          <li>
-            <span class="color-style2">Ligula curabitur maecenas </span>
-          </li>
-          <li>
-            <span class="color-style2">Vivamus quisque gravida </span>
-          </li>
-          <li>
-            <span class="color-style2">Fringilla nulla </span>
-          </li>
-          <li class="list-about-style2">
-            <span class="color-style2">Pellentesque sodales rhoncus </span>
-          </li>
-        </ul>
-        <div class="btn-about wow fadeInUp animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-          <a href="page-contact.html" class="themesflat-button-style2 btn-style-two">
-            <span class="btn-title">GET A QUOTE</span>
-          </a>
+          <?= cut(strip_tags($about['description']),820,0,820); ?>
         </div>
       </div>
     </div>
@@ -363,7 +363,7 @@
                 </a>
               </span>
               <div class="title-blog tf-text-hv">
-                <a href="<?= base_url("blog-details/{$b['id']}"); ?>"><?= strlen($b['title']) > 60 ? substr($b['title'],0,58)."..." : $b['title']; ?></a>
+                <a href="<?= base_url("blog-details/{$b['id']}"); ?>"><?= cut(strip_tags($b['title']),60,0,58); ?></a>
               </div>
             </div>
           </div>

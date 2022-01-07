@@ -246,7 +246,7 @@
                 </div>
                 <div class="text">
                   <h5>
-                    <a href="<?= base_url("blog-standard"); ?>"><?= strlen($b['title']) > 75 ? substr($b['title'],0,70)."..." : $b['title']; ?></a>
+                    <a href="<?= base_url("blog-standard"); ?>"><?= cut(strip_tags($b['title']),75,0,70); ?></a>
                   </h5>
                   <span class="post-date">
                     <i class="far fa-calendar-alt"> <?= ($b['date'] == "0000-00-00") ? date("d.m.Y", strtotime($b['created_at'])): date("d.m.Y", strtotime($b['date'])); ?> </i>

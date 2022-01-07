@@ -77,61 +77,6 @@
           </div>
           <p class="tf-text2"><?= $service['description']; ?></p>
         </div>
-        <div class="themesflat-spacer clearfix" data-desktop="49" data-mobile="30" data-smobile="20"></div>
-        <div class="box-details flex-style2">
-          <div class="image-hover  wow fadeInUp animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-            <div class="image">
-              <img src="/assets/images/Services/imgservice16.jpg" alt="images">
-            </div>
-          </div>
-          <div class="content-box clearfix">
-            <div class="box-right box-right-style">
-              <div class="title tftitle-style3">Quality Control System</div>
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>
-            </div>
-            <div class="box-right">
-              <div class="title tftitle-style3">Highly Professional Staff</div>
-              <p>Lorem ipsum dolor sit amet, consetetur sadip scing elitr, sed diam nonumy</p>
-            </div>
-          </div>
-        </div>
-        <div class="themesflat-spacer clearfix" data-desktop="21" data-mobile="20" data-smobile="15"></div>
-        <div class="box-right">
-          <div class="title tftitle-style3 tftitle-mg-bt">Fermentum purus fermentum </div>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea</p>
-        </div>
-        <div class="themesflat-spacer clearfix" data-desktop="38" data-mobile="30" data-smobile="20"></div>
-        <ul class="icon-box-details clearfix wow fadeInUp animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-          <li>
-            <span class="icon-window-style2">
-              <img src="/assets/images/Services/Ellipsewindow.png" alt="images">
-            </span>
-            <h5 class="tftitle-style2 color-style3">
-              <span>Windows Services</span>
-            </h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at est id leo</p>
-          </li>
-          <li>
-            <span class="icon-window-style2">
-              <img src="/assets/images/Services/tallwindow.png" alt="images">
-            </span>
-            <h5 class="tftitle-style2 color-style3">
-              <span>Doors Services</span>
-            </h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at est id leo</p>
-          </li>
-          <li class="iconbox-style">
-            <span class="icon-window-style2">
-              <img src="/assets/images/Services/fourpaneldoor.png" alt="images">
-            </span>
-            <h5 class="tftitle-style2 color-style3">
-              <span>Planning & Projects</span>
-            </h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at est id leo</p>
-          </li>
-        </ul>
-        <div class="themesflat-spacer clearfix" data-desktop="29" data-mobile="30" data-smobile="20"></div>
-        <p class="color-style4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem</p>
       </div>
     </div>
   </div>

@@ -13,6 +13,7 @@ class Home extends GO_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model("Home_model","home");
+		$this->load->model("Pages_model","pages");
 		$this->load->model("Blog_model","blog");
 		$this->load->helper("filter");
 	}
@@ -20,6 +21,8 @@ class Home extends GO_Controller {
 	public function index(){
 		// $this->data['slider']					= $this->home->slider();
 		$this->data['info_site']		= $this->core->get_info_site();
+		$this->data['about']			= $this->pages->about("about");
+		$this->data['services'] 		= $this->pages->services(3);
 		$this->data['blog_sidebar']		= $this->blog->blog_sidebar(3);
 		$this->render("home",$this->data);
 	}

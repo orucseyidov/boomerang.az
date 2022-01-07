@@ -13,25 +13,13 @@
                 <img src="<?= $logo; ?>" data-retina="<?= $logo; ?>" alt="images">
             </a>
           </div>
-          <p> Lorem ipsum dolor sit amet, cons etetur sadipscing elitr, sed diam nonumy eirmod tempor </p>
+          <p><?= $settings['description']; ?></p>
           <div class="topbar-socials">
             <?php foreach($social as $s) { ?>
                 <a href="<?= $s['link']; ?>">
                     <i class="fab fa-<?= $s['name']; ?>"></i>
                 </a>
             <?php } ?>
-            <!-- <a href="#">
-              <i class="fab fa-facebook-square"></i>
-            </a>
-            <a href="#">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#">
-              <i class="icon-socialgg"></i>
-            </a>
-            <a href="#">
-              <i class="icon-socialin"></i>
-            </a> -->
           </div>
         </div>
         <div class="col-sm-3 footer-widget-style1">

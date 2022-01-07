@@ -72,7 +72,7 @@
   <div class="container">
     <div class="questions-style questions-contact questions-style2">
       <div class="content-form bg-color wow fadeInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-        <div class="title-section">
+        <div class="title-section color-white">
           <div class="flat-title flat-title-contact"><?= $content['send_msg_contact']['title']; ?></div>
           <p class="color-white"><?= $content['send_msg_contact']['desc']; ?></p>
         </div>

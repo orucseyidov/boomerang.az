@@ -19,13 +19,16 @@ class Pages_model extends GO_Model {
         return $query->row_array();
 	}
 
-	public function services(){
+	public function services($limit=null){
 		$this->db->select('
 			title_'.$this->dil.' as title,
 			description_'.$this->dil.' as description,
 			id,icon,image,slug,created_at
 		');
 		$this->db->from('services');
+		if ($limit != '') {
+			$this->db->limit($limit);
+		 }
 		$this->db->where("services.status",1);
 		$this->db->order_by("services.id","DESC");
 		return $this->db->get()->result_array();
