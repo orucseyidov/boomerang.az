@@ -21,6 +21,10 @@ class Services extends Gopanel {
 		if (isset($_POST['token'])) {
 			unset($_POST['token']);
 			
+			if (empty($_POST['date'])){
+				$_POST['date'] = date("Y-m-d");
+			}
+
 			$_POST['icon'] = file_upload($_FILES['icon'],'/uploads/images/'.$this->table.'/',$_POST['title_en']);
 			$_POST['image'] = file_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$_POST['title_en']);
 			if ($this->core->add($this->table,$_POST)) {

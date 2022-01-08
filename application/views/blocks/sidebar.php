@@ -4,10 +4,10 @@
     <div id="inner-sidebar" class="inner-content-wrap">
       <div class="widget widget-search clearfix">
         <h2 class="widget-title">
-          <span>Search</span>
+          <span><?= $content['search_word']['title']; ?></span>
         </h2>
         <form action="#" class="form-search clearfix">
-          <input type="search" class="search margin-top1" placeholder="Search here" required />
+          <input type="search" class="search margin-top1" placeholder="<?= strip_tags($content['search_word']['desc']); ?>" required />
           <button class="btn-search linear-color">
             <i class="fa fa-search" aria-hidden="true"></i>
           </button>
@@ -15,7 +15,7 @@
       </div>
       <div class="widget widgetstyle widget-category widget-bg">
         <h2 class="widget-title">
-          <span>Xidmetler</span>
+          <span><?= $content['services_word']['title']; ?></span>
         </h2>
         <ul class="category-wrap">
           <li>
@@ -47,7 +47,7 @@
       </div>
       <div class="widget widget_lastest">
         <h2 class="widget-title padding-left2">
-          <span>Layiheler</span>
+          <span><?= $content['projects_word']['title']; ?></span>
         </h2>
         <ul class="lastest-posts data-effect margintop3 clearfix">
           <li class="lastest-box clearfix">
@@ -63,11 +63,11 @@
                 <a href="<?= base_url("blog-details"); ?>">Integer at faucibus urna. <br /> Nullam condimentum </a>
               </h5>
               <span class="post-date">
-                <span class="entry-date">15 October</span>
+                <i class="far fa-calendar-alt"></i><?= " " . date("d.m.Y", strtotime($blog['date'])); ?>
               </span>
             </div>
           </li>
-          <li class="lastest-box clearfix">
+          <!-- <li class="lastest-box clearfix">
             <div class="thumb">
               <img src="/assets/images/Blog/imgrencen2.jpg" alt="Image" />
               <div class="overlay-effect"></div>
@@ -100,12 +100,12 @@
                 <span class="entry-date">21 December</span>
               </span>
             </div>
-          </li>
+          </li> -->
         </ul>
       </div>
       <div class="widget widget_lastest">
         <h2 class="widget-title padding-left2">
-          <span>Son Yazilar</span>
+          <span><?= $content['blog_sidebar']['title']; ?></span>
         </h2>
         <ul class="lastest-posts data-effect margintop3 clearfix">
           <li class="lastest-box clearfix">
@@ -171,7 +171,7 @@
                 <span>Call Us</span>
               </div>
               <div class="text-number">
-                <span>360-779-2228</span>
+                <span><?= $contact['phone']; ?></span>
               </div>
             </div>
           </div>
@@ -179,7 +179,7 @@
             <div class="icon-mail"></div>
             <div class="content-mail">
               <div class="text-body">
-                <span>Our Mail</span>
+                <span><?= $content['mail_word']['title']; ?></span>
               </div>
               <div class="text-number">
                 <span>

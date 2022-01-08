@@ -30,10 +30,10 @@
               <span class="icon-phone icon-phone-style2"></span>
               <div class="content padding-top7">
                 <div class="text">
-                  <span>Call Us</span>
+                  <span><?= $content['contact_word']['desc']; ?></span>
                 </div>
                 <div class="text-time">
-                  <span>360-779-2228</span>
+                  <span><?= $contacts['mobile']; ?></span>
                 </div>
               </div>
             </div>

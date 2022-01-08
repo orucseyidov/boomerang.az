@@ -352,86 +352,23 @@
             </div>
             <div class="meta-blog-style2">
               <span class="entry-calendar">
-                <a href="<?= base_url("blog-details/{$b['id']}"); ?>">
-                <i class="far fa-clock"></i><?= $b['date'] == "0000-00-00" ? date("d.m.Y", strtotime($b['created_at'])): date("d.m.Y", strtotime($b['date'])); ?> </a>
+                <a href="<?= base_url("blog/{$b['slug']}"); ?>">
+                  <?= date("d.m.Y", strtotime($b['date'])); ?>
+                </a>
               </span>
             </div>
             <div class="content-blog-style2 bg-color">
               <span class="admin tf-text-hv">
-                <a href="<?= base_url("blog-details/{$b['id']}"); ?>">
+                <a href="<?= base_url("blog/{$b['slug']}"); ?>">
                   <i class="far fa-eye"></i><?= $b['view']; ?>
                 </a>
               </span>
               <div class="title-blog tf-text-hv">
-                <a href="<?= base_url("blog-details/{$b['id']}"); ?>"><?= cut(strip_tags($b['title']),60,0,58); ?></a>
+                <a href="<?= base_url("blog/{$b['slug']}"); ?>"><?= cut(strip_tags($b['title']),60,0,58); ?></a>
               </div>
             </div>
           </div>
           <?php } ?>
-          
-          <!-- <div class="image-box">
-            <div class="image">
-              <img src="/assets/images/Blog/imgblog1.jpg" alt="" />
-            </div>
-            <div class="meta-blog-style2">
-              <span class="entry-calendar">
-                <a href="blog-details.html">
-                  <i class="far fa-folder-open"></i>Home Gardening </a>
-              </span>
-            </div>
-            <div class="content-blog-style2 bg-color">
-              <span class="admin tf-text-hv">
-                <a href="blog-details.html">
-                  <i class="far fa-user"></i>By Admin </a>
-              </span>
-              <div class="title-blog tf-text-hv">
-                <a href="blog-details.html">Mauris neque nisiibus non elementum</a>
-              </div>
-              <div class="date"> 28 JANUARY, 2020 </div>
-            </div>
-          </div>
-          <div class="image-box">
-            <div class="image">
-              <img src="/assets/images/Blog/imgblog2.jpg" alt="" />
-            </div>
-            <div class="meta-blog-style2">
-              <span class="entry-calendar entry-calendar-style1">
-                <a href="blog-details.html">
-                  <i class="far fa-folder-open"></i>Gardening Ideas </a>
-              </span>
-            </div>
-            <div class="content-blog-style2 pd-style1 bg-color">
-              <span class="admin tf-text-hv">
-                <a href="blog-details.html">
-                  <i class="far fa-user"></i>By Admin </a>
-              </span>
-              <div class="title-blog tf-text-hv">
-                <a href="blog-details.html">Quisque suscipit ipsum est, eu venenatis leo</a>
-              </div>
-              <div class="date"> 28 JANUARY, 2020 </div>
-            </div>
-          </div>
-          <div class="image-box">
-            <div class="image">
-              <img src="/assets/images/Blog/imgblog3.jpg" alt="" />
-            </div>
-            <div class="meta-blog-style2">
-              <span class="entry-calendar entry-calendar-style1">
-                <a href="blog-details.html">
-                  <i class="far fa-folder-open"></i>Gardening Ideas </a>
-              </span>
-            </div>
-            <div class="content-blog-style2 pd-style2 bg-color">
-              <span class="admin tf-text-hv">
-                <a href="blog-details.html">
-                  <i class="far fa-user"></i>By Admin </a>
-              </span>
-              <div class="title-blog tf-text-hv">
-                <a href="blog-details.html">Maecenas interdum lorem eleifend orci aliquam</a>
-              </div>
-              <div class="date"> 28 JANUARY, 2020 </div>
-            </div>
-          </div> -->
         </div>
       </div>
     </div>

@@ -21,6 +21,10 @@ class Projects extends Gopanel {
 		if (isset($_POST['token'])) {
 			unset($_POST['token']);
 			
+			if (empty($_POST['date'])){
+				$_POST['date'] = date("Y-m-d");
+			}
+
 			$_POST['image'] = file_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$_POST['title_en']);
 			
 			if(isset($_POST['slug']) && empty($_POST['slug'])){

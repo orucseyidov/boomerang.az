@@ -65,9 +65,10 @@ class Pages extends GO_Controller {
 	public function service_single($slug){
 		$service = $this->pages->service_single($slug);
 		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
-		$this->data['title'] 	= $service['title'];
-		$this->data['desc'] 	= mb_substr(strip_tags($service['description']), 0,300);
-		$this->data['service'] 	= $service;
+		$this->data['title'] 		= $service['title'];
+		$this->data['desc'] 		= mb_substr(strip_tags($service['description']), 0,300);
+		$this->data['service'] 		= $service;
+		$this->data['services'] 	= $this->pages->services();
 		$this->render("/pages/service-details",$this->data);
 	}
 
@@ -114,13 +115,7 @@ class Pages extends GO_Controller {
 		$this->render("/pages/blog-standard",$this->data);
 	}
 	
-	public function blogDetails($id){
-		$this->data['blogDetails'] 		= $this->blog->blog_details($id);
-		$this->data['recent_blogs']		= $this->blog->blog_sidebar(3);
-		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
-		// debug($this->data);
-		$this->render("/pages/blog-details",$this->data);
-	}
+	
 	
 	
 

@@ -26,13 +26,12 @@
               <ul class="post-meta">
                 <li class="font-date">
                   <span>
-                    <i class="far fa-user"></i>BY ADMIN </span>
+                    <i class="far fa-eye"></i><?= $blog['view']; ?></span>
                 </li>
                 <li class="font-date">
-                  <span>
                     <span>
-                      <i class="far fa-calendar-alt"></i><?= ($blog['date'] == "0000-00-00") ? date("d.m.Y", strtotime($blog['date'])): date("d.m.Y", strtotime($blog['date'])); ?></span>
-                  </span>
+                      <i class="far fa-calendar-alt"></i><?= date("d.m.Y", strtotime($blog['date'])); ?>
+                    </span>
                 </li>
               </ul>
             </div>

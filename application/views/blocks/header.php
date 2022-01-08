@@ -61,23 +61,8 @@
             <div class="btn-top">
               <a href="
 									<?=base_url("contact"); ?>" class="themesflat-button-style2 btn-style-4">
-                <span class="btn-title">Get A Quote</span>
+                <span class="btn-title"><?= $content['contact_word']['title']; ?></span>
               </a>
-            </div>
-            <div class="flat-show-search">
-              <div class="show-search">
-                <a href="#">
-                  <i class="fa fa-search"></i>
-                </a>
-              </div>
-              <div class="top-search">
-                <form action="#" id="searchform-all" method="get">
-                  <div>
-                    <input type="text" id="s" class="sss" placeholder="Search...">
-                    <input type="submit" value="" id="searchsubmit">
-                  </div>
-                </form>
-              </div>
             </div>
           </div>
         </div>
