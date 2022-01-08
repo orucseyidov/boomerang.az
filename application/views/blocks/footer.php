@@ -1,6 +1,6 @@
-<footer id="footer" class="footer footer-h2">
+<footer id="footer" class="footer footer-h2" style="margin-top: 30px;">
   <div class="overlay-ft"></div>
-  <div class="themesflat-spacer clearfix" data-desktop="381" data-mobile="80" data-smobile="80"></div>
+  <div class="themesflat-spacer clearfix" data-desktop="110" data-mobile="80" data-smobile="80"></div>
   <div class="container">
     <div class="footer-widget clearfix">
       <div class="row">

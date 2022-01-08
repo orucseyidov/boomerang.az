@@ -18,12 +18,11 @@
           </li>
         </ul>
         <div class="topbar-socials">
-          <span class="icons"> <?php foreach($social as $s) { ?> <a href="
-							<?= $s['link']; ?>">
-              <i class="fab fa-
-								<?= $s['name']; ?>">
-              </i>
-            </a> <?php } ?> </span>
+          <span class="icons">
+            <?php foreach ($social as $key => $value): ?>
+              <a href="<?=$value['link'] ?>"><i class="<?=$value['icon'] ?>"></i></a>
+            <?php endforeach ?>
+          </span>
         </div>
       </div>
     </div>
@@ -53,7 +52,7 @@
                 ?> <li class="
 										<?=$active ?>">
                   <a href="
-											<?= base_url($value['slug']); ?>"> <?=$value['name'] ?> </a>
+											<?=base_url($value['slug']); ?>"> <?=$value['name'] ?> </a>
                 </li> <?php endforeach ?>
               </ul>
             </nav>
@@ -61,7 +60,7 @@
           <div class="search-btn">
             <div class="btn-top">
               <a href="
-									<?= base_url("contact"); ?>" class="themesflat-button-style2 btn-style-4">
+									<?=base_url("contact"); ?>" class="themesflat-button-style2 btn-style-4">
                 <span class="btn-title">Get A Quote</span>
               </a>
             </div>

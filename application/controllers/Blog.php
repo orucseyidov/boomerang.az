@@ -3,8 +3,8 @@
 class Blog extends GO_Controller {
 	
 	public $show  			= 0; // Səhifə başlayandaNeçədən başlasın
-	public $limit 			= 6; // Səhifə başlayanda neçə məlumat görünsün
-	public $page 			= 1; // Səhifə başlayanda neçə məlumat görünsün
+	public $limit 			= 4; // Səhifə başlayanda neçə məlumat görünsün
+	public $page 			= 1; // Səhifə başlayanda neçənci məlumatdan görünsün
 	public $show_number 	= 3; // Paginationda neçə rəqəm görünsün
 	public $itemrows 		= 0; // Məlumatların ümumi sayı
 	public $number_of_pages	= 0; // Məlumat Neçə səhifədir
@@ -59,7 +59,7 @@ class Blog extends GO_Controller {
 		$this->data['ogimage']		= base_url($blog['image']);
 		$this->data['blog']			= $blog;
 
-		$this->render("pages/blog-single",$this->data);
+		$this->render("pages/blog-details",$this->data);
 		$this->core->view_update("blog",$this->data['blog']['id']);
 	}
 
