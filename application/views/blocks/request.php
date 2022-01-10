@@ -15,19 +15,21 @@
           <div class="contact">
             <div class="time">
               <span class="iconclock bg-color-style5">
-                <i class="fas fa-clock"></i>
+                <i class="fas fa-envelope"></i>
               </span>
               <div class="content">
                 <div class="text">
-                  <span>Working Hours</span>
+                  <span><?= $content['mail_word']['title']; ?></span>
                 </div>
                 <div class="text-time">
-                  <span>Mon - Sat 9.00 to 17.00</span>
+                  <span><a href="mailto:<?= $contacts['mail']; ?>"><?= $contacts['mail']; ?></a></span>
                 </div>
               </div>
             </div>
             <div class="phone margin-top14">
-              <span class="icon-phone icon-phone-style2"></span>
+              <span class="iconclock bg-color-style5">
+                <i class="fas fa-phone-alt"></i>
+              </span>
               <div class="content padding-top7">
                 <div class="text">
                   <span><?= $content['contact_word']['desc']; ?></span>
@@ -45,18 +47,18 @@
           <form action="#" method="post" id="commentform" class="commentform">
             <div class="text-wrap clearfix">
               <fieldset class="name-wrap">
-                <input type="text" id="author" class="tb-my-input" name="author" tabindex="1" placeholder="Full Name" value="" size="32" aria-required="true" required />
+                <input type="text" id="author" class="tb-my-input" name="author" tabindex="1" placeholder="<?= $content['full_name']['title']; ?>" value="" size="32" aria-required="true" required />
               </fieldset>
               <fieldset class="phone-wrap">
-                <input type="number" id="phone" class="tb-my-input" name="phone" tabindex="2" placeholder="Phone Number" value="" aria-required="true" required />
+                <input type="number" id="phone" class="tb-my-input" name="phone" tabindex="2" placeholder="<?= $content['phone_number']['title']; ?>" value="" aria-required="true" required />
               </fieldset>
               <fieldset class="mail-wrap">
-                <input type="email" id="email" class="tb-my-input" name="phone" tabindex="2" placeholder="Email Address" value="" size="32" aria-required="true" required />
+                <input type="email" id="email" class="tb-my-input" name="phone" tabindex="2" placeholder="<?= $content['email_address']['title']; ?>" value="" size="32" aria-required="true" required />
               </fieldset>
               <fieldset class="select-wrap">
                 <div class="select">
                   <select>
-                    <option value="services">Choose services</option>
+                    <option value="services"><?= $content['choose_services']['title']; ?></option>
                     <option value="services1">Choose services 01</option>
                     <option value="services2">Choose services 02</option>
                   </select>
@@ -64,11 +66,11 @@
               </fieldset>
             </div>
             <fieldset class="message-wrap">
-              <textarea id="comment-message" name="comment" rows="8" tabindex="4" placeholder="Your Message" aria-required="true" required></textarea>
+              <textarea id="comment-message" name="comment" rows="8" tabindex="4" placeholder="<?= $content['your_message']['title']; ?>" aria-required="true" required></textarea>
             </fieldset>
             <p class="form-submit">
               <button type="submit" class="themesflat-button-style3 btn-style-5 no-boder">
-                <span class="btn-title">Send message</span>
+                <span class="btn-title"><?= $content['send_msg']['title']; ?></span>
               </button>
             </p>
           </form>

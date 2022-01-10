@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2022 at 06:24 AM
+-- Generation Time: Jan 10, 2022 at 06:56 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -223,7 +223,13 @@ INSERT INTO `content` (`id`, `keyword`, `title_az`, `title_en`, `title_ru`, `val
 (17, 'services_word', 'Xidmətlər', 'Xidmətlər', 'Xidmətlər', '<p>Xidmətlər</p>\r\n', '<p>Xidmətlər</p>\r\n', '<p>Xidmətlər</p>\r\n'),
 (18, 'search_word', 'Search', 'Search', 'Search', '<p>Search here</p>\r\n', '<p>Search here</p>\r\n', '<p>Search here</p>\r\n'),
 (19, 'service_details_word', 'Service Details', 'Service Details', 'Service Details', '<p>Service&nbsp;Details</p>\r\n', '<p>Service&nbsp;Details</p>\r\n', '<p>Service&nbsp;Details</p>\r\n'),
-(20, 'home_word', 'Home', 'Home', 'Home', '<p>Home</p>\r\n', '<p>Home</p>\r\n', '<p>Home</p>\r\n');
+(20, 'home_word', 'Home', 'Home', 'Home', '<p>Home</p>\r\n', '<p>Home</p>\r\n', '<p>Home</p>\r\n'),
+(22, 'full_name', 'Full Name', 'Full Name', 'Full Name', '<p>Full&nbsp;Name</p>\r\n', '<p>Full&nbsp;Name</p>\r\n', '<p>Full&nbsp;Name</p>\r\n'),
+(23, 'phone_number', 'Phone Number', 'Phone Number', 'Phone Number', '<p>Phone&nbsp;Number</p>\r\n', '<p>Phone&nbsp;Number</p>\r\n', '<p>Phone&nbsp;Number</p>\r\n'),
+(24, 'email_address', 'Email Address', 'Email Address', 'Email Address', '<p>Email&nbsp;Address</p>\r\n', '<p>Email&nbsp;Address</p>\r\n', '<p>Email&nbsp;Address</p>\r\n'),
+(25, 'your_message', 'Your Message', 'Your Message', 'Your Message', '<p>Your&nbsp;Message</p>\r\n', '<p>Your&nbsp;Message</p>\r\n', '<p>Your&nbsp;Message</p>\r\n'),
+(26, 'send_msg', 'Send message', 'Send message', 'Send message', '<p>Send&nbsp;message</p>\r\n', '<p>Send&nbsp;message</p>\r\n', '<p>Send&nbsp;message</p>\r\n'),
+(27, 'choose_services', 'Choose services', 'Choose services', 'Choose services', '<p>Choose&nbsp;services</p>\r\n', '<p>Choose services</p>\r\n', '<p>Choose services</p>\r\n');
 
 -- --------------------------------------------------------
 
@@ -718,7 +724,7 @@ ALTER TABLE `contacts`
 -- AUTO_INCREMENT for table `content`
 --
 ALTER TABLE `content`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `gallery`

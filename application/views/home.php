@@ -78,69 +78,12 @@
               </div>
               <div class="content-imagebox">
               <p>
-                <?= cut(strip_tags($s['description']),134,0,132); ?>
+              <?= cut(strip_tags($s['description']),130,0,128); ?>
               </p>
               </div>
             </div>
           </div>
         <?php } ?>
-        <!-- <div class="col-sm-4">
-          <div class="image-box wow fadeInUp animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-            <div class="image">
-              <img src="/assets/images/Services/imgservice1.jpg" alt="">
-            </div>
-            <span class="number">01</span>
-            <div class="icon-window">
-              <img src="/assets/images/Blog/Ellipsewindow.png" alt="images">
-            </div>
-            <div class="title-imagebox">
-              <h4>
-                <a href="service-details.html">WINDOWS SERVICES</a>
-              </h4>
-            </div>
-            <div class="content-imagebox">
-              <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="image-box wow fadeInUp animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-            <div class="image">
-              <img src="/assets/images/Services/imgservice2.jpg" alt="">
-            </div>
-            <span class="number">02</span>
-            <div class="icon-window icon-window-style2">
-              <img src="/assets/images/Blog/halfmoonwindow.png" alt="images">
-            </div>
-            <div class="title-imagebox">
-              <h4>
-                <a href="service-details.html">Doors Services</a>
-              </h4>
-            </div>
-            <div class="content-imagebox">
-              <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="image-box wow fadeInUp animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-            <div class="image">
-              <img src="/assets/images/Services/imgservice3.jpg" alt="">
-            </div>
-            <span class="number">03</span>
-            <div class="icon-window">
-              <img src="/assets/images/Blog/sixpaneldoor.png" alt="images">
-            </div>
-            <div class="title-imagebox">
-              <h4>
-                <a href="service-details.html">Planning & Projects</a>
-              </h4>
-            </div>
-            <div class="content-imagebox">
-              <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </p>
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
   </div>
