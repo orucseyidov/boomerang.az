@@ -13,6 +13,7 @@ class Blog extends GO_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model("Blog_model","blog");
+		$this->load->model("Pages_model","pages");
 		$this->itemrows 		= $this->core->get_count("blog","id"); // Məlumatların ümumi sayı
 		$this->number_of_pages 	= ceil($this->itemrows/$this->limit); // Məlumat Neçə səhifədir
 		$this->load->helper("seflink");
@@ -31,11 +32,15 @@ class Blog extends GO_Controller {
 	}
 
 	public function blog_list(){
-		$this->data['blog'] 			= $this->blog->blog($this->show,$this->limit);
-		$this->data['page']				= $this->page;
-		$this->data['itemrows']			= $this->itemrows;
-		$this->data['show_number']		= $this->show_number;
-		$this->data['number_of_pages']	= $this->number_of_pages;
+		$this->data['blog'] 			 = $this->blog->blog($this->show,$this->limit);
+		$this->data['page']				 = $this->page;
+		$this->data['itemrows']			 = $this->itemrows;
+		$this->data['show_number']		 = $this->show_number;
+		$this->data['number_of_pages']	 = $this->number_of_pages;
+		$this->data['slidebar_services'] = $this->pages->limit_in_sidebar("services",5);
+		$this->data['slidebar_projects'] = $this->pages->limit_in_sidebar("projects",3);
+		$this->data['slidebar_blogs'] 	 = $this->pages->limit_in_sidebar("blog",3);
+
 		// debug($this->data['blog']);
 		$this->render("pages/blog",$this->data);
 	}
@@ -51,13 +56,16 @@ class Blog extends GO_Controller {
 		$slug 	= filter(strip_tags(trim($this->uri->segment(2))));
 		$blog 	= $this->blog->blog_single($slug);
 		//----------------------------------------------------------------------
-		$this->data['btitle']		= $this->data['title'];
-		$this->data['title']		= $blog['title'];
-		$this->data['bdesc']		= mb_substr(strip_tags($blog['description']), 0,300);
-		$this->data['desc']			= mb_substr(strip_tags($blog['description']), 0,300);
-		$this->data['bgimage']		= $this->data['ogimage'];
-		$this->data['ogimage']		= base_url($blog['image']);
-		$this->data['blog']			= $blog;
+		$this->data['btitle']			 = $this->data['title'];
+		$this->data['title']			 = $blog['title'];
+		$this->data['bdesc']			 = mb_substr(strip_tags($blog['description']), 0,300);
+		$this->data['desc']				 = mb_substr(strip_tags($blog['description']), 0,300);
+		$this->data['bgimage']			 = $this->data['ogimage'];
+		$this->data['ogimage']			 = base_url($blog['image']);
+		$this->data['blog']				 = $blog;
+		$this->data['slidebar_services'] = $this->pages->limit_in_sidebar("services",5);
+		$this->data['slidebar_projects'] = $this->pages->limit_in_sidebar("projects",3);
+		$this->data['slidebar_blogs'] 	 = $this->pages->limit_in_sidebar("blog",3);
 
 		$this->render("pages/blog-details",$this->data);
 		$this->core->view_update("blog",$this->data['blog']['id']);

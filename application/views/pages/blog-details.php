@@ -19,7 +19,7 @@
           <article class="main-post main-post-style2">
             <div class="featured-post featured-post-style2">
               <div class="entry-image wow fadeInUp animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-                <img src="<?= $blog['image']; ?>" alt="images" />
+                <img src="<?= $blog['image']; ?>" alt="<?= $blog['title']; ?>" />
               </div>
             </div>
             <div class="content-post flat-row1">

@@ -65,10 +65,13 @@ class Pages extends GO_Controller {
 	public function service_single($slug){
 		$service = $this->pages->service_single($slug);
 		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
-		$this->data['title'] 		= $service['title'];
-		$this->data['desc'] 		= mb_substr(strip_tags($service['description']), 0,300);
-		$this->data['service'] 		= $service;
-		$this->data['services'] 	= $this->pages->services();
+		$this->data['title'] 			 = $service['title'];
+		$this->data['desc'] 			 = mb_substr(strip_tags($service['description']), 0,300);
+		$this->data['service'] 			 = $service;
+		$this->data['slidebar_services'] = $this->pages->limit_in_sidebar("services",5);
+		$this->data['slidebar_projects'] = $this->pages->limit_in_sidebar("projects",3);
+		$this->data['slidebar_blogs'] 	 = $this->pages->limit_in_sidebar("blog",3);
+		$this->data['blogs'] 			 = $this->pages->services();
 		$this->render("/pages/service-details",$this->data);
 	}
 

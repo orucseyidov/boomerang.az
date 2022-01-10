@@ -15,9 +15,9 @@
   <div class="page-title-content">
     <div class="container">
       <div class="blog-title color-white">
-        <h2><?=$title ?></h2>
+        <h2><?= $title; ?></h2>
         <span>
-          <a href="<?= base_url(); ?>" class="hv-color-st1 color-white"> Home </a>About Us </span>
+          <a href="<?= base_url(); ?>" class="hv-color-st1 color-white"><?= $content['home_word']['title']; ?></a><?= $title; ?></span>
       </div>
     </div>
   </div>

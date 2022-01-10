@@ -3,9 +3,11 @@
   <div class="page-title-content">
     <div class="container">
       <div class="blog-title color-white">
-        <h2>Service Details</h2>
+        <h2><?= $content['service_details_word']['title']; ?></h2>
         <span>
-          <a href="<?= base_url(); ?>" class="hv-color-st1 color-white"> Home </a>Service Details </span>
+          <a href="<?= base_url(); ?>" class="hv-color-st1 color-white"><?= $content['home_word']['title']; ?></a>
+          <?= $content['service_details_word']['title']; ?>
+        </span>
       </div>
     </div>
   </div>
@@ -18,7 +20,7 @@
         <div class="site-content-style2">
           <div class="image-hover ">
             <div class="image border-5">
-              <img src="/assets/images/Services/imgservice15.jpg" alt="images">
+              <img src="<?= $service['image']; ?>" alt="<?= $service['title']; ?>">
             </div>
           </div>
           <div class="title-section wow fadeInDown">

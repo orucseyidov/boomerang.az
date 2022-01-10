@@ -18,31 +18,13 @@
           <span><?= $content['services_word']['title']; ?></span>
         </h2>
         <ul class="category-wrap">
-          <li>
-            <div class="block-inside">
-              <a href="#">Tempor lorem interdum </a>
-            </div>
-          </li>
-          <li>
-            <div class="block-inside">
-              <a href="#">Auctor mattis lacus</a>
-            </div>
-          </li>
-          <li>
-            <div class="block-inside">
-              <a href="#">Dolor proin</a>
-            </div>
-          </li>
-          <li>
-            <div class="block-inside">
-              <a href="#">Pharetra amet</a>
-            </div>
-          </li>
-          <li>
-            <div class="block-inside">
-              <a href="#">Nullam dolor gravida</a>
-            </div>
-          </li>
+          <?php foreach($slidebar_services as $s) { ?>
+            <li>
+              <div class="block-inside">
+                <a href="/service/<?= $s['slug']; ?>"><?= $s['title']; ?></a>
+              </div>
+            </li>
+          <?php } ?>
         </ul>
       </div>
       <div class="widget widget_lastest">
@@ -50,57 +32,25 @@
           <span><?= $content['projects_word']['title']; ?></span>
         </h2>
         <ul class="lastest-posts data-effect margintop3 clearfix">
-          <li class="lastest-box clearfix">
-            <div class="thumb">
-              <img src="/assets/images/Blog/imgrencen3.jpg" alt="Image" />
-              <div class="overlay-effect"></div>
-              <div class="elm-link">
-                <a href="#" class="icon-2"></a>
+          <?php foreach($slidebar_projects as $p) { ?>
+            <li class="lastest-box clearfix">
+              <div class="thumb">
+                <img style="max-width: 75px; height: 70px;" src="<?= $p['image']; ?>" alt="<?= $p['title']; ?>" />
+                <div class="overlay-effect"></div>
+                <div class="elm-link">
+                  <a href="#" class="icon-2"></a>
+                </div>
               </div>
-            </div>
-            <div class="text">
-              <h5>
-                <a href="<?= base_url("blog-details"); ?>">Integer at faucibus urna. <br /> Nullam condimentum </a>
-              </h5>
-              <span class="post-date">
-                <i class="far fa-calendar-alt"></i><?= " " . date("d.m.Y", strtotime($blog['date'])); ?>
-              </span>
-            </div>
-          </li>
-          <!-- <li class="lastest-box clearfix">
-            <div class="thumb">
-              <img src="/assets/images/Blog/imgrencen2.jpg" alt="Image" />
-              <div class="overlay-effect"></div>
-              <div class="elm-link">
-                <a href="#" class="icon-2"></a>
+              <div class="text">
+                <h5>
+                  <a href="/project/<?= $p['slug']; ?>"><?= $p['title']; ?></a>
+                </h5>
+                <span class="post-date">
+                  <i class="far fa-calendar-alt"></i><?= " " . date("d.m.Y", strtotime($p['date'])); ?>
+                </span>
               </div>
-            </div>
-            <div class="text">
-              <h5>
-                <a href="<?= base_url("blog-details"); ?>">Nunc scelerisque tincidunt <br /> estibulum </a>
-              </h5>
-              <span class="post-date">
-                <span class="entry-date">21 July</span>
-              </span>
-            </div>
-          </li>
-          <li class="lastest-box clearfix">
-            <div class="thumb">
-              <img src="/assets/images/Blog/imgrencen1.jpg" alt="Image" />
-              <div class="overlay-effect"></div>
-              <div class="elm-link">
-                <a href="page-blog-single<?=base_url(); ?>" class="icon-2"></a>
-              </div>
-            </div>
-            <div class="text">
-              <h5>
-                <a href="<?=base_url("blog-details"); ?>">Cras eu elit congue, plac <br /> erat duicidunt nisl </a>
-              </h5>
-              <span class="post-date">
-                <span class="entry-date">21 December</span>
-              </span>
-            </div>
-          </li> -->
+            </li>
+          <?php } ?>
         </ul>
       </div>
       <div class="widget widget_lastest">
@@ -108,82 +58,50 @@
           <span><?= $content['blog_sidebar']['title']; ?></span>
         </h2>
         <ul class="lastest-posts data-effect margintop3 clearfix">
-          <li class="lastest-box clearfix">
-            <div class="thumb">
-              <img src="/assets/images/Blog/imgrencen3.jpg" alt="Image" />
-              <div class="overlay-effect"></div>
-              <div class="elm-link">
-                <a href="#" class="icon-2"></a>
+          <?php foreach($slidebar_blogs as $b) { ?>
+            <li class="lastest-box clearfix">
+              <div class="thumb">
+                <img style="max-width: 75px; height: 70px;" src="<?= $b['image']; ?>" alt="<?= $b['title']; ?>" />
+                <div class="overlay-effect"></div>
+                <div class="elm-link">
+                  <a href="#" class="icon-2"></a>
+                </div>
               </div>
-            </div>
-            <div class="text">
-              <h5>
-                <a href="<?= base_url("blog-details"); ?>">Integer at faucibus urna. <br /> Nullam condimentum </a>
-              </h5>
-              <span class="post-date">
-                <span class="entry-date">15 October</span>
-              </span>
-            </div>
-          </li>
-          <li class="lastest-box clearfix">
-            <div class="thumb">
-              <img src="/assets/images/Blog/imgrencen2.jpg" alt="Image" />
-              <div class="overlay-effect"></div>
-              <div class="elm-link">
-                <a href="#" class="icon-2"></a>
+              <div class="text">
+                <h5>
+                  <a href="/blog/<?= $b['slug']; ?>"><?= cut(strip_tags($b['title']),70,0,68); ?></a>
+                </h5>
+                <span class="post-date">
+                  <i class="far fa-calendar-alt"></i><?= " " . date("d.m.Y", strtotime($b['date'])); ?>
+                </span>
               </div>
-            </div>
-            <div class="text">
-              <h5>
-                <a href="<?= base_url("blog-details"); ?>">Nunc scelerisque tincidunt <br /> estibulum </a>
-              </h5>
-              <span class="post-date">
-                <span class="entry-date">21 July</span>
-              </span>
-            </div>
-          </li>
-          <li class="lastest-box clearfix">
-            <div class="thumb">
-              <img src="/assets/images/Blog/imgrencen1.jpg" alt="Image" />
-              <div class="overlay-effect"></div>
-              <div class="elm-link">
-                <a href="page-blog-single<?= base_url(); ?>" class="icon-2"></a>
-              </div>
-            </div>
-            <div class="text">
-              <h5>
-                <a href="<?= base_url("blog-details"); ?>">Cras eu elit congue, plac <br /> erat duicidunt nisl </a>
-              </h5>
-              <span class="post-date">
-                <span class="entry-date">21 December</span>
-              </span>
-            </div>
-          </li>
+            </li>
+          <?php } ?>
         </ul>
       </div>
       <div class="blog-contact wow fadeInRight animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-        <img src="/assets/images/Blog/imgwigetcontact.jpg" alt="" />
+        <img src="/assets/images/Blog/imgwigetcontact.jpg" alt="<?= $content['contact_word']['title']; ?>" />
         <div class="contact-info">
           <div class="call-us">
-            <div class="icon-call-us"></div>
+            <i style="padding-top: 15px; color: #e3cca1;" class="fas fa-phone-alt"></i>
             <div class="content-call-us">
               <div class="text-body">
-                <span>Call Us</span>
+                <span><?= $content['contact_word']['desc']; ?></span>
               </div>
               <div class="text-number">
-                <span><?= $contact['phone']; ?></span>
+                <span><?= $contacts['phone']; ?></span>
               </div>
             </div>
           </div>
           <div class="mail">
-            <div class="icon-mail"></div>
+            <i style="padding-top: 13px; color: #e3cca1;" class="fas fa-envelope"></i>
             <div class="content-mail">
               <div class="text-body">
                 <span><?= $content['mail_word']['title']; ?></span>
               </div>
               <div class="text-number">
                 <span>
-                  <a href="https://themesflat.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1d6472686f737c70785d707c7471337e7270">[email&#160;protected]</a>
+                  <a href="mailto:<?= $contacts['mail']; ?>" class="color-white __cf_email__" data-cfemail="1d6472686f737c70785d707c7471337e7270"><?= $contacts['mail']; ?></a>
                 </span>
               </div>
             </div>

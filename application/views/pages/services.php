@@ -18,11 +18,11 @@
         <?php $i=1; foreach($services as $s) { ?>
           <div class="image-box">
             <div class="image">
-              <img src="<?= $s['image']; ?>" alt="">
+              <img src="<?= $s['image']; ?>" alt="<?= $s['title']; ?>">
             </div>
             <span class="number"><?= $i < 10 ? "0".$i++ : $i++; ?></span>
             <div class="icon-window">
-              <img src="<?= $s['icon']; ?>" alt="images">
+              <img src="<?= $s['icon']; ?>" alt="<?= $s['title']; ?>">
             </div>
             <div class="title-imagebox">
               <h4>
@@ -31,7 +31,7 @@
             </div>
             <div class="content-imagebox">
               <p>
-                <?= cut(strip_tags($s['description']),134,0,132); ?>
+                <?= cut(strip_tags($s['description']),130,0,128); ?>
               </p>
             </div>
           </div>

@@ -175,7 +175,7 @@
 <section class="portfolio-slider">
   <div class="portfolio-nav bg-color-style3 clearfix">
     <div class="themesflat-spacer clearfix" data-desktop="93" data-mobile="20" data-smobile="20"></div>
-    <div class="container ">
+    <div class="container">
       <div class="title-nav flex">
         <div class="title-section wow fadeInDown">
           <div class="flat-title color-style1"><?= $content['portfolio_home']['title']; ?></div>
