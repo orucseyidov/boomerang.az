@@ -3907,3 +3907,12 @@ input:active {
 .page-title {
   padding-top: 58px!important;
 }
+
+
+#wrapClass{
+  width: 230px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding-right: 10px;
+}

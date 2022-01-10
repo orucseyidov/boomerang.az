@@ -78,7 +78,7 @@
     <div class="portfolio-nav bg-white clearfix">
       <div class="title-nav title-nav-style flex">
         <div class="title-section wow fadeInDown">
-          <div class="flat-title color-style1"><?= $content['projects_word']['title']; ?></div> <!-- Related Projects -->
+          <div class="flat-title color-style1"><?= $langs['projects_word']; ?></div> <!-- Related Projects -->
         </div>
       </div>
     </div>
@@ -94,8 +94,8 @@
                   </div>
                   <div class="profolio-show">
                     <div class="content-title text-left tf-text-hv">
-                      <h4><?= $p['title']; ?></h4>
-                      <a href="<?= $p['slug']; ?>" class="tftitle-style2"><?= $p['title']; ?></a>
+                      <!-- <h4><?= cut(strip_tags($p['title']),30,0,28); ?></h4> -->
+                      <a href="<?= $p['slug']; ?>" class="tftitle-style2"><?= cut(strip_tags($p['title']),30,0,28); ?></a>
                     </div>
                     <div class="btn-tab">
                       <a href="study-details.html">

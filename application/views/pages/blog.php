@@ -37,7 +37,7 @@
                   <div class="flat-read-more">
                     <span>
                       <i class="fas fa-arrow-alt-circle-right"></i>
-                      <a href="<?=$link ?>"><?= $content['readmore']['title']; ?></a>
+                      <a href="<?=$link ?>"><?= $langs['read_more']; ?></a>
                     </span>
                   </div>
                 </div>

@@ -71,7 +71,9 @@ class Blog extends Gopanel {
 				$_POST['slug'] = seflink($_POST['title_en']);
 			}
 			else{
-				$_POST['slug'] = $_POST['slug'] . "-" . uniqid();
+				if($this->data['values']['slug'] != $_POST['slug']){
+					$_POST['slug'] = $_POST['slug'] . "-" . uniqid();
+				}
 			}
 
 			if ($this->core->update($this->table,$id,$_POST)) {

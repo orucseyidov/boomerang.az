@@ -4,10 +4,10 @@
     <div id="inner-sidebar" class="inner-content-wrap">
       <div class="widget widget-search clearfix">
         <h2 class="widget-title">
-          <span><?= $content['search_word']['title']; ?></span>
+          <span><?= $langs['search_word']; ?></span>
         </h2>
         <form action="#" class="form-search clearfix">
-          <input type="search" class="search margin-top1" placeholder="<?= strip_tags($content['search_word']['desc']); ?>" required />
+          <input type="search" class="search margin-top1" placeholder="<?= strip_tags($langs['search_here']); ?>" required />
           <button class="btn-search linear-color">
             <i class="fa fa-search" aria-hidden="true"></i>
           </button>
@@ -15,7 +15,7 @@
       </div>
       <div class="widget widgetstyle widget-category widget-bg">
         <h2 class="widget-title">
-          <span><?= $content['services_word']['title']; ?></span>
+          <span><?= $langs['services_word']; ?></span>
         </h2>
         <ul class="category-wrap">
           <?php foreach($slidebar_services as $s) { ?>
@@ -29,7 +29,7 @@
       </div>
       <div class="widget widget_lastest">
         <h2 class="widget-title padding-left2">
-          <span><?= $content['projects_word']['title']; ?></span>
+          <span><?= $langs['projects_word']; ?></span>
         </h2>
         <ul class="lastest-posts data-effect margintop3 clearfix">
           <?php foreach($slidebar_projects as $p) { ?>
@@ -55,7 +55,7 @@
       </div>
       <div class="widget widget_lastest">
         <h2 class="widget-title padding-left2">
-          <span><?= $content['blog_sidebar']['title']; ?></span>
+          <span><?= $langs['recent_news']; ?></span>
         </h2>
         <ul class="lastest-posts data-effect margintop3 clearfix">
           <?php foreach($slidebar_blogs as $b) { ?>
@@ -80,13 +80,13 @@
         </ul>
       </div>
       <div class="blog-contact wow fadeInRight animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-        <img src="/assets/images/Blog/imgwigetcontact.jpg" alt="<?= $content['contact_word']['title']; ?>" />
+        <img src="/assets/images/Blog/imgwigetcontact.jpg" alt="<?= $langs['contact_word']; ?>" />
         <div class="contact-info">
           <div class="call-us">
             <i style="padding-top: 15px; color: #e3cca1;" class="fas fa-phone-alt"></i>
             <div class="content-call-us">
               <div class="text-body">
-                <span><?= $content['contact_word']['desc']; ?></span>
+                <span><?= $langs['call_us']; ?></span>
               </div>
               <div class="text-number">
                 <span><?= $contacts['phone']; ?></span>
@@ -97,7 +97,7 @@
             <i style="padding-top: 13px; color: #e3cca1;" class="fas fa-envelope"></i>
             <div class="content-mail">
               <div class="text-body">
-                <span><?= $content['mail_word']['title']; ?></span>
+                <span><?= $langs['our_email']; ?></span>
               </div>
               <div class="text-number">
                 <span>

@@ -64,7 +64,9 @@ class Services extends Gopanel {
 				$_POST['slug'] = seflink($_POST['title_en']);
 			}
 			else{
-				$_POST['slug'] = $_POST['slug'] . "-" . uniqid();
+				if($this->data['values']['slug'] != $_POST['slug']){
+					$_POST['slug'] = $_POST['slug'] . "-" . uniqid();
+				}
 			}
 
 			if (isset($_FILES['icon']) && strlen($_FILES['icon']['name'])>1) {

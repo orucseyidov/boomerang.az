@@ -17,7 +17,7 @@
       <div class="blog-title color-white">
         <h2><?= $title; ?></h2>
         <span>
-          <a href="<?= base_url(); ?>" class="hv-color-st1 color-white"><?= $content['home_word']['title'] . " "; ?></a><?= $title; ?></span>
+          <a href="<?= base_url(); ?>" class="hv-color-st1 color-white"><?= $langs['home_word'] . " "; ?></a><?= $title; ?></span>
       </div>
     </div>
   </div>

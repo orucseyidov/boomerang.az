@@ -63,7 +63,9 @@ class Projects extends Gopanel {
 				$_POST['slug'] = seflink($_POST['title_en']);
 			}
 			else{
-				$_POST['slug'] = $_POST['slug'] . "-" . uniqid();
+				if($this->data['values']['slug'] != $_POST['slug']){
+					$_POST['slug'] = $_POST['slug'] . "-" . uniqid();
+				}
 			}
 
 			if (isset($_FILES['image']) && strlen($_FILES['image']['name'])>1) {

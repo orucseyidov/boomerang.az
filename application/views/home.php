@@ -121,7 +121,7 @@
     <div class="container">
       <div class="title-nav flex">
         <div class="title-section wow fadeInDown">
-          <div class="flat-title color-style1"><?= $content['portfolio_home']['title']; ?></div>
+          <div class="flat-title color-style1"><?= $langs['projects_word']; ?></div>
         </div>
       </div>
     </div>
@@ -138,10 +138,10 @@
               </div>
               <div class="profolio-show profolio-show-style2">
                 <div class="content-title text-left tf-text-hv">
-                  <h4 class="margin-botom5">
+                  <!-- <h4 class="margin-botom5">
                     <span>Nec vehicula </span>
-                  </h4>
-                  <a href="/project/<?= $p['slug']; ?>"><?= $p['title']; ?></a>
+                  </h4> -->
+                  <a href="/project/<?= $p['slug']; ?>" id="wrapClass"><?= cut(strip_tags($p['title']),55,0,53); ?></a> 
                 </div>
                 <div class="btn-tab">
                   <a href="/project/<?= $p['slug']; ?>">
@@ -160,7 +160,7 @@
   <div class="container">
     <div class="themesflat-spacer clearfix" data-desktop="120" data-mobile="60" data-smobile="50"></div>
     <div class="title-section text-center wow fadeInDown">
-      <div class="flat-title flat-style3"><?= $content['client_home']['title']; ?> </div>
+      <div class="flat-title flat-style3"><?= $langs['client_home']; ?> </div>
     </div>
     <div class="themesflat-spacer clearfix" data-desktop="46" data-mobile="15" data-smobile="15"></div>
     <div class="flat-carousel-box data-effect clearfix" data-zero="0" data-gap="30" data-column="3" data-column2="1" data-column3="1" data-column4="1" data-dots="false" data-auto="true" data-nav="false" data-loop="true">
@@ -177,16 +177,6 @@
             </div>
           </div>
         <?php } ?>
-        <!-- <div class="tf-image-box text-center bg-color-style2 hv-background-before-style2">
-          <div class="image">
-            <img src="/assets/images/Secsion/imgtestimonio3.jpg" alt="images">
-            <i class="fa fa-quote-left" aria-hidden="true"></i>
-          </div>
-          <p class="pd-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at est id leo luctus gravida a in ipsum.</p>
-          <div class="tf-conten">
-            <span>Eugene Freeman</span>
-          </div>
-        </div> -->
       </div>
     </div>
     <div class="themesflat-spacer clearfix" data-desktop="259" data-mobile="60" data-smobile="50"></div>
@@ -199,7 +189,6 @@
         <?php foreach($info_site as $i) { ?>
         <div class="box">
           <div class="icon-wrap margin-right15">
-            <!-- <i class="icon-iconcoutor1"></i> -->
             <i class="<?= $i['icon_class']; ?>"></i>
           </div>
           <div class="coutor-box margin-left120">
@@ -218,7 +207,7 @@
   <div class="container">
     <div class="tf-blog">
       <div class="title-section text-center wow fadeInDown">
-        <div class="flat-title"><?= $content['blog_home']['title']; ?></div>
+        <div class="flat-title"><?= $langs['blog_home']; ?></div>
       </div>
       <div class="themesflat-spacer  clearfix" data-desktop="61" data-mobile="40" data-smobile="30"></div>
     </div>
@@ -244,7 +233,7 @@
                 </a>
               </span>
               <div class="title-blog tf-text-hv">
-                <a href="<?= base_url("blog/{$b['slug']}"); ?>"><?= cut(strip_tags($b['title']),60,0,58); ?></a>
+                <a href="<?= base_url("blog/{$b['slug']}"); ?>"><?= cut(strip_tags($b['title']),57,0,55); ?></a>
               </div>
             </div>
           </div>

@@ -61,7 +61,7 @@
             <div class="btn-top">
               <a href="
 									<?=base_url("contact"); ?>" class="themesflat-button-style2 btn-style-4">
-                <span class="btn-title"><?= $content['contact_word']['title']; ?></span>
+                <span class="btn-title"><?= $langs['order']; ?></span>
               </a>
             </div>
           </div>

@@ -3,10 +3,10 @@
   <div class="page-title-content">
     <div class="container">
       <div class="blog-title color-white">
-        <h2><?= $content['service_details_word']['title']; ?></h2>
+        <h2><?= $langs['service_details_word']; ?></h2>
         <span>
-          <a href="<?= base_url(); ?>" class="hv-color-st1 color-white"><?= $content['home_word']['title']; ?></a>
-          <?= $content['service_details_word']['title']; ?>
+          <a href="<?= base_url(); ?>" class="hv-color-st1 color-white"><?= $langs['home_word'] . " "; ?></a>
+          <?= $langs['service_details_word']; ?>
         </span>
       </div>
     </div>

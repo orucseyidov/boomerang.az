@@ -24,7 +24,7 @@
         </div>
         <div class="col-sm-3 footer-widget-style1">
           <div class="footer-contact">
-            <div class="title-ft"><?= $content['contact_word']['title']; ?></div>
+            <div class="title-ft"><?= $langs['contact_word']; ?></div>
             <div class="tf-info call-us">
               <!-- <i class="icon-call-us margintop-3"></i> -->
               <i style="padding-top: 7px; color: #e3cca1;" class="fas fa-map-marker-alt"></i>
@@ -61,7 +61,7 @@
         </div>
         <div class="col-sm-3 footer-widget-style1">
           <div class="link">
-            <div class="title-ft"><?= $content['footer_title']['title']; ?></div>
+            <div class="title-ft"><?= $langs['useful_links']; ?></div>
             <ul>
               <?php foreach($menu as $m) { ?>
                 <li>
