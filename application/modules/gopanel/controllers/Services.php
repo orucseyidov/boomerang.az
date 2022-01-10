@@ -25,8 +25,16 @@ class Services extends Gopanel {
 				$_POST['date'] = date("Y-m-d");
 			}
 
+			if(isset($_POST['slug']) && empty($_POST['slug'])){
+				$_POST['slug'] = seflink($_POST['title_en']);
+			}
+			else{
+				$_POST['slug'] = $_POST['slug'] . "-" . uniqid();
+			}
+
 			$_POST['icon'] = file_upload($_FILES['icon'],'/uploads/images/'.$this->table.'/',$_POST['title_en']);
 			$_POST['image'] = file_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$_POST['title_en']);
+
 			if ($this->core->add($this->table,$_POST)) {
 				$this->session->set_flashdata('success', "Məlumat Uğurla Əlavə edildi");
 			}
@@ -51,6 +59,13 @@ class Services extends Gopanel {
 
 		if (isset($_POST['token'])) {
 			unset($_POST['token']);
+
+			if(isset($_POST['slug']) && empty($_POST['slug'])){
+				$_POST['slug'] = seflink($_POST['title_en']);
+			}
+			else{
+				$_POST['slug'] = $_POST['slug'] . "-" . uniqid();
+			}
 
 			if (isset($_FILES['icon']) && strlen($_FILES['icon']['name'])>1) {
 				$img = seflink($_POST['name']);

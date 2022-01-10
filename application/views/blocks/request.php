@@ -58,9 +58,10 @@
               <fieldset class="select-wrap">
                 <div class="select">
                   <select>
-                    <option value="services"><?= $content['choose_services']['title']; ?></option>
-                    <option value="services1">Choose services 01</option>
-                    <option value="services2">Choose services 02</option>
+                    <option value=""><?= $content['choose_services']['title']; ?></option>
+                    <?php foreach($all_services as $s) { ?>
+                      <option value="<?= $s['id']; ?>"><?= $s['title']; ?></option>
+                    <?php } ?>
                   </select>
                 </div>
               </fieldset>

@@ -131,78 +131,26 @@
     <div class="banners-z">
       <div class="flat-carousel-box data-effect clearfix" data-zero="0" data-gap="0" data-column="4" data-column2="2" data-column3="1" data-dots="false" data-auto="true" data-nav="false" data-loop="true">
         <div class="owl-carousel owl-loaded owl-drag">
-          <div class="image-profolio style2">
-            <div class="image">
-              <img src="/assets/images/Carosel/imgowl1.jpg" alt="images">
-            </div>
-            <div class="profolio-show profolio-show-style2">
-              <div class="content-title text-left tf-text-hv">
-                <h4 class="margin-botom5">
-                  <span>Nec vehicula </span>
-                </h4>
-                <a href="study-details.html">Maximus libero ornare </a>
+          <?php foreach($projects as $p) { ?>
+            <div class="image-profolio style2">
+              <div class="image">
+                <img src="<?= $p['image']; ?>" alt="<?= $p['title']; ?>">
               </div>
-              <div class="btn-tab">
-                <a href="study-details.html">
-                  <i class="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="image-profolio style2">
-            <div class="image">
-              <img src="/assets/images/Carosel/imgowl2.jpg" alt="images">
-            </div>
-            <div class="profolio-show profolio-show-style2">
-              <div class="content-title text-left tf-text-hv">
-                <h4 class="margin-botom5">
-                  <span>Nec vehicula </span>
-                </h4>
-                <a href="study-details.html">Maximus libero ornare </a>
-              </div>
-              <div class="btn-tab">
-                <a href="study-details.html">
-                  <i class="fas fa-arrow-right"></i>
-                </a>
+              <div class="profolio-show profolio-show-style2">
+                <div class="content-title text-left tf-text-hv">
+                  <h4 class="margin-botom5">
+                    <span>Nec vehicula </span>
+                  </h4>
+                  <a href="/project/<?= $p['slug']; ?>"><?= $p['title']; ?></a>
+                </div>
+                <div class="btn-tab">
+                  <a href="/project/<?= $p['slug']; ?>">
+                    <i class="fas fa-arrow-right"></i>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="image-profolio style2">
-            <div class="image">
-              <img src="/assets/images/Carosel/imgowl3.jpg" alt="images">
-            </div>
-            <div class="profolio-show profolio-show-style2  active">
-              <div class="content-title text-left tf-text-hv">
-                <h4 class="margin-botom5">
-                  <span>Nec vehicula </span>
-                </h4>
-                <a href="study-details.html">Maximus libero ornare </a>
-              </div>
-              <div class="btn-tab">
-                <a href="study-details.html">
-                  <i class="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="image-profolio style2">
-            <div class="image">
-              <img src="/assets/images/Carosel/imgowl4.jpg" alt="images">
-            </div>
-            <div class="profolio-show profolio-show-style2">
-              <div class="content-title text-left tf-text-hv">
-                <h4 class="margin-botom5">
-                  <span>Nec vehicula </span>
-                </h4>
-                <a href="study-details.html">Maximus libero ornare </a>
-              </div>
-              <div class="btn-tab">
-                <a href="study-details.html">
-                  <i class="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
+          <?php } ?>
         </div>
       </div>
     </div>
@@ -217,7 +165,19 @@
     <div class="themesflat-spacer clearfix" data-desktop="46" data-mobile="15" data-smobile="15"></div>
     <div class="flat-carousel-box data-effect clearfix" data-zero="0" data-gap="30" data-column="3" data-column2="1" data-column3="1" data-column4="1" data-dots="false" data-auto="true" data-nav="false" data-loop="true">
       <div class="owl-carousel wow fadeInRight animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-        <div class="tf-image-box text-center bg-color-style2 hv-background-before-style2">
+        <?php foreach($opinions as $o) { ?>
+          <div class="tf-image-box text-center bg-color-style2 hv-background-before-style2">
+            <div class="image">
+              <img src="<?= empty($o['image']) ? "/uploads/nophoto.png" : $o['image']; ?>" alt="<?= $o['username']; ?>">
+              <i class="fa fa-quote-left" aria-hidden="true"></i>
+            </div>
+            <p class="pd-center"><?= $o['opinion']; ?></p>
+            <div class="tf-conten">
+              <span><?= $o['username']; ?></span>
+            </div>
+          </div>
+        <?php } ?>
+        <!-- <div class="tf-image-box text-center bg-color-style2 hv-background-before-style2">
           <div class="image">
             <img src="/assets/images/Secsion/imgtestimonio3.jpg" alt="images">
             <i class="fa fa-quote-left" aria-hidden="true"></i>
@@ -225,31 +185,8 @@
           <p class="pd-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at est id leo luctus gravida a in ipsum.</p>
           <div class="tf-conten">
             <span>Eugene Freeman</span>
-            <p class="position">Tincidunt</p>
           </div>
-        </div>
-        <div class="tf-image-box active style2 text-center bg-color hv-background-before-style2 ">
-          <div class="image">
-            <img src="/assets/images/Secsion/imgtestimonio4.jpg" alt="images">
-            <i class="fa fa-quote-left" aria-hidden="true"></i>
-          </div>
-          <p class="pd-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at est id leo luctus gravida a in ipsum.</p>
-          <div class="tf-conten">
-            <span class="name-active">Kelly Coleman</span>
-            <p class="position">Nulla nec</p>
-          </div>
-        </div>
-        <div class="tf-image-box text-center bg-color-style2 hv-background-before-style2">
-          <div class="image">
-            <img src="/assets/images/Secsion/imgtestimonio5.jpg" alt="images">
-            <i class="fa fa-quote-left" aria-hidden="true"></i>
-          </div>
-          <p class="pd-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at est id leo luctus gravida a in ipsum.</p>
-          <div class="tf-conten">
-            <span>Philip Mendez</span>
-            <p class="position">Consectetur</p>
-          </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="themesflat-spacer clearfix" data-desktop="259" data-mobile="60" data-smobile="50"></div>

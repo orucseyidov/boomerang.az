@@ -47,17 +47,32 @@
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Haqqında AZ</label>
-                                    <textarea class="form-control" rows="5" name="description_az" ><?=$values['description_az'] ?></textarea>
+                                    <textarea class="form-control ckeditor" rows="5" name="description_az" ><?=$values['description_az'] ?></textarea>
                                 </div>
                                 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Haqqında EN</label>
-                                    <textarea class="form-control" rows="5" name="description_en" ><?=$values['description_en'] ?></textarea>
+                                    <textarea class="form-control ckeditor" rows="5" name="description_en" ><?=$values['description_en'] ?></textarea>
                                 </div>
                                 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Haqqında RU</label>
-                                    <textarea class="form-control" rows="5" name="description_ru" ><?=$values['description_ru'] ?></textarea>
+                                    <textarea class="form-control ckeditor" rows="5" name="description_ru" ><?=$values['description_ru'] ?></textarea>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Açar sözlər <small>AZ</small></label>
+                                    <input type="text" name="keywords_az" class="form-control tags" value="<?=$values['keywords_az'] ?>" required>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Açar sözlər <small>EN</small></label>
+                                    <input type="text" name="keywords_en" class="form-control tags" value="<?=$values['keywords_en'] ?>" required>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Açar sözlər <small>RU</small></label>
+                                    <input type="text" name="keywords_ru" class="form-control tags" value="<?=$values['keywords_ru'] ?>" required>
                                 </div>
 
                                 <?php $newDate = date("Y-m-d", strtotime($values['date']));?>

@@ -41,7 +41,8 @@ class Pages_model extends GO_Model {
 			$this->db->limit($limit);
 		}
 		$this->db->where("$table.status",1);
-		$this->db->order_by("$table.id","DESC");
+		// $this->db->order_by("$table.id","DESC");
+		$this->db->order_by("$table.id","RANDOM");
 		return $this->db->get()->result_array();
 	}
 

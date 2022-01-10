@@ -158,8 +158,8 @@
                         <i class="fas fa-comments"></i><span> Rəylər</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="/gopanel/testimonial/add"><i class="fas fa-plus"></i> Əlavə et</a></li>
-                        <li><a href="/gopanel/testimonial/manage"><i class="fas fa-fas fa-table"></i> İdarə et</a></li>
+                        <li><a href="/gopanel/opinions/add"><i class="fas fa-plus"></i> Əlavə et</a></li>
+                        <li><a href="/gopanel/opinions/manage"><i class="fas fa-fas fa-table"></i> İdarə et</a></li>
                     </ul>
                 </li>
 

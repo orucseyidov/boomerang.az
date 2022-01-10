@@ -1,15 +1,4 @@
-<div class="page-title page-title-inner padding-bottom9">
-  <div class="overlay-page-tile"></div>
-  <div class="page-title-content">
-    <div class="container">
-      <div class="blog-title color-white">
-        <h2>Company infomation</h2>
-        <span>
-          <a href="<?= base_url(); ?>" class="hv-color-st1 color-white"> Home </a>Company infomation </span>
-      </div>
-    </div>
-  </div>
-</div>
+<?php $this->load->view("blocks/breadcrumb") ?>
 <section class="about2 bg-color-style2 about-style">
   <div class="container">
     <div class="row">

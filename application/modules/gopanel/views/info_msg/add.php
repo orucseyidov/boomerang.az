@@ -50,15 +50,15 @@
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Kontent AZ</label>
-                                    <textarea class="form-control" name="description_az"></textarea>
+                                    <textarea class="form-control ckeditor" name="description_az"></textarea>
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Kontent EN</label>
-                                    <textarea class="form-control" name="description_en"></textarea>
+                                    <textarea class="form-control ckeditor" name="description_en"></textarea>
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Kontent RU</label>
-                                    <textarea class="form-control" name="description_ru"></textarea>
+                                    <textarea class="form-control ckeditor" name="description_ru"></textarea>
                                 </div>
                                 <div class="hidden-inputs">
                                     <input type="hidden" name="token" value="<?=$token ?>">

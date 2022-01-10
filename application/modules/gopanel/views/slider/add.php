@@ -46,17 +46,17 @@
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Alt yazı AZ</label>
-                                    <textarea class="form-control" rows="5" name="description_az" ></textarea>
+                                    <textarea class="form-control ckeditor" rows="5" name="description_az" ></textarea>
                                 </div>
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Alt yazı EN</label>
-                                    <textarea class="form-control" rows="5" name="description_en" ></textarea>
+                                    <textarea class="form-control ckeditor" rows="5" name="description_en" ></textarea>
                                 </div>
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Alt yazı RU</label>
-                                    <textarea class="form-control" rows="5" name="description_ru" ></textarea>
+                                    <textarea class="form-control ckeditor" rows="5" name="description_ru" ></textarea>
                                 </div>
 
                                 <div class="col-md-6 col-sm-12 col-xs-12 form-group">

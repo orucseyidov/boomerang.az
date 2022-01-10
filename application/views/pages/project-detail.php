@@ -1,15 +1,4 @@
-<div class="page-title page-title-inner padding-bottom9">
-  <div class="overlay-page-tile"></div>
-  <div class="page-title-content">
-    <div class="container">
-      <div class="blog-title color-white">
-        <h2><?=$title ?></h2>
-        <span>
-          <a href="/" class="hv-color-st1 color-white"> Home </a> <?=$title ?> </span>
-      </div>
-    </div>
-  </div>
-</div>
+<?php $this->load->view("blocks/breadcrumb") ?>
 <div class="themesflat-spacer  clearfix" data-desktop="120" data-mobile="60" data-smobile="50"></div>
 <section class="case-studio-details">
   <div class="container">
@@ -89,7 +78,7 @@
     <div class="portfolio-nav bg-white clearfix">
       <div class="title-nav title-nav-style flex">
         <div class="title-section wow fadeInDown">
-          <div class="flat-title color-style1">Related Projects</div>
+          <div class="flat-title color-style1"><?= $content['projects_word']['title']; ?></div> <!-- Related Projects -->
         </div>
       </div>
     </div>
@@ -97,60 +86,26 @@
       <div class="banners-z">
         <div class="flat-carousel-box data-effect clearfix" data-zero="0" data-gap="30" data-column="3" data-column2="2" data-column3="1" data-dots="false" data-auto="true" data-nav="false" data-loop="true">
           <div class="owl-carousel owl-loaded owl-drag">
-            <div class="tabs-case-study">
-              <div class="image-profolio style2">
-                <div class="image boder-style">
-                  <img src="images/Secsion/imgworkman.jpg" alt="images" />
-                </div>
-                <div class="profolio-show">
-                  <div class="content-title text-left tf-text-hv">
-                    <h4>Nec vehicula</h4>
-                    <a href="study-details.html" class="tftitle-style2">Maximus libero ornare</a>
+            <?php foreach($projects as $p) { ?>
+              <div class="tabs-case-study">
+                <div class="image-profolio style2">
+                  <div class="image boder-style">
+                    <img src="<?= $p['image']; ?>" alt="<?= $p['title']; ?>" />
                   </div>
-                  <div class="btn-tab">
-                    <a href="study-details.html">
-                      <i class="fas fa-arrow-right"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="tabs-case-study">
-              <div class="image-profolio style2">
-                <div class="image boder-style">
-                  <img src="images/Secsion/imgdomestic-bathroom.jpg" alt="images" />
-                </div>
-                <div class="profolio-show active">
-                  <div class="content-title text-left tf-text-hv">
-                    <h4>Nec vehicula</h4>
-                    <a href="study-details.html" class="tftitle-style2">Maximus libero ornare</a>
-                  </div>
-                  <div class="btn-tab">
-                    <a href="study-details.html">
-                      <i class="fas fa-arrow-right"></i>
-                    </a>
+                  <div class="profolio-show">
+                    <div class="content-title text-left tf-text-hv">
+                      <h4><?= $p['title']; ?></h4>
+                      <a href="<?= $p['slug']; ?>" class="tftitle-style2"><?= $p['title']; ?></a>
+                    </div>
+                    <div class="btn-tab">
+                      <a href="study-details.html">
+                        <i class="fas fa-arrow-right"></i>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="tabs-case-study">
-              <div class="image-profolio style2">
-                <div class="image boder-style">
-                  <img src="images/Secsion/imgliving-room3.jpg" alt="images" />
-                </div>
-                <div class="profolio-show">
-                  <div class="content-title text-left tf-text-hv">
-                    <h4>Nec vehicula</h4>
-                    <a href="study-details.html" class="tftitle-style2">Maximus libero ornare</a>
-                  </div>
-                  <div class="btn-tab">
-                    <a href="study-details.html">
-                      <i class="fas fa-arrow-right"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <?php } ?>
           </div>
         </div>
       </div>

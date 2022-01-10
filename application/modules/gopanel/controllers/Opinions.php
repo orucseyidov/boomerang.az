@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Projects extends Gopanel {
+class Opinions extends Gopanel {
 	
 	function __construct(){
 		parent::__construct();
@@ -8,7 +8,7 @@ class Projects extends Gopanel {
 		$this->load->helper("filter");
 		$this->load->helper("seflink");
 		$this->load->helper("file_upload");
-		$this->data['btitle']	= ' Proyektlər';
+		$this->data['btitle']	= ' Rəylər';
 	}
 
 	public function index(){
@@ -20,20 +20,8 @@ class Projects extends Gopanel {
 		// core
 		if (isset($_POST['token'])) {
 			unset($_POST['token']);
-			
-			if (empty($_POST['date'])){
-				$_POST['date'] = date("Y-m-d");
-			}
 
-			if(isset($_POST['slug']) && empty($_POST['slug'])){
-				$_POST['slug'] = seflink($_POST['title_en']);
-			}
-			else{
-				$_POST['slug'] = $_POST['slug'] . "-" . uniqid();
-			}
-
-			$_POST['image'] = file_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$_POST['title_en']);
-
+			$_POST['image'] = file_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$_POST['username']);
 			if ($this->core->add($this->table,$_POST)) {
 				$this->session->set_flashdata('success', "Məlumat Uğurla Əlavə edildi");
 			}
@@ -58,13 +46,6 @@ class Projects extends Gopanel {
 
 		if (isset($_POST['token'])) {
 			unset($_POST['token']);
-			
-			if(isset($_POST['slug']) && empty($_POST['slug'])){
-				$_POST['slug'] = seflink($_POST['title_en']);
-			}
-			else{
-				$_POST['slug'] = $_POST['slug'] . "-" . uniqid();
-			}
 
 			if (isset($_FILES['image']) && strlen($_FILES['image']['name'])>1) {
 				$img = seflink($_POST['name']);

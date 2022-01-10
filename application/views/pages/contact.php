@@ -1,15 +1,4 @@
-<div class="page-title page-title-inner padding-bottom9">
-  <div class="overlay-page-tile"></div>
-  <div class="page-title-content">
-    <div class="container">
-      <div class="blog-title color-white">
-        <h2>Contact</h2>
-        <span>
-          <a href="<?= base_url(); ?>'" class="hv-color-st1 color-white"> Home </a>Contact </span>
-      </div>
-    </div>
-  </div>
-</div>
+<?php $this->load->view("blocks/breadcrumb") ?>
 <section class="tf-contact-us">
   <div class="container">
     <div class="row">
@@ -88,28 +77,29 @@
           <form action="#" method="post" id="commentform" class="commentform">
             <div class="text-wrap clearfix">
               <fieldset class="name-wrap">
-                <input type="text" id="author" class="tb-my-input" name="author" tabindex="1" placeholder="Full Name" value="" size="32" aria-required="true" />
+                <input type="text" id="author" class="tb-my-input" name="author" tabindex="1" placeholder="<?= $content['full_name']['title']; ?>" value="" size="32" aria-required="true" />
               </fieldset>
               <fieldset class="phone-wrap">
-                <input type="number" id="phone" class="tb-my-input" name="phone" tabindex="2" placeholder="Phone Number" value="" aria-required="true" />
+                <input type="number" id="phone" class="tb-my-input" name="phone" tabindex="2" placeholder="<?= $content['phone_number']['title']; ?>" value="" aria-required="true" />
               </fieldset>
               <fieldset class="mail-wrap">
-                <input type="email" id="email" class="tb-my-input" name="phone" tabindex="2" placeholder="Email Address" value="" size="32" aria-required="true" />
+                <input type="email" id="email" class="tb-my-input" name="phone" tabindex="2" placeholder="<?= $content['email_address']['title']; ?>" value="" size="32" aria-required="true" />
               </fieldset>
               <fieldset class="select-wrap">
                 <select>
-                  <option value="services">Subject</option>
-                  <option value="services1">Subject 01</option>
-                  <option value="services2">Subject 02</option>
+                  <option value=""><?= $content['choose_services']['title']; ?></option>
+                    <?php foreach($all_services as $s) { ?>
+                      <option value="<?= $s['id']; ?>"><?= $s['title']; ?></option>
+                    <?php } ?>
                 </select>
               </fieldset>
             </div>
             <fieldset class="message-wrap">
-              <textarea id="comment-message" name="comment" rows="8" tabindex="4" placeholder="Your Message" aria-required="true"></textarea>
+              <textarea id="comment-message" name="comment" rows="8" tabindex="4" placeholder="<?= $content['your_message']['title']; ?>" aria-required="true"></textarea>
             </fieldset>
             <p class="form-submit">
               <button type="submit" class="themesflat-button-style3 btn-style-5 no-boder">
-                <span class="btn-title">Send message</span>
+                <span class="btn-title"><?= $content['send_msg']['title']; ?></span>
               </button>
             </p>
           </form>

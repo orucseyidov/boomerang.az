@@ -45,22 +45,20 @@
                                     <input type="text" name="title_ru" class="form-control" value="<?=$values['title_ru'] ?>" required>
                                 </div>
 
-
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>SƏhifə haqqında <small>AZ</small></label>
-                                    <textarea class="form-control" rows="5" name="description_az" maxlength="300" placeholder="Səhifə haqqında məlumatmaksimum 300 simvol" ><?=$values['description_az'] ?></textarea>
+                                    <textarea class="form-control ckeditor" rows="5" name="description_az" maxlength="300" placeholder="Səhifə haqqında məlumatmaksimum 300 simvol" ><?=$values['description_az'] ?></textarea>
                                 </div>
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>SƏhifə haqqında <small>EN</small></label>
-                                    <textarea class="form-control" rows="5" name="description_en" maxlength="300" placeholder="Səhifə haqqında məlumatmaksimum 300 simvol" ><?=$values['description_en'] ?></textarea>
+                                    <textarea class="form-control ckeditor" rows="5" name="description_en" maxlength="300" placeholder="Səhifə haqqında məlumatmaksimum 300 simvol" ><?=$values['description_en'] ?></textarea>
                                 </div>
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>SƏhifə haqqında <small>RU</small></label>
-                                    <textarea class="form-control" rows="5" name="description_ru" maxlength="300" placeholder="Səhifə haqqında məlumatmaksimum 300 simvol" ><?=$values['description_ru'] ?></textarea>
+                                    <textarea class="form-control ckeditor" rows="5" name="description_ru" maxlength="300" placeholder="Səhifə haqqında məlumatmaksimum 300 simvol" ><?=$values['description_ru'] ?></textarea>
                                 </div>
-
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Açar sözlər <small>AZ</small></label>

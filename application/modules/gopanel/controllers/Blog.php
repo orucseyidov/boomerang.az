@@ -25,7 +25,15 @@ class Blog extends Gopanel {
 				$_POST['date'] = date("Y-m-d");
 			}
 
+			if(isset($_POST['slug']) && empty($_POST['slug'])){
+				$_POST['slug'] = seflink($_POST['title_en']);
+			}
+			else{
+				$_POST['slug'] = $_POST['slug'] . "-" . uniqid();
+			}
+
 			$_POST['image'] = file_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$_POST['title_en']);
+
 			if ($this->core->add($this->table,$_POST)) {
 				$this->session->set_flashdata('success', "Məlumat Uğurla Əlavə edildi");
 			}
@@ -57,6 +65,13 @@ class Blog extends Gopanel {
 			}
 			else{
 				unset($_POST['image']);
+			}
+
+			if(isset($_POST['slug']) && empty($_POST['slug'])){
+				$_POST['slug'] = seflink($_POST['title_en']);
+			}
+			else{
+				$_POST['slug'] = $_POST['slug'] . "-" . uniqid();
 			}
 
 			if ($this->core->update($this->table,$id,$_POST)) {

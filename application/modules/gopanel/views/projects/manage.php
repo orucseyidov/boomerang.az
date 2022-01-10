@@ -24,12 +24,7 @@
         </div>
         <!-- end row -->
 
-<input 
-id="datatableOptions" 
-type="hidden"
-exportColunm = "0,1,2" 
-value=""
-/>
+<input id="datatableOptions" type="hidden" exportColunm = "0,1,2" value="" />
 
         <div class="row">
             <div class="col-md-12">
@@ -41,16 +36,17 @@ value=""
                                     <th>№</th>
                                     <th>Şəkil</th>
                                     <th>Başlığ</th>
+                                    <th>Açar szölər</th>
                                     <th>Haqqında</th>
                                     <th>Status</th>
                                     <th>Əməliyyatlar</th>
                                 </tr>
                             </thead>
                             <tbody id="sortable" class="sortableIcon" data-table="<?=$table ?>">
-<?php
-foreach ($manage as $key => $value): 
-    $editlink = base_url("gopanel/").$class."/edit/?id=".$value['id'];
-?>
+                            <?php
+                            foreach ($manage as $key => $value): 
+                                $editlink = base_url("gopanel/").$class."/edit/?id=".$value['id'];
+                            ?>
                                 <tr id="ord-<?=$value['id']?>">
                                     <td><?=$counter++ ?></td>
                                     <td>
@@ -59,6 +55,7 @@ foreach ($manage as $key => $value):
                                         </a>
                                     </td>
                                     <td><?=$value['title_en'] ?></td>
+                                    <td><?=$value['keywords_en'] ?></td>
                                     <td><?=mb_substr(strip_tags($value['description_en']), 0,50) ?></td>
                                     <td>
                                         <input
@@ -83,7 +80,7 @@ foreach ($manage as $key => $value):
                                         </div>
                                     </td>
                                 </tr>
-<?php endforeach ?>
+                            <?php endforeach ?>
                             </tbody>
                         </table>
                     </div>

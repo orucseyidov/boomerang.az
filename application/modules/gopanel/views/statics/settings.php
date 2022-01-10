@@ -38,29 +38,25 @@
                                     <input type="text" name="site_title_en" class="form-control" value="<?=$values['site_title_en'] ?>" required>
                                 </div>
 
-
                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                     <label>Saytın Adı RU</label>
                                     <input type="text" name="site_title_ru" class="form-control" value="<?=$values['site_title_ru'] ?>" required>
                                 </div>
                                
-
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Sayt haqqında AZ</label>
-                                    <textarea class="form-control" rows="5" name="description_az"><?=$values['description_az'] ?></textarea>
+                                    <textarea class="form-control ckeditor" rows="5" name="description_az"><?=$values['description_az'] ?></textarea>
                                 </div>
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Sayt haqqında EN</label>
-                                    <textarea class="form-control" rows="5" name="description_en"><?=$values['description_en'] ?></textarea>
+                                    <textarea class="form-control ckeditor" rows="5" name="description_en"><?=$values['description_en'] ?></textarea>
                                 </div>
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Sayt haqqında RU</label>
-                                    <textarea class="form-control" rows="5" name="description_ru"><?=$values['description_ru'] ?></textarea>
+                                    <textarea class="form-control ckeditor" rows="5" name="description_ru"><?=$values['description_ru'] ?></textarea>
                                 </div>
-
-                                
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Açar sözlər AZ</label>

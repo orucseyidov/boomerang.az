@@ -1,15 +1,4 @@
-<div class="page-title page-title-inner padding-bottom9">
-  <div class="overlay-page-tile"></div>
-  <div class="page-title-content">
-    <div class="container">
-      <div class="blog-title color-white">
-        <h2>Gallery</h2>
-        <span>
-          <a href="<?= base_url(); ?>" class="hv-color-st1 color-white"> Home </a>Gallery Grid </span>
-      </div>
-    </div>
-  </div>
-</div>
+<?php $this->load->view("blocks/breadcrumb") ?>
 <div class="themesflat-spacer  clearfix" data-desktop="106" data-mobile="60" data-smobile="50"></div>
 <section class="portfolio text-center">
   <div class="container portfolio-style">

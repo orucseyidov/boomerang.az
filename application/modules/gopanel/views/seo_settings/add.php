@@ -31,25 +31,56 @@
                             <div class="row">
                                 
                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                    <label>Başlığ AZ</label>
+                                    <label>Səhifə başlığı AZ</label>
                                     <input type="text" name="title_az" class="form-control" required>
                                 </div>
 
                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                    <label>Başlığ EN</label>
+                                    <label>Səhifə başlığı EN</label>
                                     <input type="text" name="title_en" class="form-control" required>
                                 </div>
 
                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                    <label>Başlığ RU</label>
+                                    <label>Səhifə başlığı RU</label>
                                     <input type="text" name="title_ru" class="form-control" required>
                                 </div>
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>Say</label>
-                                    <input type="text" name="count" class="form-control" required>
+                                    <label>SƏhifə haqqında <small>AZ</small></label>
+                                    <textarea class="form-control ckeditor" rows="5" name="description_az" maxlength="300" placeholder="Səhifə haqqında məlumatmaksimum 300 simvol"></textarea>
                                 </div>
 
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>SƏhifə haqqında <small>EN</small></label>
+                                    <textarea class="form-control ckeditor" rows="5" name="description_en" maxlength="300" placeholder="Səhifə haqqında məlumatmaksimum 300 simvol"></textarea>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>SƏhifə haqqında <small>RU</small></label>
+                                    <textarea class="form-control ckeditor" rows="5" name="description_ru" maxlength="300" placeholder="Səhifə haqqında məlumatmaksimum 300 simvol"></textarea>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Açar sözlər <small>AZ</small></label>
+                                    <input type="text" name="keywords_az" class="form-control tags" required>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Açar sözlər <small>EN</small></label>
+                                    <input type="text" name="keywords_en" class="form-control tags" required>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Açar sözlər <small>RU</small></label>
+                                    <input type="text" name="keywords_ru" class="form-control tags" required>
+                                </div>
+                                
+                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                    <label>Şəkil</label>
+                                    <small class="pull-right imgnotfiy">Ölçü 1920 x 800</small>
+                                    <input type="file" name="image" class="filestyle" data-buttonname="btn-secondary" data-buttonText="Şəkil Seçi" data-classIcon="fas fa-file-import" data-buttonBefore="false">
+                                </div>
+                                
                                 <div class="hidden-inputs">
                                     <input type="hidden" name="token" value="<?=$token ?>">
                                 </div>

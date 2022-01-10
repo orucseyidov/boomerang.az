@@ -38,7 +38,7 @@
                                
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Ətraflı Məlumat </label>
-                                    <textarea rows="5" class="form-control" name="description" required></textarea>
+                                    <textarea rows="5" class="form-control ckeditor" name="description" required></textarea>
                                 </div>
 
                                 
