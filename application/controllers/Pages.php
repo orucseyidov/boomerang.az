@@ -29,31 +29,32 @@ class Pages extends GO_Controller {
 		$this->render("/pages/about",$this->data);
 	}
 
-	public function aboutCompany(){
-		// $this->data['aboutCompany'] 		= $this->pages->aboutCompany();
+
+	public function projects(){
+		$this->data['projects'] = $this->pages->projects();
 		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
 		// debug($this->data);
-		$this->render("/pages/about-company",$this->data);
+		$this->render("/pages/projects",$this->data);
 	}
+
+
+	public function project_single($slug){
+		$slug 		= filter($slug);
+		$project 	= $this->pages->project_single($slug);
+		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
+		$this->data['title'] 			 = $project['title'];
+		$this->data['desc'] 			 = mb_substr(strip_tags($project['description']), 0,300);
+		$this->data['project'] 			 = $project;
+		$this->render("/pages/project-detail",$this->data);
+	}
+
 
 	public function contact(){
 		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
 		$this->render("/pages/contact",$this->data);
 	}
 
-	public function windows(){
-		// $this->data['windows'] 		= $this->pages->windows();
-		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
-		// debug($this->data);
-		$this->render("/pages/windows",$this->data);
-	}
-
-	public function doors(){
-		// $this->data['doors'] 		= $this->pages->doors();
-		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
-		// debug($this->data);
-		$this->render("/pages/doors",$this->data);
-	}
+	
 
 	public function services(){
 		$this->data['services'] 		= $this->pages->services();

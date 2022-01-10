@@ -71,6 +71,11 @@ $route['gallery']					= 'Pages/gallery';
 
 
 // $route['services/(:any)']			= 'Pages/services/$1';
+$route['projects']			        = 'Pages/projects';
+$route['projects/(:any)']	        = 'Pages/project_single/$1';
+
+
+// $route['services/(:any)']			= 'Pages/services/$1';
 $route['services']			        = 'Pages/services';
 $route['service/(:any)']	        = 'Pages/service_single/$1';
 
