@@ -83,7 +83,7 @@
                 <input type="number" id="phone" class="tb-my-input" name="phone" tabindex="2" placeholder="<?= $langs['phone_number']; ?>" value="" aria-required="true" />
               </fieldset>
               <fieldset class="mail-wrap">
-                <input type="email" id="email" class="tb-my-input" name="phone" tabindex="2" placeholder="<?= $content['email_address']['title']; ?>" value="" size="32" aria-required="true" />
+                <input type="email" id="email" class="tb-my-input" name="phone" tabindex="2" placeholder="<?= $langs['email_address']; ?>" value="" size="32" aria-required="true" />
               </fieldset>
               <fieldset class="select-wrap">
                 <select>
