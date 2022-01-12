@@ -51,18 +51,48 @@
                                     </select>
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>Başlıq </label>
-                                    <input type="text" name="title" class="form-control" value="<?=$values['title'] ?>" required>
+                                    <label>Başlıq AZ</label>
+                                    <input type="text" name="title_az" class="form-control" value="<?=$values['title_az'] ?>" required>
                                 </div>
                                 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>Ətraflı məlumat </label>
-                                    <textarea class="form-control ckeditor" name="description" required><?=$values['description'] ?></textarea>
+                                    <label>Başlıq EN</label>
+                                    <input type="text" name="title_en" class="form-control" value="<?=$values['title_en'] ?>" required>
                                 </div>
                                 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>Açar sözlər </label>
-                                    <input type="text" name="keywords" class="form-control tags" value="<?=$values['keywords'] ?>" required>
+                                    <label>Başlıq RU</label>
+                                    <input type="text" name="title_ru" class="form-control" value="<?=$values['title_ru'] ?>" required>
+                                </div>
+                                
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Ətraflı məlumat AZ</label>
+                                    <textarea class="form-control ckeditor" name="description_az" required><?=$values['description_az'] ?></textarea>
+                                </div>
+                                
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Ətraflı məlumat EN</label>
+                                    <textarea class="form-control ckeditor" name="description_en" required><?=$values['description_en'] ?></textarea>
+                                </div>
+                                
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Ətraflı məlumat RU</label>
+                                    <textarea class="form-control ckeditor" name="description_ru" required><?=$values['description_ru'] ?></textarea>
+                                </div>
+                                
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Açar sözlər AZ</label>
+                                    <input type="text" name="keywords_az" class="form-control tags" value="<?=$values['keywords_az'] ?>" required>
+                                </div>
+                            
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Açar sözlər EN</label>
+                                    <input type="text" name="keywords_en" class="form-control tags" value="<?=$values['keywords_en'] ?>" required>
+                                </div>
+                            
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Açar sözlər RU</label>
+                                    <input type="text" name="keywords_ru" class="form-control tags" value="<?=$values['keywords_ru'] ?>" required>
                                 </div>
                             
 

@@ -31,19 +31,20 @@
                             <div class="row">
 
                                 <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                                    <label>İstifadəçinin adı</label>
-                                    <input type="text" name="username" class="form-control" >
+                                    <div class="form-group">
+                                        <label>Brendin adı</label>
+                                        <input type="text" name="title" class="form-control" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Link <small>Linkyoxdursa boş saxlaya bilərsiz</small></label>
+                                        <input type="text" name="slug" class="form-control" placeholder="Nümunə : <?=base_url() ?>">
+                                    </div>
                                 </div>
 
                                 <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                                    <label>İstifadəçinin şəkli</label>
-                                    <small class="pull-right imgnotfiy">Ölçü 80 x 80</small>
+                                    <label>Brendin şəkli</label>
+                                    <small class="pull-right imgnotfiy">Ölçü 168 x 68</small>
                                     <input type="file" name="image" class="filestyle" data-buttonname="btn-secondary" data-buttonText="Şəkil Seçi" data-classIcon="fas fa-file-import" data-buttonBefore="false">
-                                </div>
-
-                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>İstifadəçinin rəyi</label>
-                                    <textarea class="form-control ckeditor" rows="5" name="opinion" ></textarea>
                                 </div>
 
                                 <div class="hidden-inputs">

@@ -70,7 +70,7 @@ class Services extends Gopanel {
 			}
 
 			if (isset($_FILES['icon']) && strlen($_FILES['icon']['name'])>1) {
-				$img = seflink($_POST['name']);
+				$img = seflink($_POST['title_en']);
 				$_POST['icon'] = image_upload($_FILES['icon'],'/uploads/images/'.$this->table.'/',$img);
 			}
 			else{
@@ -78,7 +78,7 @@ class Services extends Gopanel {
             }
             
 			if (isset($_FILES['image']) && strlen($_FILES['image']['name'])>1) {
-				$img = seflink($_POST['name']);
+				$img = seflink($_POST['title_en']);
 				$_POST['image'] = image_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$img);
 			}
 			else{

@@ -51,6 +51,14 @@ class Pages extends GO_Controller {
 	}
 
 
+	public function products(){
+		// $this->data['products'] = $this->pages->products();
+		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
+		// debug($this->data);
+		$this->render("/pages/products",$this->data);
+	}
+
+
 	public function contact(){
 		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
 		$this->data['all_services'] 	= $this->pages->services();

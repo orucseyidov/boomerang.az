@@ -21,12 +21,13 @@ class Home extends GO_Controller {
 	public function index(){
 		// $this->data['slider']					= $this->home->slider();
 		$this->data['info_site']		= $this->core->get_info_site();
-		$this->data['about']			= $this->pages->about("about");
+		$this->data['about']			= $this->pages->about();
 		$this->data['opinions']			= $this->core->get_select_all("opinions");
 		$this->data['services'] 		= $this->pages->limit_in_sidebar("services",3);
 		$this->data['all_services'] 	= $this->pages->services();
 		$this->data['projects'] 		= $this->pages->limit_in_sidebar("projects",10);
 		$this->data['blog_sidebar']		= $this->blog->blog_sidebar(3);
+		$this->data['brands']			= $this->core->get_select_all("brands");
 		$this->render("home",$this->data);
 	}
 

@@ -24,6 +24,7 @@
     <meta name="token" content="<?=$token ?>">
     <meta name="device" content="<?=$device ?>">
     <link rel="canonical" href="<?=base_url($_SERVER['REQUEST_URI']) ?>" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css"> <!-- bootstrap yeni -->
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=<?=time() ?>" />
     <link rel="stylesheet" type="text/css" href="/assets/css/shortcodes.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/color.css" />

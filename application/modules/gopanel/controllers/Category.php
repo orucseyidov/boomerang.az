@@ -13,7 +13,7 @@ class Category extends Gopanel {
 		$this->load->helper("file_upload");
 		$this->data['btitle']	= ' Kateqoriyalar';
 		$this->parent 			= isset($_GET['parent']) ? $_GET['parent'] : 0;
-		$this->data['parent']	= $this->parent;
+		$this->data['parent']	= $this->parent;		
 	}
 
 	public function index(){
@@ -26,7 +26,7 @@ class Category extends Gopanel {
 		if (isset($_POST['token'])) {
 			unset($_POST['token']);
 
-			$_POST['slug'] 		= $this->slug($_POST['title']);
+			$_POST['slug'] 		= $this->slug($_POST['title_az']);
 			$_POST['image'] 	= file_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$_POST['slug']);
 			$_POST['status'] 	= 1;
 
@@ -58,7 +58,7 @@ class Category extends Gopanel {
 
 			if ($_POST['parent'] != $this->data['values']['id']) {
 				$this->parent 				= $this->data['values']['parent'];
-				$_POST['slug'] 				= $this->slug($_POST['title']);
+				$_POST['slug'] 				= $this->slug($_POST['title_az']);
 
 				if (isset($_FILES['image']) && strlen($_FILES['image']['name'])>1) {
 					$_POST['image'] = image_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$_POST['slug']);

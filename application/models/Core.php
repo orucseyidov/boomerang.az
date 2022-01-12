@@ -91,26 +91,4 @@ class Core extends GO_Model {
         $this->db->where("keyword",$keyyword);
         return $this->db->get()->row_array();
 	}
-
-	public function service_category(){
-        $this->db->select('
-            title_'.$this->dil.' as title,
-            slug,id
-        ');
-        $this->db->from('service_category');
-        $this->db->where("service_category.status",1);
-        return $this->db->get()->result_array();
-	}
-
-	public function subjects_category(){
-        $this->db->select('
-            title_'.$this->dil.' as title,
-            slug,id
-        ');
-        $this->db->from('subjects_category');
-        $this->db->where("subjects_category.status",1);
-        return $this->db->get()->result_array();
-	}
-
-
 }

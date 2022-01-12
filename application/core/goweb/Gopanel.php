@@ -129,7 +129,7 @@ class Gopanel extends MX_Controller{
 		if (count($result) > 0) {
 			foreach ($result as $key => $value) {
 				$id    		= $value['id'];
-				$title 		= str_repeat(' - ', $st).$value['title']; //&nbsp;
+				$title 		= str_repeat(' - ', $st).$value['title_az']; //&nbsp;
 				$selected 	= $id == $select ? 'selected' : null;
 				$data 		.= "<option value='{$id}' {$selected}>{$title}</option>";
 				$this->get_category($id,$st+1,$select);

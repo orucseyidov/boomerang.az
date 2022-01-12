@@ -80,7 +80,7 @@
 
                                 <div class="col-md-6 col-sm-12 col-xs-12 form-group">
                                     <label>SLaydın şəkli</label>
-                                    <small class="pull-right imgnotfiy">Ölçü 1550 x 950</small>
+                                    <small class="pull-right imgnotfiy">Ölçü 770 x 450</small>
                                     <input type="file" name="image" class="filestyle" data-buttonname="btn-secondary" data-buttonText="Şəkil Seçi" data-classIcon="fas fa-file-import" data-buttonBefore="false">
                                 </div>
 

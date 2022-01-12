@@ -4,16 +4,16 @@
       <div class="container-fluid">
         <ul class="top-content">
           <li class="adress">
-            <a href="#">
+            <a href=""> <!-- http://maps.google.com/?q=<?php //echo $contacts['adress']; ?> -->
               <!-- <i class="icon-iconmap"></i> -->
-              <i class="fas fa-map-marker-alt"></i> 2072 Pinnickinick Street, WA 98370
+              <i class="fas fa-map-marker-alt"></i><?= $contacts['adress']; ?>
             </a>
           </li>
           <li class="email">
             <!-- <i class="icon-iconmail"></i> -->
             <i class="fas fa-envelope"></i>
-            <a href="#">
-              <span>testemail</span>
+            <a href="mailto:<?= $contacts['mail']; ?>">
+              <span><?= $contacts['mail']; ?></span>
             </a>
           </li>
         </ul>

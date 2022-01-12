@@ -79,6 +79,8 @@ $route['project/(:any)']	        = 'Pages/project_single/$1';
 $route['services']			        = 'Pages/services';
 $route['service/(:any)']	        = 'Pages/service_single/$1';
 
+$route['products']			        = 'Pages/products';
+
 // Other pages
 // Blog
 $route['blog']						= 'Blog/index';

@@ -115,7 +115,7 @@ class Gopanel_model extends GO_Model {
 
 
 	public function get_category($parent){
-		$this->db->select('title,id,parent');
+		$this->db->select('title_az,id,parent');
         $this->db->from('category');
         $this->db->where("parent",$parent);
         $this->db->order_by("rank","ASC");
@@ -146,6 +146,29 @@ class Gopanel_model extends GO_Model {
         $this->db->from('menu');
         $this->db->order_by("rank","ASC");
         return $this->db->get()->result_array();
+	}
+
+	public function get_messages(){
+		$this->db->select('
+			messages.*,
+			services.title_'.$this->dil.' as service
+		');
+        $this->db->from('messages');
+		$this->db->join('services','messages.service_id = services.id','left');
+		$this->db->order_by("messages.id","DESC");
+        return $this->db->get()->result_array();
+	}
+
+	public function get_message_by_id($id){
+		$this->db->select('
+			messages.*,
+			services.title_'.$this->dil.' as service
+		');
+		$this->db->from('messages');
+		$this->db->where("messages.id",$id);
+		$this->db->join('services','messages.service_id = services.id','left');
+		$this->db->order_by("messages.id","DESC");
+        return $this->db->get()->row_array();
 	}
 
 }

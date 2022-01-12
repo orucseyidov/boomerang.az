@@ -245,3 +245,4 @@
   <div class="themesflat-spacer  clearfix" data-desktop="120" data-mobile="60" data-smobile="50"></div>
 </section>
 <?php $this->load->view("blocks/request"); ?>
+<?php $this->load->view("blocks/brands"); ?>

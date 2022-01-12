@@ -31,20 +31,48 @@
                             <div class="row">
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>Başlıq </label>
-                                    <input type="text" name="title" class="form-control" required>
+                                    <label>Başlıq AZ</label>
+                                    <input type="text" name="title_az" class="form-control" required>
                                 </div>
 
-                               
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>Ətraflı Məlumat </label>
-                                    <textarea rows="5" class="form-control ckeditor" name="description" required></textarea>
+                                    <label>Başlıq EN</label>
+                                    <input type="text" name="title_en" class="form-control" required>
                                 </div>
 
-                                
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                                    <label>Açar sözlər </label>
-                                    <input type="text" name="keywords" class="form-control tags" required>
+                                    <label>Başlıq RU</label>
+                                    <input type="text" name="title_ru" class="form-control" required>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Ətraflı Məlumat AZ</label>
+                                    <textarea rows="5" class="form-control ckeditor" name="description_az" required></textarea>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Ətraflı Məlumat EN</label>
+                                    <textarea rows="5" class="form-control ckeditor" name="description_en" required></textarea>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Ətraflı Məlumat RU</label>
+                                    <textarea rows="5" class="form-control ckeditor" name="description_ru" required></textarea>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Açar sözlər AZ</label>
+                                    <input type="text" name="keywords_az" class="form-control tags" required>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Açar sözlər EN</label>
+                                    <input type="text" name="keywords_en" class="form-control tags" required>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Açar sözlər RU</label>
+                                    <input type="text" name="keywords_ru" class="form-control tags" required>
                                 </div>
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">

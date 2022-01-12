@@ -60,6 +60,21 @@
                                     <textarea class="form-control ckeditor" rows="5" name="description_ru" ><?=$values['description_ru'] ?></textarea>
                                 </div>
 
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Açar sözlər AZ</label>
+                                    <input type="text" name="keywords_az" class="form-control tags" value="<?=$values['keywords_az'] ?>" required>
+                                </div>
+                            
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Açar sözlər EN</label>
+                                    <input type="text" name="keywords_en" class="form-control tags" value="<?=$values['keywords_en'] ?>" required>
+                                </div>
+                            
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                    <label>Açar sözlər RU</label>
+                                    <input type="text" name="keywords_ru" class="form-control tags" value="<?=$values['keywords_ru'] ?>" required>
+                                </div>
+                            
                                 <div class="col-md-6 col-sm-12 col-xs-12 form-group">
                                     <label>Link <small>Linkyoxdursa boş saxlaya bilərsiz</small></label>
                                     <input type="text" name="slug" class="form-control" placeholder="Nümunə : <?=base_url() ?>" value="<?=$values['slug'] ?>" >
@@ -78,7 +93,7 @@
 
                                 <div class="col-md-6 col-sm-12 col-xs-12 form-group">
                                     <label>Slaydın icon-u</label>
-                                    <small class="pull-right imgnotfiy">Ölçü 1550 x 950</small>
+                                    <small class="pull-right imgnotfiy">Ölçü 70 x 70 (maksimum)</small>
                                     <input type="file" name="icon" class="filestyle" data-buttonname="btn-secondary" data-buttonText="Şəkil Seçi" data-classIcon="fas fa-file-import" data-buttonBefore="false">
                                     <a class="imgarea" target="_blank" href="<?=$values['icon'] ?>">
                                         <img style="max-width: 250px;" src="<?=base_url($values['icon']) ?>">
@@ -87,7 +102,7 @@
 
                                 <div class="col-md-6 col-sm-12 col-xs-12 form-group">
                                     <label>Slaydın şəkli</label>
-                                    <small class="pull-right imgnotfiy">Ölçü 1550 x 950</small>
+                                    <small class="pull-right imgnotfiy">Ölçü 325 x 230</small>
                                     <input type="file" name="image" class="filestyle" data-buttonname="btn-secondary" data-buttonText="Şəkil Seçi" data-classIcon="fas fa-file-import" data-buttonBefore="false">
                                     <a class="imgarea" target="_blank" href="<?=$values['image'] ?>">
                                         <img style="max-width: 250px;" src="<?=base_url($values['image']) ?>">

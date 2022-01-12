@@ -1,9 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Adventure_activity extends Gopanel {
-	
-
-	
+class Brands extends Gopanel {
+		
 	function __construct(){
 		parent::__construct();
 		$this->admin_control();
@@ -24,7 +22,7 @@ class Adventure_activity extends Gopanel {
 		if (isset($_POST['token'])) {
 			unset($_POST['token']);
 
-			$img = seflink($_POST['name']);
+			$img = seflink($_POST['title']);
 
 			$_POST['image'] = file_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$img);
 
@@ -54,7 +52,7 @@ class Adventure_activity extends Gopanel {
 			unset($_POST['token']);
 
 			if (isset($_FILES['image']) && strlen($_FILES['image']['name'])>1) {
-				$img = seflink($_POST['name']);
+				$img = seflink($_POST['title']);
 				$_POST['image'] = image_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$img);
 			}
 			else{
