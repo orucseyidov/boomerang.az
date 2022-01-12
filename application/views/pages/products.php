@@ -1,305 +1,558 @@
 <?php $this->load->view("blocks/breadcrumb") ?>
+<style type="text/css">
+    .widget-products{
+        position: relative;
+        padding: 16px 25px;
+        border-bottom: 1px solid #eef2ed;
+        position: relative;
+        box-shadow: 0px 0px 15px rgb(0 0 0 / 10%);
+    }
+    .widget-products h4{
+        
+    }
+    .category-wrap{
+
+    }
+    .category-wrap li{
+        position: relative;
+        /* display: none; */
+        padding-bottom: 5px;
+        margin-bottom: 2px;
+        border-bottom: 1px solid #eef2ed;
+    }
+    .category-wrap li a{
+        position: relative;
+        font-size: 18px;
+        font-weight: 400;
+        color: #848484;
+        padding-left: 22px;
+        transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+    }
+    .category-wrap li a:before{
+        position: absolute;
+        content: '';
+        left: 0px;
+        top: 5px;
+        width: 7px;
+        height: 7px;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        background-color: #d9dfd7;
+    }
+    .altcat a:before{
+      display: none;
+      /*content: "\2192";*/
+    }
+    .product-desc{
+        position: relative;
+        padding-bottom: 0px;
+        margin-bottom: 40px;
+        border-bottom: 1px solid #f2f2f2;
+    }
+    .gallery-block-three{
+        position:relative;
+        margin-bottom: 30px;
+    }
+
+    .gallery-block-three .inner-box{
+        position:relative;
+        width:100%;
+        overflow:hidden;
+    }
+
+    .gallery-block-three .image-box{
+        position:relative;
+        display:block;
+        margin-bottom: 0px;
+    }
+
+    .gallery-block-three .image-box img{
+        position:relative;
+        display:block;
+        width:100%;
+    }
+
+    .gallery-block-three .overlay-box{
+        position:absolute;
+        left:0px;
+        top:0px;
+        width:100%;
+        height:100%;
+        opacity:0;
+        color:#ffffff;
+        text-align:center;
+        -webkit-transition:all 700ms ease;
+        -ms-transition:all 700ms ease;
+        -o-transition:all 700ms ease;
+        transition:all 700ms ease;
+    }
+
+    .gallery-block-three .overlay-box:before{
+        position: absolute;
+        content: '';
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 900ms ease;
+        -moz-transition: all 900ms ease;
+        -webkit-transition: all 900ms ease;
+        -ms-transition: all 900ms ease;
+        -o-transition: all 900ms ease;
+        background:rgba(0,0,0,0.30);
+        
+        -moz-transform: rotateX(-180deg);
+        -webkit-transform: rotateX(-180deg);
+        -ms-transform: rotateX(-180deg);
+        -o-transform: rotateX(-180deg);
+        transform: rotateX(-180deg);
+    }
+
+    .gallery-block-three .inner-box:hover .overlay-box:before{
+        -moz-transform: rotateX(0deg);
+        -webkit-transform: rotateX(0deg);
+        -ms-transform: rotateX(0deg);
+        -o-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .gallery-block-three .inner-box:hover .overlay-box{
+        opacity:1;
+    }
+
+    .gallery-block-three .inner-box .overlay-inner{
+        position:absolute;
+        left:0px;
+        top:0px;
+        width:100%;
+        height:100%;
+        display:table;
+        vertical-align:middle;
+        padding:10px 0px;
+    }
+
+    .gallery-block-three .inner-box .overlay-inner .content{
+        position:relative;
+        display:table-cell;
+        vertical-align:middle;
+    }
+
+    .gallery-block-three .inner-box .overlay-inner .link{
+        position:relative;
+        font-size:20px;
+        color:#ffffff;
+        width:50px;
+        height:50px;
+        line-height:52px;
+        margin:0px 5px;
+        display:inline-block;
+        background-color:#0c7ac7;
+        transition:all 300ms ease;
+        -webkit-transition:all 300ms ease;
+        -ms-transition:all 300ms ease;
+        -o-transition:all 300ms ease;
+    }
+
+    .gallery-block-three .inner-box .overlay-inner .link .icon{
+        position:relative;
+    }
+
+    .gallery-block-three .overlay-inner .link:hover{
+        color:#666666;
+        background-color:rgba(255,255,255,1);
+    }
+    .pagination-outer {
+        position: relative;
+        text-align: center;
+    }
+    .our-shop .styled-pagination {
+        margin-top: 10px;
+    }
+    .styled-pagination {
+        position: relative;
+        display: inline-block;
+        padding: 12px 30px;
+        border-radius: 50px;
+        border: 1px solid #eef2ed;
+        background-color: #ffffff;
+    }
+    .styled-pagination li {
+        position: relative;
+        display: inline-block;
+        margin: 0px 4px 0px 4px;
+    }
+    .styled-pagination li a {
+        position: relative;
+        display: inline-block;
+        line-height: 32px;
+        height: 32px;
+        font-size: 18px;
+        min-width: 32px;
+        color: #262626;
+        font-weight: 500;
+        text-align: center;
+        border-radius: 50px;
+        text-transform: capitalize;
+        transition: all 500ms ease;
+        -webkit-transition: all 500ms ease;
+        -ms-transition: all 500ms ease;
+        -o-transition: all 500ms ease;
+        -moz-transition: all 500ms ease;
+    }
+    .styled-pagination li a:hover, .styled-pagination li a.active {
+        color: #ffffff;
+        background-color: #0c7ac7;
+    }
+</style>
 <section class="about-us about-us-style" id="about-us">
     <div class="container">
         <div class="row">
             <div class="themesflat-spacer clearfix" data-desktop="85" data-mobile="60" data-smobile="50"></div>
-                <div class="col-md-4 clearfix">
-                    <div class="sidebar-page-container">
-                        <div class="auto-container">
-                            <div class="row clearfix">
-                            <style>
-                                .category-list-two li a{
-                                    position: relative;
-                                    font-size: 18px;
-                                    font-weight: 400;
-                                    color: #848484;
-                                    padding-left: 22px;
-                                    transition:all 0.3s ease;
-                                    -moz-transition:all 0.3s ease;
-                                    -webkit-transition:all 0.3s ease;
-                                    -ms-transition:all 0.3s ease;
-                                    -o-transition:all 0.3s ease;
-                                }
-                                .category-list-two li a:before {
-                                    position: absolute;
-                                    content: '';
-                                    left: 0px;
-                                    top: 5px;
-                                    width: 7px;
-                                    height: 7px;
-                                    border-radius: 50px;
-                                    transition: all 0.3s ease;
-                                    -moz-transition: all 0.3s ease;
-                                    -webkit-transition: all 0.3s ease;
-                                    -ms-transition: all 0.3s ease;
-                                    -o-transition: all 0.3s ease;
-                                    background-color: #d9dfd7;
-                                }
-                                .category-list-two li:last-child{
-                                    border:none;
-                                }
-                                .category-list-two li a:hover{
-                                    color:#0c7ac7;
-                                }
-                                .category-list-two li a:hover::before{
-                                    background-color:#0c7ac7;
-                                }
-                                .categories-two .view-more{
-                                    position: relative;
-                                    color: #0c7ac7;
-                                    font-size: 18px;
-                                    font-weight: 500;
-                                    cursor: pointer;
-                                }
-                                .sidebar-page-container .sidebar-side .sidebar-two {
-                                    position: relative;
-                                    box-shadow: 0px 0px 15px rgb(0 0 0 / 10%);
-                                }
-                                aside {
-                                    display: block;
-                                }
-                                .sidebar-widget-two {
-                                    position: relative;
-                                    padding: 16px 25px;
-                                    border-bottom: 1px solid #eef2ed;
-                                }
-                                .sidebar-title-two {
-                                    position: relative;
-                                    margin-bottom: 20px;
-                                }
-                                .sidebar-title-two h3 {
-                                    position: relative;
-                                    display: block;
-                                    font-size: 20px;
-                                    color: #262626;
-                                    font-weight: 500;
-                                    line-height: 1.2em;
-                                    text-transform: capitalize;
-                                    font-family: 'Frank Ruhl Libre', serif;
-                                    margin: 0;
-                                }
-                                ul {
-                                    display: block;
-                                    list-style-type: disc;
-                                    margin-block-start: 1em;
-                                    margin-block-end: 1em;
-                                    margin-inline-start: 0px;
-                                    margin-inline-end: 0px;
-                                    padding-inline-start: 40px;
-                                }
-                                .category-list-two li {
-                                    position: relative;
-                                    /* display: none; */
-                                    padding-bottom: 5px;
-                                    margin-bottom: 2px;
-                                    border-bottom: 1px solid #eef2ed;
-                                }
-                                .category-list-two li a {
-                                    font-family: "avroqapifont";
-                                    text-transform: capitalize;
-                                }
-                                .category-list-two li a {
-                                    position: relative;
-                                    font-size: 18px;
-                                    font-weight: 400;
-                                    color: #848484;
-                                    padding-left: 22px;
-                                    transition: all 0.3s ease;
-                                    -moz-transition: all 0.3s ease;
-                                    -webkit-transition: all 0.3s ease;
-                                    -ms-transition: all 0.3s ease;
-                                    -o-transition: all 0.3s ease;
-                                }
-                                a {
-                                    text-decoration: none;
-                                    cursor: pointer;
-                                    color: #0c7ac7;
-                                    background-color: transparent;
-                                }
-                                ul, li {
-                                    list-style: none;
-                                    padding: 0px;
-                                    margin: 0px;
-                                }
-                            </style>
-                                <!--Sidebar Side-->
-                                <div class="sidebar-side col-lg-12 col-md-12 col-sm-12">
-                                    <aside class="sidebar sidebar-two">
-                                        <!--Category Widget-->
-                                        <div class="sidebar-widget-two categories-two">
-                                            <div class="sidebar-title-two"><h3>Kategoriyalar</h3></div>
-                                            <div class="widget-content">
-                                                <ul class="category-list-two">
-                                                    <!-- <li><a href="senaye-qapilari.html">	&nbsp;&nbsp;Sənaye Qapilari</a></li> -->
-                                                    <li><a href="avtomatik-seksiyonal-qapilar.html">Avtomatik Seksiyonal Qapılar</a></li>
-                                                    <li class="altcat"><a href="qaraj-qapilari.html">	&nbsp;&nbsp;Qaraj qapıları</a></li>
-                                                    <li class="altcat"><a href="senaye-qapilari.html">	&nbsp;&nbsp;Sənaye qapıları</a></li>
-                                                    <li><a href="avtomatik-jaluz-qapilar.html">Avtomatik Jalüz Qapılar</a></li>
-                                                    <!-- <li><a href="#">AVTOMATİK SEKSİYONAL QAPILAR</a></li> -->
-                                                </ul>
-                                                <!-- <span class="view-more">+ Hamısına Bax</span> -->
+                <div class="sidebar-side col-lg-4 col-md-4 col-sm-12 clearfix">
+                    <div class="widget-products">
+                        <h4>Kateqoriyalar</h4>
+                        <ul class="category-wrap">
+                            <li>
+                                <a href="">
+                                    Avtomatik Seksiyonal Qapılar
+                                </a>
+                            </li>
+                            <li class="altcat">
+                                <a href="">
+                                    Qaraj Qapıları
+                                </a>
+                            </li>
+                            <li class="altcat">
+                                <a href="">
+                                    Sənaye Qapıları
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Avtomatik Jalüz Qapılar
+                                </a>
+                            </li>
+                            <li class="altcat">
+                                <a href="">
+                                    Avtomatik Pəncərə Jalüzləri
+                                </a>
+                            </li>
+                            <li class="altcat">
+                                <a href="">
+                                    Jalüz Darvazalar
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content-side col-lg-8 col-md-8 col-sm-12 clearfix">
+                    <div class="product-desc">
+                        
+                    </div>
+                    <div class="product-images">
+                        <div class="row">
+                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
+                                <div class="inner-box">
+                                    <figure class="image-box">
+                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
+                                        <!--Overlay Box-->
+                                        <div class="overlay-box">
+                                            <div class="overlay-inner">
+                                                <div class="content">
+                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
+                                                        <i class="icon fas fa-search-plus"></i>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </aside>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
+                                <div class="inner-box">
+                                    <figure class="image-box">
+                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
+                                        <!--Overlay Box-->
+                                        <div class="overlay-box">
+                                            <div class="overlay-inner">
+                                                <div class="content">
+                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
+                                                        <i class="icon fas fa-search-plus"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
+                                <div class="inner-box">
+                                    <figure class="image-box">
+                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
+                                        <!--Overlay Box-->
+                                        <div class="overlay-box">
+                                            <div class="overlay-inner">
+                                                <div class="content">
+                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
+                                                        <i class="icon fas fa-search-plus"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
+                                <div class="inner-box">
+                                    <figure class="image-box">
+                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
+                                        <!--Overlay Box-->
+                                        <div class="overlay-box">
+                                            <div class="overlay-inner">
+                                                <div class="content">
+                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
+                                                        <i class="icon fas fa-search-plus"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
+                                <div class="inner-box">
+                                    <figure class="image-box">
+                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
+                                        <!--Overlay Box-->
+                                        <div class="overlay-box">
+                                            <div class="overlay-inner">
+                                                <div class="content">
+                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
+                                                        <i class="icon fas fa-search-plus"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
+                                <div class="inner-box">
+                                    <figure class="image-box">
+                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
+                                        <!--Overlay Box-->
+                                        <div class="overlay-box">
+                                            <div class="overlay-inner">
+                                                <div class="content">
+                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
+                                                        <i class="icon fas fa-search-plus"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
+                                <div class="inner-box">
+                                    <figure class="image-box">
+                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
+                                        <!--Overlay Box-->
+                                        <div class="overlay-box">
+                                            <div class="overlay-inner">
+                                                <div class="content">
+                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
+                                                        <i class="icon fas fa-search-plus"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
+                                <div class="inner-box">
+                                    <figure class="image-box">
+                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
+                                        <!--Overlay Box-->
+                                        <div class="overlay-box">
+                                            <div class="overlay-inner">
+                                                <div class="content">
+                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
+                                                        <i class="icon fas fa-search-plus"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
+                                <div class="inner-box">
+                                    <figure class="image-box">
+                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
+                                        <!--Overlay Box-->
+                                        <div class="overlay-box">
+                                            <div class="overlay-inner">
+                                                <div class="content">
+                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
+                                                        <i class="icon fas fa-search-plus"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
+                                <div class="inner-box">
+                                    <figure class="image-box">
+                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
+                                        <!--Overlay Box-->
+                                        <div class="overlay-box">
+                                            <div class="overlay-inner">
+                                                <div class="content">
+                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
+                                                        <i class="icon fas fa-search-plus"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
+                                <div class="inner-box">
+                                    <figure class="image-box">
+                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
+                                        <!--Overlay Box-->
+                                        <div class="overlay-box">
+                                            <div class="overlay-inner">
+                                                <div class="content">
+                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
+                                                        <i class="icon fas fa-search-plus"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
+                                <div class="inner-box">
+                                    <figure class="image-box">
+                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
+                                        <!--Overlay Box-->
+                                        <div class="overlay-box">
+                                            <div class="overlay-inner">
+                                                <div class="content">
+                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
+                                                        <i class="icon fas fa-search-plus"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
+                                <div class="inner-box">
+                                    <figure class="image-box">
+                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
+                                        <!--Overlay Box-->
+                                        <div class="overlay-box">
+                                            <div class="overlay-inner">
+                                                <div class="content">
+                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
+                                                        <i class="icon fas fa-search-plus"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
+                                <div class="inner-box">
+                                    <figure class="image-box">
+                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
+                                        <!--Overlay Box-->
+                                        <div class="overlay-box">
+                                            <div class="overlay-inner">
+                                                <div class="content">
+                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
+                                                        <i class="icon fas fa-search-plus"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
+                                <div class="inner-box">
+                                    <figure class="image-box">
+                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
+                                        <!--Overlay Box-->
+                                        <div class="overlay-box">
+                                            <div class="overlay-inner">
+                                                <div class="content">
+                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
+                                                        <i class="icon fas fa-search-plus"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </figure>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-8 clearfix">
-                    <div class="col-md-12">
-                        <p style="margin-left:0cm; margin-right:0cm">
-                        <span style="font-size:11pt">
-                            <span style="font-family:Calibri,sans-serif">Fotoselli avtomatik s&uuml;r&uuml;şmə qapıları istənilən məkanda girişin rahatlığını və səmərəliliyini təmin etmək &uuml;&ccedil;&uuml;n b&ouml;y&uuml;k rol oynayır. Son vaxtlar bir &ccedil;ox m&uuml;xtəlif təyinatlı iş yerlərində geniş istifadə edilir. Bu ona g&ouml;rədir ki, fotoselli qapılar bir &ccedil;ox &uuml;st&uuml;nl&uuml;klərinə g&ouml;rə digərlərindən fərqlənir. Təmasda olmadan a&ccedil;ılma &uuml;st&uuml;nl&uuml;y&uuml;nə malik olan bu qapılar i&ccedil;əridə olan tənzimlənmiş havanın &ccedil;&ouml;lə axın etməsinin də qarşısını alır. Avtomatik s&uuml;r&uuml;şmə qapıları m&uuml;xtəlif tiplərə b&ouml;l&uuml;n&uuml;r ki, bu da ke&ccedil;idin maksimumluğunu təmin etmə və ya tarazlaşdırma imkanı yaradır. Bu qapılar dizayn m&uuml;xtəlifliyində he&ccedil; bir sərhəd tanımır. Fotoselli qapılarda səssiz a&ccedil;ılıb bağlanma, istilik və səs izolyasiyası kimi x&uuml;suyyətləri də nəzərə almaq lazımdır. Siz bu tip qapılara həm də giriş təhl&uuml;kəsizliyi kimi x&uuml;susiyyətlər də artıra bilərsiniz ki, bu halda girişdən istifadə etməzdən əvvəl barmaq izi, şifrə və yaxud da kart istifadəsi zərurəti yaradacaqsınız. Biz sizə fotoselli avtomatik qapıları m&uuml;xtəlif ş&uuml;şə n&ouml;vləri ilə təklif edirik.</span>
-                        </span>
-                        </p>
-                    </div>
-                    <style>
-                        .inner-box .image .overlay-box{
-                            position: absolute;
-                            content: '';
-                            left: 0px;
-                            top: 0px;
-                            width: 100%;
-                            height: 100%;
-                            display: block;
-                            text-align: center;
-                            -webkit-transition:all 900ms ease;
-                            -ms-transition:all 900ms ease;
-                            -o-transition:all 900ms ease;
-                            -moz-transition:all 900ms ease;
-                            transition:all 900ms ease;
-                            -webkit-transform:scale(0,0);
-                            -ms-transform:scale(0,0);
-                            -o-transform:scale(0,0);
-                            -moz-transform:scale(0,0);
-                            transform:scale(0,0);
-                            background-color: rgba(234, 18, 108, 0.72);
-                        }
-
-                        .services-block .inner-box .image .overlay-box .plus{
-                            position: absolute;
-                            left: 50%;
-                            top: 50%;
-                            color: #ffffff;
-                            font-size: 34px;
-                            line-height: 1em;
-                            margin-left: -17px;
-                            margin-top: -17px;
-                        }
-
-                        .services-block .inner-box:hover .image .overlay-box{
-                            -webkit-transform:scale(1,1);
-                            -ms-transform:scale(1,1);
-                            -o-transform:scale(1,1);
-                            -moz-transform:scale(1,1);
-                            transform:scale(1,1);
-                        }
-                        .inner-box .overlay-box{
-                            position:absolute;
-                            left: 0px;
-                            top: 0px;
-                            width: 100%;
-                            height: 100%;
-                            display: block;
-                        }
-                        .inner-box .overlay-box .overlay-inner{
-                            position:static;
-                        }
-
-                        .gallery-block .inner-box .overlay-box .overlay-inner h3{
-                            position:absolute;
-                            left: 40px;
-                            bottom: 40px;
-                            padding: 20px 30px;
-                            background-color: #ffffff;
-                        }
-
-                        .gallery-block .inner-box .overlay-box .overlay-inner h3 a{
-                            position:relative;
-                            color: #262626;
-                            font-size: 20px;
-                            font-weight: 400;
-                        }
-                    </style>
-                    
-                    <div class="row clearfix">
-                        <!--Gallery Block-->
-                        <div class="gallery-block-three col-lg-4 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <figure class="image-box">
-                                    <img class="lazy" src="http://avroqapi.az/images/galereya/163828859684f005.jpg" data-src="/images/galereya/154961413525babek plaza002.jpg" alt="Fotosel qapılar">
-                                    <!--Overlay Box-->
-                                    <div class="overlay-box">
-                                        <div class="overlay-inner">
-                                            <div class="content">
-                                                <a href="/images/galereya/154961413525babek plaza002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
-                                                <span class="icon fa fa-search"></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </div>
-                        </div>
-                        <hr />
-                        <!--Gallery Block-->
-                        <div class="gallery-block-three col-lg-4 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <figure class="image-box">
-                                    <img class="lazy" src="http://avroqapi.az/images/galereya/163828859684f005.jpg" data-src="/images/galereya/154961413525babek plaza002.jpg" alt="Fotosel qapılar">
-                                    <!--Overlay Box-->
-                                    <div class="overlay-box">
-                                        <div class="overlay-inner">
-                                            <div class="content">
-                                                <a href="/images/galereya/154961413525babek plaza002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
-                                                <span class="icon fa fa-search"></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </div>
-                        </div>
-                        <!--Gallery Block-->
-                        <div class="gallery-block-three col-lg-4 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <figure class="image-box">
-                                    <img class="lazy" src="http://avroqapi.az/images/galereya/163828859684f005.jpg" data-src="/images/galereya/154961413525babek plaza002.jpg" alt="Fotosel qapılar">
-                                    <!--Overlay Box-->
-                                    <div class="overlay-box">
-                                        <div class="overlay-inner">
-                                            <div class="content">
-                                                <a href="/images/galereya/154961413525babek plaza002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
-                                                <span class="icon fa fa-search"></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <!--Pagination Outer-->
                     <div class="pagination-outer">
                         <ul class="styled-pagination">
-                        <li class="next">
-                            <a href="/fotosel-qapilar.html?page=2">
-                            <i class="fa fa-angle-left"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="active" href="javascript:void(0);"> 1 </a>
-                        </li>
-                        <li>
-                            <a class="" href="/fotosel-qapilar.html?page=2"> 2 </a>
-                        </li>
-                        <li class="next">
-                            <a href="/fotosel-qapilar.html?page=2">
-                            <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
+                            <li class="prev">
+                              <a href="/mehsullar.html?page=2">
+                                 <i class="fa fa-angle-left"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="active" href="javascript:void(0);">
+                                  1
+                              </a>
+                            </li>
+                            <li>
+                              <a class="" href="/mehsullar.html?page=2">
+                                  2
+                              </a>
+                            </li>
+                            <li>
+                              <a class="" href="/mehsullar.html?page=3">
+                                  3
+                              </a>
+                            </li>
+                            <li>
+                              <a class="" href="/mehsullar.html?page=4">
+                                  4
+                              </a>
+                            </li>
+                            <li class="next">
+                              <a href="/mehsullar.html?page=2">
+                                 <i class="fa fa-angle-right"></i>
+                              </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

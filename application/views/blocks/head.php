@@ -30,6 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/color.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/animate.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <?php 
         if (!empty($headdata)) {echo $headdata;}
