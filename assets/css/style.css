@@ -3779,19 +3779,19 @@ input:active {
 	margin-top: 79px
 }
 
-#commentform .name-wrap,
-#commentform .mail-wrap,
-#commentform .select-wrap,
-#commentform .phone-wrap {
+#contact-form .name-wrap,
+#contact-form .mail-wrap,
+#contact-form .select-wrap,
+#contact-form .phone-wrap {
 	width: 48%;
 	float: left;
 	margin-right: 5.3%
 }
 
-#comments #commentform .name-wrap,
-#comments #commentform .mail-wrap,
-#comments #commentform .select-wrap,
-#comments #commentform .phone-wrap {
+#comments #contact-form .name-wrap,
+#comments #contact-form .mail-wrap,
+#comments #contact-form .select-wrap,
+#comments #contact-form .phone-wrap {
 	width: 48%;
 	float: left;
 	margin-right: 4%
@@ -3801,18 +3801,18 @@ input:active {
 	font-size: 15px!important
 }
 
-#commentform .phone-wrap {
+#contact-form .phone-wrap {
 	margin-right: 0
 }
 
-#commentform .select-wrap {
+#contact-form .select-wrap {
 	margin-right: 0
 }
 
-#commentform input[type=text],
-#commentform input[type=email],
-#commentform input[type=number],
-#commentform input[type=select] #commentform textarea {
+#contact-form input[type=text],
+#contact-form input[type=email],
+#contact-form input[type=number],
+#contact-form input[type=select] #contact-form textarea {
 	background-color: #fff;
 	border: 2px solid #e2eeff
 }
@@ -3822,7 +3822,7 @@ input:active {
 	padding-left: 20px
 }
 
-#commentform textarea {
+#contact-form textarea {
 	height: 170px;
 	border: 2px solid #e2eeff
 }

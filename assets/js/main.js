@@ -18,3 +18,68 @@ mode='mobile';if(matchMedia('only screen and (max-width: 767px)').matches)
 mode='smobile';$('.themesflat-spacer').each(function(){if(mode==='desktop'){$(this).attr('style','height:'+$(this).data('desktop')+'px')}else if(mode==='mobile'){$(this).attr('style','height:'+$(this).data('mobile')+'px')}else{$(this).attr('style','height:'+$(this).data('smobile')+'px')}});});};var flatCounter=function(){if($(document.body).hasClass('counter-scroll')){var a=0;$(window).scroll(function(){var oTop=$('.box').offset().top-window.innerHeight;if(a===0&&$(window).scrollTop()>oTop){if($().countTo){$('.box').find('.number').each(function(){var to=$(this).data('to'),speed=$(this).data('speed');$(this).countTo({to:to,speed:speed});});}
 a=1;}});}};$(function(){if(matchMedia('only screen and (min-width: 991px)').matches){headerFixedHome1();headerFixedHome2();}
 removePreloader();new WOW().init();responsiveMenu();tabs();parallax();topSearch();retinaLogos();retinaLogos2();goTop();flatSpacer();flatCounter();$(window).on('load resize',function(){flatOwl();});});})(jQuery);
+
+
+
+/*-----------------------------------------------------------------------------------*/
+	/*	CONTACT FORM
+	/*-----------------------------------------------------------------------------------*/
+	function enableContactForm()
+	{
+		$('#contact-form').validator({
+			disable: false,
+			focus: false
+		});
+
+		$('#contact-form').on('submit', function(e)
+		{
+			if (!e.isDefaultPrevented())
+			{
+				$.ajax(
+					{
+					type:     "POST",
+					url:      "/process/sendMessage",
+					data:     $(this).serialize(),
+					dataType: "json",
+					success: function(data)
+					{
+						var messageAlert = 'alert-' + data.type;
+						var messageText  =  data.message;
+						var alertBox     = '<div class="alert ' + messageAlert + ' alert-dismissible fade show"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + messageText + '</div>';
+
+						if (messageAlert && messageText)
+						{
+							$('#contact-form').find('.messages').html(alertBox);
+							$('#contact-form')[0].reset();
+						}
+					}
+				});
+
+				return false;
+			}
+		});
+	}
+
+	// enableContactForm();
+
+$('body').on('submit', '#contact-form', function(e){
+	e.preventDefault();
+	var form = $(this);
+	$.ajax({
+		type: "post",
+		url:  'Process/contactfrom',
+		data: form.serialize(),
+		success : function(response){
+			var data = JSON.parse(response);
+			if(data.status=="success"){
+				$("input").val("");
+				$("textarea").val("");
+			}
+			console.log(data);
+		},
+		error : function(err){
+			alert("Sistem xətası");
+		}
+	});
+	return false;
+});

@@ -100,6 +100,7 @@ class Process extends GO_Controller {
 			unset($_POST['token']);
 			$fullname 	= filter(strip_tags($this->input->post('fullname','trim')));
 			$email 		= filter(strip_tags($this->input->post('email','trim')));
+			$service_id	= filter(strip_tags($this->input->post('service_id','trim')));
 			$message 	= filter(strip_tags($this->input->post('message','trim')));
 			$date 		= date("Y-m-d H:i:s");
 			$empty 		= false;
@@ -119,22 +120,27 @@ class Process extends GO_Controller {
 				$dataInsert = array(
 					"fullname" 		=> $fullname,
 					"email" 		=> $email,
+					"service_id" 	=> $service_id,
 					"message" 		=> $message,
-					"status" 		=> 0,
-					"date" 			=> $date
+					"date" 			=> $date,
+					"status" 		=> 0
 				);
-				// $this->process->insertData("contactform",$dataInsert)
-				if ($this->process->insertData("contactform",$dataInsert)) {
+				
+				// $this->process->insertData("messages",$dataInsert)
+				if ($this->process->insertData("messages",$dataInsert)) {
 					$data['status'] = 'success';
 					$data['msg'] 	= 'Müraciətiniz uğurla qeydiyyata alınmışdır təşəkkür edirik.';
 					$data['color']	= 'green';
 					/* Mail send */
-					$senddingmail  = 'info@printerbaku.az'; //info@printerbaku.az
+					$service = $this->core->get_values("services",$service_id,"title_az");
+					debug($service_id);
+					$senddingmail  = 'yxedice1@gmail.com'; //info@printerbaku.az
 					$mailtitle  = 'Yeni mesajınız var';
 					$subject  = 'Sizə Saytdan mesaj gəlib';
 					$content  = "
 						 <div>Ad Soyad : {$fullname}</div>
 						 <div>E-poçt : {$email}</div>
+						 <div>Servis : {$service}</div>
 						 <div>Tarix : {$date}</div>
 						 <div>Mesaj : {$message}</div>
 					";

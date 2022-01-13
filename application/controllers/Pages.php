@@ -10,7 +10,6 @@ class Pages extends GO_Controller {
 		$this->load->model("Pages_model","pages");
 		$this->load->model("Blog_model","blog");
 		$this->load->helper("filter");
-		
 	}
 
 	public function index($slug){

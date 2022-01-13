@@ -74,19 +74,19 @@
       </div>
       <div class="form-questions boxshadow bg-white wow fadeInRight  animated" data-wow-delay="0ms" data-wow-duration="1500ms">
         <div id="respond" class="comment-respond">
-          <form action="#" method="post" id="commentform" class="commentform">
+          <form action="#" method="post" id="contact-form" class="commentform">
             <div class="text-wrap clearfix">
               <fieldset class="name-wrap">
-                <input type="text" id="author" class="tb-my-input" name="author" tabindex="1" placeholder="<?= $langs['full_name']; ?>" value="" size="32" aria-required="true" />
+                <input type="text" id="author" class="tb-my-input" name="fullname" tabindex="1" placeholder="<?= $langs['full_name']; ?>" value="" size="32" aria-required="true" />
               </fieldset>
               <fieldset class="phone-wrap">
                 <input type="number" id="phone" class="tb-my-input" name="phone" tabindex="2" placeholder="<?= $langs['phone_number']; ?>" value="" aria-required="true" />
               </fieldset>
               <fieldset class="mail-wrap">
-                <input type="email" id="email" class="tb-my-input" name="phone" tabindex="2" placeholder="<?= $langs['email_address']; ?>" value="" size="32" aria-required="true" />
+                <input type="email" id="email" class="tb-my-input" name="email" tabindex="2" placeholder="<?= $langs['email_address']; ?>" value="" size="32" aria-required="true" />
               </fieldset>
               <fieldset class="select-wrap">
-                <select>
+                <select name="service_id">
                   <option value=""><?= $langs['choose_services']; ?></option>
                     <?php foreach($all_services as $s) { ?>
                       <option value="<?= $s['id']; ?>"><?= $s['title']; ?></option>
@@ -98,6 +98,7 @@
               <textarea id="comment-message" name="comment" rows="8" tabindex="4" placeholder="<?= $langs['your_message']; ?>" aria-required="true"></textarea>
             </fieldset>
             <p class="form-submit">
+              <input type="hidden" name="token" value="<?= $token; ?>">
               <button type="submit" class="themesflat-button-style3 btn-style-5 no-boder">
                 <span class="btn-title"><?= $langs['send_msg']; ?></span>
               </button>
