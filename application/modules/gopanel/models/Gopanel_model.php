@@ -123,10 +123,11 @@ class Gopanel_model extends GO_Model {
 	}
 
 	public function get_category_manage($parent){
-		$this->db->select('
+		$this->db->select("
 			category.*,
-			(SELECT COUNT(id) FROM category cat WHERE cat.parent=category.id) as childs
-		');
+			(SELECT COUNT(id) FROM category cat WHERE cat.parent=category.id) as childs,
+			(SELECT COUNT(id) FROM gallery ga WHERE ga.parent=category.id AND ga.section='category') as images
+		");
         $this->db->from('category');
         $this->db->where("parent",$parent);
         $this->db->order_by("rank","ASC");

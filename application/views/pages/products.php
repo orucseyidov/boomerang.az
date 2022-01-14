@@ -225,54 +225,53 @@
                     <div class="widget-products">
                         <h4>Kateqoriyalar</h4>
                         <ul class="category-wrap">
-                            <li>
-                                <a href="">
-                                    Avtomatik Seksiyonal Qapılar
-                                </a>
-                            </li>
-                            <li class="altcat">
-                                <a href="">
-                                    Qaraj Qapıları
-                                </a>
-                            </li>
-                            <li class="altcat">
-                                <a href="">
-                                    Sənaye Qapıları
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    Avtomatik Jalüz Qapılar
-                                </a>
-                            </li>
-                            <li class="altcat">
-                                <a href="">
-                                    Avtomatik Pəncərə Jalüzləri
-                                </a>
-                            </li>
-                            <li class="altcat">
-                                <a href="">
-                                    Jalüz Darvazalar
-                                </a>
-                            </li>
+                            <?php 
+                                foreach ($categories as $key => $value){
+                                    if ($value['parent'] == 0) {
+                            ?>
+                                <li>
+                                    <a href="/mehsullar/<?=$value['slug'] ?>">
+                                        <?=$value['title'] ?>
+                                    </a>
+                                </li>
+                                <?php 
+                                        foreach ($categories as $key2 => $value2){
+                                            if ($value['id'] == $value2['parent']) {
+                                ?>
+                                            <li class="altcat">
+                                                <a href="/mehsullar/<?=$value2['slug'] ?>">
+                                                   <?=$value2['title'] ?>
+                                                </a>
+                                            </li>
+                            <?php 
+                                            }//ikinci if
+                                        }//ikinci dongu
+                                    }//birinci if
+                                }// Birinci dongu
+                            ?>
                         </ul>
                     </div>
                 </div>
                 <div class="content-side col-lg-8 col-md-8 col-sm-12 clearfix">
                     <div class="product-desc">
-                        
+                        <?php 
+                            if (isset($category['id'])){
+                                echo $category['description'];
+                            }
+                        ?>
                     </div>
                     <div class="product-images">
                         <div class="row">
+                            <?php foreach ($iamges as $key => $value): ?>
                             <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
                                 <div class="inner-box">
                                     <figure class="image-box">
-                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
+                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="<?=$value['image'] ?>" alt="<?=$title ?>">
                                         <!--Overlay Box-->
                                         <div class="overlay-box">
                                             <div class="overlay-inner">
                                                 <div class="content">
-                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
+                                                    <a href="<?=$value['image'] ?>" data-fancybox="gallery-images-2" data-caption="" class="link">
                                                         <i class="icon fas fa-search-plus"></i>
                                                     </a>
                                                 </div>
@@ -281,278 +280,38 @@
                                     </figure>
                                 </div>
                             </div>
-                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
-                                        <!--Overlay Box-->
-                                        <div class="overlay-box">
-                                            <div class="overlay-inner">
-                                                <div class="content">
-                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
-                                                        <i class="icon fas fa-search-plus"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
-                                        <!--Overlay Box-->
-                                        <div class="overlay-box">
-                                            <div class="overlay-inner">
-                                                <div class="content">
-                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
-                                                        <i class="icon fas fa-search-plus"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
-                                        <!--Overlay Box-->
-                                        <div class="overlay-box">
-                                            <div class="overlay-inner">
-                                                <div class="content">
-                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
-                                                        <i class="icon fas fa-search-plus"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
-                                        <!--Overlay Box-->
-                                        <div class="overlay-box">
-                                            <div class="overlay-inner">
-                                                <div class="content">
-                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
-                                                        <i class="icon fas fa-search-plus"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
-                                        <!--Overlay Box-->
-                                        <div class="overlay-box">
-                                            <div class="overlay-inner">
-                                                <div class="content">
-                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
-                                                        <i class="icon fas fa-search-plus"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
-                                        <!--Overlay Box-->
-                                        <div class="overlay-box">
-                                            <div class="overlay-inner">
-                                                <div class="content">
-                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
-                                                        <i class="icon fas fa-search-plus"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
-                                        <!--Overlay Box-->
-                                        <div class="overlay-box">
-                                            <div class="overlay-inner">
-                                                <div class="content">
-                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
-                                                        <i class="icon fas fa-search-plus"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
-                                        <!--Overlay Box-->
-                                        <div class="overlay-box">
-                                            <div class="overlay-inner">
-                                                <div class="content">
-                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
-                                                        <i class="icon fas fa-search-plus"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
-                                        <!--Overlay Box-->
-                                        <div class="overlay-box">
-                                            <div class="overlay-inner">
-                                                <div class="content">
-                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
-                                                        <i class="icon fas fa-search-plus"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
-                                        <!--Overlay Box-->
-                                        <div class="overlay-box">
-                                            <div class="overlay-inner">
-                                                <div class="content">
-                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
-                                                        <i class="icon fas fa-search-plus"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
-                                        <!--Overlay Box-->
-                                        <div class="overlay-box">
-                                            <div class="overlay-inner">
-                                                <div class="content">
-                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
-                                                        <i class="icon fas fa-search-plus"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
-                                        <!--Overlay Box-->
-                                        <div class="overlay-box">
-                                            <div class="overlay-inner">
-                                                <div class="content">
-                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
-                                                        <i class="icon fas fa-search-plus"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
-                                        <!--Overlay Box-->
-                                        <div class="overlay-box">
-                                            <div class="overlay-inner">
-                                                <div class="content">
-                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
-                                                        <i class="icon fas fa-search-plus"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="http://avroqapi.az/images/galereya/163828881669t002.jpg" alt="Məhsullar">
-                                        <!--Overlay Box-->
-                                        <div class="overlay-box">
-                                            <div class="overlay-inner">
-                                                <div class="content">
-                                                    <a href="http://avroqapi.az/images/galereya/163828881669t002.jpg" data-fancybox="gallery-images-2" data-caption="" class="link">
-                                                        <i class="icon fas fa-search-plus"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
+                            <?php endforeach ?>
                         </div>
                     </div>
                     <div class="pagination-outer">
                         <ul class="styled-pagination">
-                            <li class="prev">
-                              <a href="/mehsullar.html?page=2">
-                                 <i class="fa fa-angle-left"></i>
-                              </a>
-                            </li>
-                            <li>
-                              <a class="active" href="javascript:void(0);">
-                                  1
-                              </a>
-                            </li>
-                            <li>
-                              <a class="" href="/mehsullar.html?page=2">
-                                  2
-                              </a>
-                            </li>
-                            <li>
-                              <a class="" href="/mehsullar.html?page=3">
-                                  3
-                              </a>
-                            </li>
-                            <li>
-                              <a class="" href="/mehsullar.html?page=4">
-                                  4
-                              </a>
-                            </li>
-                            <li class="next">
-                              <a href="/mehsullar.html?page=2">
-                                 <i class="fa fa-angle-right"></i>
-                              </a>
-                            </li>
+                            <?php if ($page > 1): ?>
+                                <li class="prev">
+                                  <a href="<?=$slug."?page=".($page-1);?>">
+                                    <span class="fa fa-angle-left"></span>
+                                  </a>
+                                </li>
+                            <?php
+                            endif; 
+                                for ($i = $page - $show_number; $i < $page + $show_number + 1; $i++) {
+                                    if ($i > 0 && $i <= $number_of_pages) {
+                                       if ($page == $i) {
+                                           echo '<li>
+                                                    <a class="active" href="javascript:void(0);">'.$i.'</a>
+                                                </li>';
+                                       }
+                                       else{
+                                        echo '<li><a class="" href="'.$slug.'?page='.$i.'">'.$i.'</a></li>';
+                                       }
+                                    }
+                                }
+                            if ( $page != $number_of_pages ): ?>
+                                <li class="next">
+                                  <a href="<?=$slug."?page=".($page+1);?>">
+                                    <span class="fa fa-angle-right"></span>
+                                  </a>
+                                </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>

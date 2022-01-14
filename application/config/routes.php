@@ -56,12 +56,6 @@ $route['Gopanel'] 					= 'gopanel/Dashboard';
 $route['gopanel'] 					= 'gopanel/Dashboard';
 $route['gopanel/login'] 			= 'gopanel/auth/login';
 
-// Products
-$route['search/']					= 'Search/index';
-
-//Category
-$route['category/(:any)']			= 'Category/index/$1';
-
 
 //Static pages
 $route['404']						= 'Pages/error_404';
@@ -79,8 +73,6 @@ $route['project/(:any)']	        = 'Pages/project_single/$1';
 $route['services']			        = 'Pages/services';
 $route['service/(:any)']	        = 'Pages/service_single/$1';
 
-$route['products']			        = 'Pages/products';
-
 // Other pages
 // Blog
 $route['blog']						= 'Blog/index';
@@ -88,6 +80,10 @@ $route['blog/page/(:any)']			= 'Blog/page/$1';
 $route['blog/(:any)']				= 'Blog/index/$1';
 
 
+//Products
+$route['mehsullar']						= 'Products/index';
+$route['mehsullar/(:any)']				= 'Products/index/$1';
+$route['mehsullar/(:any)/(:any)']		= 'Products/index/$1';
 
 
 

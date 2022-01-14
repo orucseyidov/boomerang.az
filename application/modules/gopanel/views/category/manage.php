@@ -42,6 +42,7 @@ value=""
                                     <th>№</th>
                                     <th>Başlığ</th>
                                     <th>Alt Kateqoriya</th>
+                                    <th>Şəkillər</th>
                                     <th>Status</th>
                                     <th>Əməliyyatlar</th>
                                 </tr>
@@ -50,8 +51,9 @@ value=""
 <?php
 foreach ($manage as $key => $value): 
     $id         = $value['id'];
-    $editlink   = base_url("gopanel/{$class}/edit/?id={$id}");
+    $editlink   = base_url("{$app}/{$class}/edit/?id={$id}");
     $alt        = '?parent='.$value['id'];
+    $gallery    = base_url("{$app}/gallery/manage/?parent={$id}&section={$table}&size=2000x2000");
 ?>
                                 <tr id="ord-<?=$value['id']?>">
                                     <td class="sort-td"><i class="fas fa-arrows-alt-v"></i></td>
@@ -61,6 +63,12 @@ foreach ($manage as $key => $value):
                                         <a class="btn btn-outline-success waves-effect waves-light" href="<?=$alt ?>">
                                             <i class="fas fa-list-ol mr-2"></i> 
                                             Alt Kateqoriyaları [ <?=$value['childs'] ?> ]
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-outline-success waves-effect waves-light" href="<?=$gallery ?>">
+                                            <i class="fas fa-images mr-2"></i> 
+                                            Şəkillər [ <?=$value['images'] ?> ]
                                         </a>
                                     </td>
                                     <td>

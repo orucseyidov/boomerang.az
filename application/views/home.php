@@ -89,6 +89,160 @@
   </div>
   <div class="themesflat-spacer clearfix" data-desktop="120" data-mobile="60" data-smobile="50"></div>
 </section>
+
+<style type="text/css">
+  .productgroup img {
+      left: 0;
+      top: 0;
+
+      -webkit-transition: all .3s ease-out;
+      -moz-transition: all .3s ease-out;
+      -ms-transition: all .3s ease-out;
+      -o-transition: all .3s ease-out;
+      transition: all .3s ease-out;
+  }
+
+  .productgroup {
+      border-bottom: 3px solid #eee;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+  }
+
+  .productgroup .image {
+      position: relative;
+      overflow: hidden;
+      /*width: 100%;*/
+      height: 180px;
+      display: inline-block;
+  }
+  div.image.revealUpFull .title {
+      height: 100%;
+      width: 100%;
+      bottom: -144px;
+  }
+
+  div.image.revealUpFull:hover img {
+      top: 0;
+  }
+
+  div.image.revealUpFull:hover .title {
+      bottom: 0;
+  }
+  .productgroup .title {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: rgb(0, 0, 0); /* fallback color */
+      background: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      font-size: 14px;
+      color: white;
+
+      -webkit-transition: all .3s ease-out;
+      -moz-transition: all .3s ease-out;
+      -ms-transition: all .3s ease-out;
+      -o-transition: all .3s ease-out;
+      transition: all .3s ease-out;
+
+  }
+
+  .productgroup .title ul li {
+      list-style-type: none;
+      display: block;
+      text-align: center;
+      width: 360px;
+      background: rgb(153, 153, 153);
+      background: rgba(153, 153, 153, 0.4);
+      height: 36px;
+      line-height: 36px;
+      color: #fff;
+      border-bottom: 1px solid #000000;
+  }
+
+  .productgroup .title ul li:hover {
+      background-color: #009dcd;
+  }
+
+  .productgroup .title ul li.head {
+      background: rgb(66, 139, 202);
+      background: rgba(12, 122, 199, 0.78);
+      font-size: 16px;
+
+  }
+
+  .productgroup .title ul li a {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+
+  }
+
+  .productgroup .title ul {
+      float: left;
+      padding-left: 0;
+  }
+</style>
+
+<section class="tf-testimonials clearfix">
+  <div class="container">
+    <div class="themesflat-spacer clearfix" data-desktop="20" data-mobile="60" data-smobile="50"></div>
+    <div class="title-section text-center wow fadeInDown">
+      <div class="flat-title flat-style3"><?=$langs['products_home']; ?> </div>
+    </div>
+    <div class="themesflat-spacer clearfix" data-desktop="46" data-mobile="15" data-smobile="15"></div>
+    <div class="flat-carousel-box data-effect clearfix" data-zero="0" data-gap="30" data-column="3" data-column2="1" data-column3="1" data-column4="1" data-dots="false" data-auto="true" data-nav="false" data-loop="true">
+
+      <div class="row productgroup">
+          <?php 
+            foreach ($category as $key => $value){
+              if ($value['parent'] == 0) {
+                $link1 = base_url("mehsullar/".$value['slug']);
+          ?>
+          <div class="col-md-4" title="<?=$value['title'] ?>">
+            <!-- Reveal Up Full -->
+              <div class="image revealUpFull">
+                  <img id="_image39" src="<?=$value['image'] ?>" alt="<?=$value['title'] ?>" class="img-responsive">
+                  <div class="title">
+                    <!-- <time itemprop="priceValidUntil" datetime="2022-01-14"></time> -->
+                      <ul>
+                          <li class="head" itemprop="name">
+                            <a href="<?=$link1 ?>">
+                              <span><?=$value['title'] ?></span>
+                            </a>
+                          </li>
+                          <?php 
+                            foreach ($category as $key2 => $value2):
+                              if ($value2['parent'] == $value['id']) {
+                                $link2 = base_url("mehsullar/".$value2['slug']);
+                          ?>
+                            <li title="Sənaye qapıları">
+                              <a href="<?=$link2 ?>">
+                                <i class="fas fa-arrow-right"></i>
+                                <span><?=$value2['title'] ?></span>
+                              </a>
+                            </li>
+                          <?php 
+                              }
+                            endforeach;
+                          ?>
+                      </ul>
+                  </div>
+              </div>
+              <meta itemprop="priceCurrency" content="AZN">
+          </div>
+          <?php 
+            }//endif
+          }
+          ?>
+      </div>
+
+    </div>
+    <div class="themesflat-spacer clearfix" data-desktop="259" data-mobile="60" data-smobile="50"></div>
+  </div>
+</section>
+
+
 <section class="about2 bg-color-style2">
   <div class="container">
     <div class="row">
@@ -156,6 +310,7 @@
     </div>
   </div>
 </section>
+
 <section class="tf-testimonials clearfix">
   <div class="container">
     <div class="themesflat-spacer clearfix" data-desktop="120" data-mobile="60" data-smobile="50"></div>

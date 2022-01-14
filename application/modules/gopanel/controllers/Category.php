@@ -21,6 +21,12 @@ class Category extends Gopanel {
 		$this->manage();
 	}
 
+	public function manage(){
+		$this->data['datatable'] = true;
+		$this->data['manage'] 	 = $this->gopanel->get_category_manage($this->parent);
+		$this->render($this->table.'/manage',$this->data);
+	}
+
 	public function add(){
 		// core
 		if (isset($_POST['token'])) {
@@ -42,11 +48,6 @@ class Category extends Gopanel {
 		$this->render($this->table.'/add',$this->data);
 	}
 
-	public function manage(){
-		$this->data['datatable'] = true;
-		$this->data['manage'] 	 = $this->gopanel->get_category_manage($this->parent);
-		$this->render($this->table.'/manage',$this->data);
-	}
 
 	public function edit(){
 		$id 					= intval(filter($this->input->get('id',true)));
