@@ -35,17 +35,6 @@ class Blog_model extends GO_Model {
 	        return $query->row_array();
 	}
 
-	public function blog_sidebar($limit){
-			$this->db->select('*,
-				title_'.$this->dil.' as title,
-				description_'.$this->dil.' as description
-			'); //tags_'.$this->dil.' as tags,
-	        $this->db->from('blog');
-	        $this->db->where("status",1);
-	        $this->db->order_by("id","RANDOM");
-	        $this->db->limit($limit);
-	 		return $this->db->get()->result_array();
-	}
 	/* End blog area */
 
 	public function blog_details($id){

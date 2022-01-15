@@ -8,6 +8,7 @@ class Pages extends GO_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model("Pages_model","pages");
+		$this->load->model("Home_model","home");
 		$this->load->model("Blog_model","blog");
 		$this->load->helper("filter");
 	}
@@ -22,8 +23,8 @@ class Pages extends GO_Controller {
 	}
 
 	public function about(){
-		$this->data['about'] 			= $this->pages->about();
-		$this->data['all_services'] 	= $this->pages->services();
+		$this->data['about'] 			= $this->home->about();
+		$this->data['all_services'] 	= $this->home->services();
 		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
 		// debug($this->data);
 		$this->render("/pages/about",$this->data);
@@ -45,7 +46,7 @@ class Pages extends GO_Controller {
 		$this->data['title'] 			 = $project['title'];
 		$this->data['desc'] 			 = mb_substr(strip_tags($project['description']), 0,300);
 		$this->data['project'] 			 = $project;
-		$this->data['projects'] 		 = $this->pages->limit_in_sidebar("projects",10);
+		$this->data['projects'] 		 = $this->core->limit_in_sidebar("projects",10);
 		$this->render("/pages/project-detail",$this->data);
 	}
 
@@ -60,14 +61,14 @@ class Pages extends GO_Controller {
 
 	public function contact(){
 		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
-		$this->data['all_services'] 	= $this->pages->services();
+		$this->data['all_services'] 	= $this->home->services();
 		$this->render("/pages/contact",$this->data);
 	}
 
 	
 
 	public function services(){
-		$this->data['services'] 		= $this->pages->services();
+		$this->data['services'] 		= $this->home->services();
 		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
 		// debug($this->data);
 		$this->render("/pages/services",$this->data);
@@ -79,11 +80,11 @@ class Pages extends GO_Controller {
 		$this->data['title'] 			 = $service['title'];
 		$this->data['desc'] 			 = mb_substr(strip_tags($service['description']), 0,300);
 		$this->data['service'] 			 = $service;
-		$this->data['all_services'] 	 = $this->pages->services();
-		$this->data['slidebar_services'] = $this->pages->limit_in_sidebar("services",5);
-		$this->data['slidebar_projects'] = $this->pages->limit_in_sidebar("projects",3);
-		$this->data['slidebar_blogs'] 	 = $this->pages->limit_in_sidebar("blog",3);
-		$this->data['blogs'] 			 = $this->pages->services();
+		$this->data['all_services'] 	 = $this->home->services();
+		$this->data['slidebar_services'] = $this->core->limit_in_sidebar("services",5);
+		$this->data['slidebar_projects'] = $this->core->limit_in_sidebar("projects",3);
+		$this->data['slidebar_blogs'] 	 = $this->core->limit_in_sidebar("blog",3);
+		$this->data['blogs'] 			 = $this->home->services();
 		$this->render("/pages/service-details",$this->data);
 	}
 
@@ -135,7 +136,7 @@ class Pages extends GO_Controller {
 	
 
 	// public function services(){
-	// 	$this->data['services'] = $this->pages->services();
+	// 	$this->data['services'] = $this->home->services();
 	// 	$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
 	// 	$this->render("/pages/services",$this->data);
 	// }

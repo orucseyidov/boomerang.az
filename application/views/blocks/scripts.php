@@ -23,7 +23,7 @@
             success : function(response){
                 var data = JSON.parse(response);
                 if(data.status=="success"){
-                    $("input").val("");
+                    $(".tb-my-input").val("");
                     $("textarea").val("");
                 }
                 $(".msg").html(data.msg).css("color",data.color);

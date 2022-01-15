@@ -98,7 +98,7 @@
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                     <label>Şəkil</label>
-                                    <small class="pull-right imgnotfiy">Ölçü 600 x 600</small>
+                                    <small class="pull-right imgnotfiy">Ölçü 360 x 180</small>
                                     <input type="file" name="image" class="filestyle" data-buttonname="btn-secondary" data-buttonText="Şəkil Seçi" data-classIcon="fas fa-file-import" data-buttonBefore="false">
                                     <a class="imgarea" target="_blank" href="<?=$values['image'] ?>">
                                         <img style="max-width: 250px;" src="<?=base_url($values['image']) ?>">

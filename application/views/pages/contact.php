@@ -74,7 +74,8 @@
       </div>
       <div class="form-questions boxshadow bg-white wow fadeInRight  animated" data-wow-delay="0ms" data-wow-duration="1500ms">
         <div id="respond" class="comment-respond">
-          <form action="#" method="post" id="contact-form" class="commentform">
+          <div class="col-sm-12 msg"></div>
+          <form action="" method="post" id="contact-form" class="commentform">
             <div class="text-wrap clearfix">
               <fieldset class="name-wrap">
                 <input type="text" id="author" class="tb-my-input" name="fullname" tabindex="1" placeholder="<?= $langs['full_name']; ?>" value="" size="32" aria-required="true" />
@@ -95,7 +96,7 @@
               </fieldset>
             </div>
             <fieldset class="message-wrap">
-              <textarea id="comment-message" name="comment" rows="8" tabindex="4" placeholder="<?= $langs['your_message']; ?>" aria-required="true"></textarea>
+              <textarea id="comment-message" name="message" rows="8" tabindex="4" placeholder="<?= $langs['your_message']; ?>" aria-required="true"></textarea>
             </fieldset>
             <p class="form-submit">
               <input type="hidden" name="token" value="<?= $token; ?>">

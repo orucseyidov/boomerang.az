@@ -7,7 +7,7 @@
         <div class="site-content">
           <?php 
               foreach ($blog as $key => $value):
-                $link = '/blog/'.$value['slug'];
+                $link = '/bloq/'.$value['slug'];
           ?>
             <article class="main-post">
               <div class="featured-post">
@@ -49,7 +49,7 @@
           <ul>
             <?php if ($page > 1): ?>
                 <li>
-                  <a href="/blog/page/<?=$page-1;?>" class="page-numbers prev">
+                  <a href="/bloq/page/<?=$page-1;?>" class="page-numbers prev">
                     <span class="fa fa-angle-left"></span>
                   </a>
                 </li>
@@ -63,13 +63,13 @@
                                 </li>';
                        }
                        else{
-                        echo '<li><a class="page-numbers" href="/blog/page/'.$i.'">'.$i.'</a></li>';
+                        echo '<li><a class="page-numbers" href="/bloq/page/'.$i.'">'.$i.'</a></li>';
                        }
                     }
                 }
             if ( $page != $number_of_pages ): ?>
                 <li>
-                  <a href="/blog/page/<?=$page+1;?>" class="page-numbers next">
+                  <a href="/bloq/page/<?=$page+1;?>" class="page-numbers next">
                     <span class="fa fa-angle-right"></span>
                   </a>
                 </li>

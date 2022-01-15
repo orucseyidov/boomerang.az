@@ -37,9 +37,9 @@ class Blog extends GO_Controller {
 		$this->data['itemrows']			 = $this->itemrows;
 		$this->data['show_number']		 = $this->show_number;
 		$this->data['number_of_pages']	 = $this->number_of_pages;
-		$this->data['slidebar_services'] = $this->pages->limit_in_sidebar("services",5);
-		$this->data['slidebar_projects'] = $this->pages->limit_in_sidebar("projects",3);
-		$this->data['slidebar_blogs'] 	 = $this->pages->limit_in_sidebar("blog",3);
+		$this->data['slidebar_services'] = $this->core->limit_in_sidebar("services",5);
+		$this->data['slidebar_projects'] = $this->core->limit_in_sidebar("projects",3);
+		$this->data['slidebar_blogs'] 	 = $this->core->limit_in_sidebar("blog",3);
 
 		// debug($this->data['blog']);
 		$this->render("pages/blog",$this->data);
@@ -63,9 +63,9 @@ class Blog extends GO_Controller {
 		$this->data['bgimage']			 = $this->data['ogimage'];
 		$this->data['ogimage']			 = base_url($blog['image']);
 		$this->data['blog']				 = $blog;
-		$this->data['slidebar_services'] = $this->pages->limit_in_sidebar("services",5);
-		$this->data['slidebar_projects'] = $this->pages->limit_in_sidebar("projects",3);
-		$this->data['slidebar_blogs'] 	 = $this->pages->limit_in_sidebar("blog",3);
+		$this->data['slidebar_services'] = $this->core->limit_in_sidebar("services",5);
+		$this->data['slidebar_projects'] = $this->core->limit_in_sidebar("projects",3);
+		$this->data['slidebar_blogs'] 	 = $this->core->limit_in_sidebar("blog",3);
 
 		$this->render("pages/blog-details",$this->data);
 		$this->core->view_update("blog",$this->data['blog']['id']);

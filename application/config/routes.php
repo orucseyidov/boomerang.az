@@ -59,25 +59,25 @@ $route['gopanel/login'] 			= 'gopanel/auth/login';
 
 //Static pages
 $route['404']						= 'Pages/error_404';
-$route['about']						= 'Pages/about';
-$route['contact']					= 'Pages/contact';
+$route['haqqimizda']				= 'Pages/about';
+$route['elaqe']				    	= 'Pages/contact';
 $route['gallery']					= 'Pages/gallery';
 
 
 // $route['services/(:any)']			= 'Pages/services/$1';
-$route['projects']			        = 'Pages/projects';
-$route['project/(:any)']	        = 'Pages/project_single/$1';
+$route['layiheler']			        = 'Pages/projects';
+$route['layiheler/(:any)']	        = 'Pages/project_single/$1';
 
 
 // $route['services/(:any)']			= 'Pages/services/$1';
-$route['services']			        = 'Pages/services';
-$route['service/(:any)']	        = 'Pages/service_single/$1';
+$route['xidmetler']			        = 'Pages/services';
+$route['xidmetler/(:any)']	        = 'Pages/service_single/$1';
 
 // Other pages
 // Blog
-$route['blog']						= 'Blog/index';
-$route['blog/page/(:any)']			= 'Blog/page/$1';
-$route['blog/(:any)']				= 'Blog/index/$1';
+$route['bloq']						= 'Blog/index';
+$route['bloq/page/(:any)']			= 'Blog/page/$1';
+$route['bloq/(:any)']				= 'Blog/index/$1';
 
 
 //Products

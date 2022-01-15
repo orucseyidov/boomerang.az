@@ -21,7 +21,7 @@
           <?php foreach($slidebar_services as $s) { ?>
             <li>
               <div class="block-inside">
-                <a href="/service/<?= $s['slug']; ?>"><?= $s['title']; ?></a>
+                <a href="/xidmetler/<?= $s['slug']; ?>"><?= $s['title']; ?></a>
               </div>
             </li>
           <?php } ?>
@@ -43,7 +43,7 @@
               </div>
               <div class="text">
                 <h5>
-                  <a href="/project/<?= $p['slug']; ?>"><?= $p['title']; ?></a>
+                  <a href="/layiheler/<?= $p['slug']; ?>"><?= $p['title']; ?></a>
                 </h5>
                 <span class="post-date">
                   <i class="far fa-calendar-alt"></i><?= " " . date("d.m.Y", strtotime($p['date'])); ?>
@@ -69,7 +69,7 @@
               </div>
               <div class="text">
                 <h5>
-                  <a href="/blog/<?= $b['slug']; ?>"><?= cut(strip_tags($b['title']),70,0,68); ?></a>
+                  <a href="/bloq/<?= $b['slug']; ?>"><?= cut(strip_tags($b['title']),70,0,68); ?></a>
                 </h5>
                 <span class="post-date">
                   <i class="far fa-calendar-alt"></i><?= " " . date("d.m.Y", strtotime($b['date'])); ?>

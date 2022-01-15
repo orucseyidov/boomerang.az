@@ -8,7 +8,7 @@
           <div class="content-inner">
             <div class="col-tab align-items-center">
               <div class="tabs-case-study row">
-                <?php foreach ($projects as $key => $value): $link = base_url("/project/{$value['slug']}") ?>
+                <?php foreach ($projects as $key => $value): $link = base_url("/layiheler/{$value['slug']}") ?>
                 <div class="image-profolio image-profolio-style2 col-md-4">
                   <div class="image">
                     <img src="<?=$value['image'] ?>" alt="<?=$value['title'] ?>" />

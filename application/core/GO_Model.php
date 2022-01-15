@@ -62,7 +62,6 @@ class GO_Model extends CI_Model {
         return $this->db->get()->result_array();
 	}
 
-
 	public function get_count($table,$row,$where=false) {
 		$this->db->select($row);
         $this->db->from($table);
@@ -111,6 +110,21 @@ class GO_Model extends CI_Model {
 
 	public function view_update($table,$id){
 		$this->db->query("UPDATE `$table` SET `view` = view+1 WHERE `$table`.`id` ='$id'");
+	}
+
+	public function limit_in_sidebar($table, $limit){
+		$this->db->select('*,
+			title_'.$this->dil.' as title,
+			description_'.$this->dil.' as description
+		');
+		$this->db->from($table);
+		if ($limit != '') {
+			$this->db->limit($limit);
+		}
+		$this->db->where("$table.status",1);
+		// $this->db->order_by("$table.id","DESC");
+		$this->db->order_by("$table.id","RANDOM");
+		return $this->db->get()->result_array();
 	}
 
 }

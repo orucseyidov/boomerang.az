@@ -26,7 +26,7 @@
             </div>
             <div class="title-imagebox">
               <h4>
-                <a href="<?= base_url("service/" . $s['slug']); ?>"><?= $s['title']; ?></a>
+                <a href="<?= base_url("xidmetler/" . $s['slug']); ?>"><?= $s['title']; ?></a>
               </h4>
             </div>
             <div class="content-imagebox">

@@ -73,7 +73,7 @@
               </div>
               <div class="title-imagebox">
                 <h4>
-                  <a href="<?= base_url("service/" . $s['slug']); ?>"><?= $s['title']; ?></a>
+                  <a href="<?= base_url("xidmetler/" . $s['slug']); ?>"><?= $s['title']; ?></a>
                 </h4>
               </div>
               <div class="content-imagebox">
@@ -295,10 +295,10 @@
                   <!-- <h4 class="margin-botom5">
                     <span>Nec vehicula </span>
                   </h4> -->
-                  <a href="/project/<?= $p['slug']; ?>" id="wrapClass"><?= cut(strip_tags($p['title']),55,0,53); ?></a> 
+                  <a href="/layiheler/<?= $p['slug']; ?>" id="wrapClass"><?= cut(strip_tags($p['title']),55,0,53); ?></a> 
                 </div>
                 <div class="btn-tab">
-                  <a href="/project/<?= $p['slug']; ?>">
+                  <a href="/layiheler/<?= $p['slug']; ?>">
                     <i class="fas fa-arrow-right"></i>
                   </a>
                 </div>
