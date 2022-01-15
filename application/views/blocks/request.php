@@ -43,7 +43,11 @@
         </div>
       </div>
       <div class="form-questions boxshadow bg-white wow fadeInRight animated" data-wow-delay="0ms" data-wow-duration="1500ms">
+        <div class="loadrequest">
+          <img src="https://i.gifer.com/VAyR.gif">
+        </div>
         <div id="respond" class="comment-respond">
+          <div class="col-sm-12 msg"></div>
           <form action="" method="post" id="contact-form" class="commentform">
             <div class="text-wrap clearfix">
               <fieldset class="name-wrap">
@@ -58,7 +62,7 @@
               <fieldset class="select-wrap">
                 <div class="select">
                   <select name="service_id">
-                    <option value=""><?= $langs['choose_services']; ?></option>
+                    <option value="0"><?= $langs['choose_services']; ?></option>
                     <?php foreach($all_services as $s) { ?>
                       <option value="<?= $s['id']; ?>"><?= $s['title']; ?></option>
                     <?php } ?>
@@ -81,3 +85,32 @@
     </div>
   </div>
 </section>
+<style type="text/css">
+  .form-questions{
+    position: relative;
+  }
+  .loadrequest{
+    position: absolute;
+    z-index: 9999;
+    background: white;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 1px;
+    top: 0;
+    display: none;
+  }
+  .loadrequest img{
+    width: 50px;
+    height: 50px;
+  }
+  .questions-style .comment-respond {
+      margin-top: 30px;
+  }
+  .msg{
+    padding-bottom: 10px;
+  }
+</style>

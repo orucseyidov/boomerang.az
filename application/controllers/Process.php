@@ -103,6 +103,11 @@ class Process extends GO_Controller {
 			$service_id	= filter(strip_tags($this->input->post('service_id','trim')));
 			$message 	= filter(strip_tags($this->input->post('message','trim')));
 			$date 		= date("Y-m-d H:i:s");
+			$service_name = null;
+			if ($service_id > 0) {
+				$service 	= $this->core->get_values("services",$service_id,"title_az");
+				$service_name = isset($service['title_az']) ? $service['title_az'] : null;
+			}
 			$empty 		= false;
 			foreach ($_POST as $key => $value) {
 				if (empty($value) && $key != 'email') {
@@ -121,6 +126,7 @@ class Process extends GO_Controller {
 					"fullname" 		=> $fullname,
 					"email" 		=> $email,
 					"service_id" 	=> $service_id,
+					"service_name"	=> $service_name,
 					"message" 		=> $message,
 					"date" 			=> $date,
 					"status" 		=> 0
@@ -132,15 +138,13 @@ class Process extends GO_Controller {
 					$data['msg'] 	= 'Müraciətiniz uğurla qeydiyyata alınmışdır təşəkkür edirik.';
 					$data['color']	= 'green';
 					/* Mail send */
-					$service = $this->core->get_values("services",$service_id,"title_az");
-					debug($service_id);
 					$senddingmail  = 'yxedice1@gmail.com'; //info@printerbaku.az
 					$mailtitle  = 'Yeni mesajınız var';
 					$subject  = 'Sizə Saytdan mesaj gəlib';
 					$content  = "
 						 <div>Ad Soyad : {$fullname}</div>
 						 <div>E-poçt : {$email}</div>
-						 <div>Servis : {$service}</div>
+						 <div>Servis : {$service_name}</div>
 						 <div>Tarix : {$date}</div>
 						 <div>Mesaj : {$message}</div>
 					";

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Hazırlanma Vaxtı: 14 Yan, 2022 saat 16:51
+-- Hazırlanma Vaxtı: 15 Yan, 2022 saat 11:44
 -- Server versiyası: 5.6.47
 -- PHP Versiyası: 7.2.29
 
@@ -380,6 +380,7 @@ INSERT INTO `menu` (`id`, `name_az`, `name_en`, `name_ru`, `slug`, `status`, `ra
 CREATE TABLE `messages` (
   `id` int(11) NOT NULL,
   `service_id` int(11) NOT NULL,
+  `service_name` varchar(255) NOT NULL,
   `fullname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
@@ -392,11 +393,17 @@ CREATE TABLE `messages` (
 -- Sxemi çıxarılan cedvel `messages`
 --
 
-INSERT INTO `messages` (`id`, `service_id`, `fullname`, `email`, `phone`, `message`, `date`, `status`) VALUES
-(1, 1, 'zzxczxc', 'seyidovoruc@gmailcom', '0707007070', 'sadad', '2020-03-27', 1),
-(2, 5, 'Oruc Seyidov', 'seyidovoruc@gmail.com', '0505005050', 'dasdasd', '2020-06-30', 0),
-(3, 3, 'Oruc Seyidov', 'seyidovoruc@gmail.com', '0555555555', 'dasdasd', '2020-06-30', 0),
-(4, 2, 'Oruc Seyidov', 'seyidovoruc@gmail.com', '0515515151', 'dasdasd', '2020-06-30', 0);
+INSERT INTO `messages` (`id`, `service_id`, `service_name`, `fullname`, `email`, `phone`, `message`, `date`, `status`) VALUES
+(1, 1, '', 'zzxczxc', 'seyidovoruc@gmailcom', '0707007070', 'sadad', '2020-03-27', 1),
+(2, 5, '', 'Oruc Seyidov', 'seyidovoruc@gmail.com', '0505005050', 'dasdasd', '2020-06-30', 0),
+(3, 3, '', 'Oruc Seyidov', 'seyidovoruc@gmail.com', '0555555555', 'dasdasd', '2020-06-30', 0),
+(4, 2, '', 'Oruc Seyidov', 'seyidovoruc@gmail.com', '0515515151', 'dasdasd', '2020-06-30', 0),
+(5, 4, '', 'sfsdfsd', 'sdfsdf@dfds.sdfd', '', 'sdfsdfdsfdsf', '2022-01-15', 0),
+(6, 3, '', 'Oruc Seyidov', 'seyidovoruc@gmail.com', '', 'sdfsdf', '2022-01-15', 0),
+(7, 3, 'PLANNING & PROJECTS', 'Oruc Seyidov', 'seyidovoruc@gmail.com', '', 'sdfsdf', '2022-01-15', 0),
+(8, 3, 'PLANNING & PROJECTS', 'Oruc Seyidov', 'seyidovoruc@gmail.com', '', 'sdfsdf', '2022-01-15', 0),
+(9, 4, 'REPLACE ACCESSORIES', 'Oruc Seyidov', 'seyidovoruc@gmail.com', '', 'rgfdfgdf', '2022-01-15', 0),
+(10, 5, 'DOOR MAINTENANCE REPAIR', 'Oruc Seyidov', 'seyidovoruc@gmail.com', '', 'dsfsdf', '2022-01-15', 0);
 
 -- --------------------------------------------------------
 
@@ -810,7 +817,7 @@ ALTER TABLE `administration`
 -- Cədvəl üçün AUTO_INCREMENT `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Cədvəl üçün AUTO_INCREMENT `brands`
@@ -834,7 +841,7 @@ ALTER TABLE `contacts`
 -- Cədvəl üçün AUTO_INCREMENT `content`
 --
 ALTER TABLE `content`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Cədvəl üçün AUTO_INCREMENT `gallery`
@@ -870,7 +877,7 @@ ALTER TABLE `menu`
 -- Cədvəl üçün AUTO_INCREMENT `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Cədvəl üçün AUTO_INCREMENT `newsletter`
@@ -882,13 +889,13 @@ ALTER TABLE `newsletter`
 -- Cədvəl üçün AUTO_INCREMENT `opinions`
 --
 ALTER TABLE `opinions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Cədvəl üçün AUTO_INCREMENT `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Cədvəl üçün AUTO_INCREMENT `seo_settings`

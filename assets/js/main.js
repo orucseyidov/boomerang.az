@@ -62,24 +62,3 @@ removePreloader();new WOW().init();responsiveMenu();tabs();parallax();topSearch(
 
 	// enableContactForm();
 
-$('body').on('submit', '#contact-form', function(e){
-	e.preventDefault();
-	var form = $(this);
-	$.ajax({
-		type: "post",
-		url:  'Process/contactfrom',
-		data: form.serialize(),
-		success : function(response){
-			var data = JSON.parse(response);
-			if(data.status=="success"){
-				$("input").val("");
-				$("textarea").val("");
-			}
-			console.log(data);
-		},
-		error : function(err){
-			alert("Sistem xətası");
-		}
-	});
-	return false;
-});
