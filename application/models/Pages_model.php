@@ -36,6 +36,7 @@ class Pages_model extends GO_Model {
 		$this->db->select('
 			title_'.$this->dil.' as title,
 			description_'.$this->dil.' as description,
+			keywords_'.$this->dil.' as keywords,
 			image,slug,date
 		');
         $this->db->from('projects');

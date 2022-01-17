@@ -1,50 +1,42 @@
-<div class="slider-style2 cleafix">
-  <div class="container">
-    <div class="overlay-slider1 cleafix"></div>
-    <div class="flat-slider clearfix">
-      <div class="rev_slider_wrapper fullwidthbanner-container">
-        <div id="rev-slider2" class="rev_slider fullwidthabanner">
-          <ul>
-            <li data-transition="random">
-              <div class="tp-caption tp-resizeme text-one" data-x="['center','left','left','center']" data-hoffset="['-1','30','15','20']" data-y="['middle','middle','middle','middle']" data-voffset="['-182','-170','-170','-240']" data-fontsize="['16','16','16','16']" data-lineheight="['30','30','30','30']" data-width="full" data-height="none" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="500" data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                <span class="title1">Fonsetetur sadipscing</span>
-              </div>
-              <div class="tp-caption tp-resizeme text-two" data-x="['center','center','center','left']" data-hoffset="['-8','0','15','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-83','-80','-50','-140']" data-fontsize="['70','70','50','40']" data-lineheight="['68','68','64','52']" data-width="full" data-height="none" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="900" data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                <h1 class="title2">The Futurist</h1>
-              </div>
-              <div class="tp-caption tp-resizeme text-four" data-x="['center','center','center','left']" data-hoffset="['0','0','15','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-15','00','20','-30']" data-fontsize="['70','70','50','40']" data-lineheight="['68','68','64','52']" data-width="full" data-height="none" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="910" data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                <h1 class="title2">Windows & Doors</h1>
-              </div>
-              <div class="tp-caption tp-resizeme text-three" data-x="['center','center','center','left']" data-hoffset="['0','0','15','0']" data-y="['middle','middle','middle','middle']" data-voffset="['75','110','120','110']" data-fontsize="['16','16','16','16']" data-lineheight="['30','28','28','28']" data-width="full" data-height="none" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="1700" data-splitin="none" data-splitout="none" data-responsive_offset="on"> Fonsetetur sadipscing elitr, sed diam nonumy eirmod tempor <br /> invidunt ut labore et dolore magna aliquyam </div>
-              <div class="tp-caption btn-text btn-linear hv-linear-gradient" data-x="['center','center','center','left']" data-hoffset="['0','0','15','0']" data-y="['middle','middle','middle','middle']" data-voffset="['167','200','200','230']" data-width="full" data-height="none" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="2100" data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                <a href="page-contact.html" class="themesflat-button-style2 btn-style-two">
-                  <span class="btn-title">GET A QUOTE</span>
-                </a>
-              </div>
-            </li>
-            <li data-transition="random">
-              <div class="tp-caption tp-resizeme text-one" data-x="['center','left','left','center']" data-hoffset="['-1','30','15','20']" data-y="['middle','middle','middle','middle']" data-voffset="['-182','-170','-170','-240']" data-fontsize="['16','16','16','16']" data-lineheight="['30','30','30','30']" data-width="full" data-height="none" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="500" data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                <span class="title1">Fonsetetur sadipscing</span>
-              </div>
-              <div class="tp-caption tp-resizeme text-two" data-x="['center','center','center','left']" data-hoffset="['-8','0','15','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-83','-80','-50','-140']" data-fontsize="['70','70','50','40']" data-lineheight="['68','68','64','52']" data-width="full" data-height="none" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="900" data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                <h1 class="title2">The Futurist</h1>
-              </div>
-              <div class="tp-caption tp-resizeme text-four" data-x="['center','center','center','left']" data-hoffset="['0','0','15','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-15','00','20','-30']" data-fontsize="['70','70','50','40']" data-lineheight="['68','68','64','52']" data-width="full" data-height="none" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="910" data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                <h1 class="title2">Windows & Doors</h1>
-              </div>
-              <div class="tp-caption tp-resizeme text-three" data-x="['center','center','center','left']" data-hoffset="['0','0','15','0']" data-y="['middle','middle','middle','middle']" data-voffset="['75','110','120','110']" data-fontsize="['16','16','16','16']" data-lineheight="['30','28','28','28']" data-width="full" data-height="none" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="1700" data-splitin="none" data-splitout="none" data-responsive_offset="on"> Fonsetetur sadipscing elitr, sed diam nonumy eirmod tempor <br /> invidunt ut labore et dolore magna aliquyam </div>
-              <div class="tp-caption btn-text btn-linear hv-linear-gradient" data-x="['center','center','center','left']" data-hoffset="['0','0','15','0']" data-y="['middle','middle','middle','middle']" data-voffset="['167','200','200','230']" data-width="full" data-height="none" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;" data-start="2100" data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                <a href="page-contact.html" class="themesflat-button-style2 btn-style-two">
-                  <span class="btn-title">GET A QUOTE</span>
-                </a>
-              </div>
-            </li>
-          </ul>
-        </div>
+<section class="cleafix">
+  <div class="home-silder-container">
+    <div class="swiper-container home-silder">
+      <!-- swiper slides -->
+      <div class="swiper-wrapper">
+          <div class="swiper-slide" style="background-image: url(https://source.unsplash.com/random?sig=24);">
+              <h2>SIMPLE SWIPER</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.</p>
+              <a href="" class="btn btn-silder">Read More</a>
+          </div>
+          
+          <div class="swiper-slide" style="background-image: url(https://source.unsplash.com/random?sig=53);"> 
+              <h2>HELLO WORLD</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.</p>
+              <a href="" class="btn btn-silder">Read More</a>
+          </div>
+          
+          <div class="swiper-slide" style="background-image: url(https://source.unsplash.com/random?sig=52);">
+              <h2>Random Text 1</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.</p>
+              <a href="" class="btn btn-silder">Read More</a>
+          </div>
       </div>
+      <!-- !swiper slides -->
+      
+      <!-- next / prev arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <!-- !next / prev arrows -->
+      
+      <!-- pagination dots -->
+      <div class="swiper-pagination"></div>
+      <!-- !pagination dots -->
     </div>
   </div>
-</div>
+</section>
 <section class="what-we-do-service bg-white" id="what-we-do-service">
   <div class="container">
     <div class="row">

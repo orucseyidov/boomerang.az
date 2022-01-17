@@ -37,3 +37,16 @@
         return false;
     });
 </script>
+
+<script type="text/javascript">
+    var Swipes = new Swiper('.home-silder', {
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+        },
+    });
+</script>

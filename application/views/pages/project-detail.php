@@ -40,15 +40,13 @@
     <div class="themesflat-spacer clearfix" data-desktop="77" data-mobile="40" data-smobile="30"></div>
     <div class="tag-social">
       <ul class="list-tag flex">
-        <li>
-          <a href="#">Black</a>
-        </li>
-        <li>
-          <a href="#">Aid</a>
-        </li>
-        <li>
-          <a href="#">Green</a>
-        </li>
+        <?php if (!empty($project['keywords'])): ?>
+          <?php foreach (explode(",",$project['keywords']) as $key => $value): ?>
+            <li>
+              <a href="javascript:void(0)"><?=$value ?></a>
+            </li>
+          <?php endforeach ?>
+        <?php endif ?>
       </ul>
       <ul class="social flex">
         <li class="text">

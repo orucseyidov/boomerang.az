@@ -42,23 +42,20 @@
             </div>
             <p><?=$blog['description']; ?></p>
         </div>
-        <!-- <div class="tag-socical">
+        <div class="tag-socical">
           <div class="tag">
             <ul>
               <li class="text1">
                 <span>Related Tags :</span>
               </li>
-              <li class="text2">
-                <a href="#">Doctor </a>
-                <span class="text2-style2">.</span>
-              </li>
-              <li class="text2">
-                <a href="#">Medical</a>
-                <span>.</span>
-              </li>
-              <li class="text2">
-                <a href="#">osud</a>
-              </li>
+              <?php if (!empty($blog['tags'])): ?>
+                <?php foreach (explode(",",$blog['tags']) as $key => $value): ?>
+                  <li class="text2">
+                    <a href="javascript:void(0)"><?=$value ?> </a>
+                    <span class="text2-style2">.</span>
+                  </li>
+                <?php endforeach ?>
+              <?php endif ?>
             </ul>
           </div>
           <div class="socical">
@@ -67,24 +64,22 @@
                 <span>Share :</span>
               </li>
               <li class="topbar-socials">
-                <span class="icons">
-                  <a href="#">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                  <a href="#">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                  <a href="#">
-                    <i class="fab fa-google-plus-g"></i>
-                  </a>
-                  <a href="#">
-                    <i class="fab fa-instagram"></i>
-                  </a>
-                </span>
+                <!-- AddToAny BEGIN -->
+                <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                <a class="a2a_button_whatsapp"></a>
+                <a class="a2a_button_facebook"></a>
+                <a class="a2a_button_twitter"></a>
+                <a class="a2a_button_email"></a>
+                <a class="a2a_button_facebook_messenger"></a>
+                <a class="a2a_button_copy_link"></a>
+                </div>
+                <script async src="https://static.addtoany.com/menu/page.js"></script>
+                <!-- AddToAny END -->
               </li>
             </ul>
           </div>
-        </div> -->
+        </div>
       </div>
       <?php $this->load->view("blocks/sidebar") ?>
     </div>

@@ -117,18 +117,7 @@
   <script type="text/javascript" src="/assets/js/animsition.js"></script>
   <script type="text/javascript" src="/assets/js/recliner.min.js"></script>
   <script type="text/javascript" src="/assets/js/jquery.fancybox.js"></script>
-  <script src="/assets/rev-slider/js/jquery.themepunch.revolution.min.js"></script>
-  <script src="/rev-slider/js/jquery.themepunch.tools.min.js"></script>
-  <script src="/assets/js/rev-slider.js"></script>
-  <script src="/assets/rev-slider/js/extensions/extensionsrevolution.extension.actions.min.js"></script>
-  <script src="/assets/rev-slider/js/extensions/extensionsrevolution.extension.carousel.min.js"></script>
-  <script src="/assets/rev-slider/js/extensions/extensionsrevolution.extension.kenburn.min.js"></script>
-  <script src="/assets/rev-slider/js/extensions/extensionsrevolution.extension.layeranimation.min.js"></script>
-  <script src="/assets/rev-slider/js/extensions/extensionsrevolution.extension.migration.min.js"></script>
-  <script src="/assets/rev-slider/js/extensions/extensionsrevolution.extension.navigation.min.js"></script>
-  <script src="/assets/rev-slider/js/extensions/extensionsrevolution.extension.parallax.min.js"></script>
-  <script src="/assets/rev-slider/js/extensions/extensionsrevolution.extension.slideanims.min.js"></script>
-  <script src="/assets/rev-slider/js/extensions/extensionsrevolution.extension.video.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.js'>
   <?php 
     if (!empty($headdata)) {echo $headdata;}
     $this->load->view("blocks/scripts");

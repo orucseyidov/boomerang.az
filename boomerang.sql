@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 15, 2022 at 01:57 PM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.8
+-- Host: 127.0.0.1:3306
+-- Hazırlanma Vaxtı: 17 Yan, 2022 saat 12:04
+-- Server versiyası: 5.6.47
+-- PHP Versiyası: 7.2.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `boomerang`
+-- Verilənlər Bazası: `boomerang`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `about`
+-- Cədvəl üçün cədvəl strukturu `about`
 --
 
 CREATE TABLE `about` (
@@ -39,7 +39,7 @@ CREATE TABLE `about` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `about`
+-- Sxemi çıxarılan cedvel `about`
 --
 
 INSERT INTO `about` (`id`, `title_az`, `title_en`, `title_ru`, `description_az`, `description_en`, `description_ru`, `image`) VALUES
@@ -49,7 +49,7 @@ INSERT INTO `about` (`id`, `title_az`, `title_en`, `title_ru`, `description_az`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `administration`
+-- Cədvəl üçün cədvəl strukturu `administration`
 --
 
 CREATE TABLE `administration` (
@@ -57,12 +57,12 @@ CREATE TABLE `administration` (
   `fullname` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 0,
+  `status` tinyint(1) NOT NULL DEFAULT '0',
   `image` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `administration`
+-- Sxemi çıxarılan cedvel `administration`
 --
 
 INSERT INTO `administration` (`id`, `fullname`, `username`, `password`, `status`, `image`) VALUES
@@ -71,7 +71,7 @@ INSERT INTO `administration` (`id`, `fullname`, `username`, `password`, `status`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blog`
+-- Cədvəl üçün cədvəl strukturu `blog`
 --
 
 CREATE TABLE `blog` (
@@ -85,21 +85,21 @@ CREATE TABLE `blog` (
   `tags_az` varchar(1500) NOT NULL,
   `tags_en` varchar(1500) NOT NULL,
   `tags_ru` varchar(1500) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
   `date` date NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_deleted` tinyint(1) NOT NULL,
   `slug` varchar(500) NOT NULL,
-  `view` int(11) NOT NULL DEFAULT 0,
+  `view` int(11) NOT NULL DEFAULT '0',
   `image` varchar(1500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `blog`
+-- Sxemi çıxarılan cedvel `blog`
 --
 
 INSERT INTO `blog` (`id`, `title_az`, `title_en`, `title_ru`, `description_az`, `description_en`, `description_ru`, `tags_az`, `tags_en`, `tags_ru`, `status`, `date`, `created_at`, `is_deleted`, `slug`, `view`, `image`) VALUES
-(1, 'Mauris neque nisiibus non elementum', 'Mauris neque nisiibus non elementum', 'Mauris neque nisiibus non elementum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '', '', '', 1, '2021-12-18', '2022-01-06 14:01:02', 0, 'blog1', 25, '/uploads/images/blog/0f7315cdd3blog4.jpg'),
+(1, 'Mauris neque nisiibus non elementum', 'Mauris neque nisiibus non elementum', 'Mauris neque nisiibus non elementum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '', '', '', 1, '2021-12-18', '2022-01-06 14:01:02', 0, 'blog1', 27, '/uploads/images/blog/0f7315cdd3blog4.jpg'),
 (2, 'Quisque suscipit ipsum est, eu venenatis leo', 'Quisque suscipit ipsum est, eu venenatis leo', 'Quisque suscipit ipsum est, eu venenatis leo', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '', '', '', 1, '2021-11-07', '2022-01-06 14:02:43', 0, 'blog2', 146, '/uploads/images/blog/3ffad4007bblog3.jpg'),
 (3, 'Maecenas interdum lorem eleifend orci aliquam', 'Maecenas interdum lorem eleifend orci aliquam', 'Maecenas interdum lorem eleifend orci aliquam', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '', '', '', 1, '2021-11-11', '2022-01-06 14:02:43', 0, 'blog3', 29, '/uploads/images/blog/03e7d962f2imgblog1.jpg'),
 (4, 'There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..', 'There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..', 'There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '', '', '', 1, '2021-12-03', '2022-01-06 14:03:51', 0, 'blog4', 52, '/uploads/images/blog/2bb90b8800blog2.jpg'),
@@ -113,7 +113,7 @@ INSERT INTO `blog` (`id`, `title_az`, `title_en`, `title_ru`, `description_az`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `brands`
+-- Cədvəl üçün cədvəl strukturu `brands`
 --
 
 CREATE TABLE `brands` (
@@ -124,7 +124,7 @@ CREATE TABLE `brands` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `brands`
+-- Sxemi çıxarılan cedvel `brands`
 --
 
 INSERT INTO `brands` (`id`, `title`, `image`, `slug`) VALUES
@@ -136,7 +136,7 @@ INSERT INTO `brands` (`id`, `title`, `image`, `slug`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category`
+-- Cədvəl üçün cədvəl strukturu `category`
 --
 
 CREATE TABLE `category` (
@@ -151,17 +151,17 @@ CREATE TABLE `category` (
   `keywords_az` varchar(1500) NOT NULL,
   `keywords_en` varchar(1500) NOT NULL,
   `keywords_ru` varchar(1500) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
-  `is_deleted` tinyint(1) NOT NULL DEFAULT 0,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
   `slug` varchar(500) NOT NULL,
-  `view` int(11) NOT NULL DEFAULT 0,
-  `rank` int(11) DEFAULT 0,
+  `view` int(11) NOT NULL DEFAULT '0',
+  `rank` int(11) DEFAULT '0',
   `image` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `category`
+-- Sxemi çıxarılan cedvel `category`
 --
 
 INSERT INTO `category` (`id`, `parent`, `title_az`, `title_en`, `title_ru`, `description_az`, `description_en`, `description_ru`, `keywords_az`, `keywords_en`, `keywords_ru`, `status`, `created_at`, `is_deleted`, `slug`, `view`, `rank`, `image`) VALUES
@@ -175,7 +175,7 @@ INSERT INTO `category` (`id`, `parent`, `title_az`, `title_en`, `title_ru`, `des
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contacts`
+-- Cədvəl üçün cədvəl strukturu `contacts`
 --
 
 CREATE TABLE `contacts` (
@@ -192,7 +192,7 @@ CREATE TABLE `contacts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `contacts`
+-- Sxemi çıxarılan cedvel `contacts`
 --
 
 INSERT INTO `contacts` (`id`, `adress_az`, `adress_en`, `adress_ru`, `map`, `phone`, `mobile`, `whatsapp`, `fax`, `mail`) VALUES
@@ -201,7 +201,7 @@ INSERT INTO `contacts` (`id`, `adress_az`, `adress_en`, `adress_ru`, `map`, `pho
 -- --------------------------------------------------------
 
 --
--- Table structure for table `content`
+-- Cədvəl üçün cədvəl strukturu `content`
 --
 
 CREATE TABLE `content` (
@@ -216,7 +216,7 @@ CREATE TABLE `content` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `content`
+-- Sxemi çıxarılan cedvel `content`
 --
 
 INSERT INTO `content` (`id`, `keyword`, `title_az`, `title_en`, `title_ru`, `value_az`, `value_en`, `value_ru`) VALUES
@@ -226,7 +226,7 @@ INSERT INTO `content` (`id`, `keyword`, `title_az`, `title_en`, `title_ru`, `val
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gallery`
+-- Cədvəl üçün cədvəl strukturu `gallery`
 --
 
 CREATE TABLE `gallery` (
@@ -237,7 +237,7 @@ CREATE TABLE `gallery` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `gallery`
+-- Sxemi çıxarılan cedvel `gallery`
 --
 
 INSERT INTO `gallery` (`id`, `image`, `parent`, `section`) VALUES
@@ -259,7 +259,7 @@ INSERT INTO `gallery` (`id`, `image`, `parent`, `section`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `info_msg`
+-- Cədvəl üçün cədvəl strukturu `info_msg`
 --
 
 CREATE TABLE `info_msg` (
@@ -272,7 +272,7 @@ CREATE TABLE `info_msg` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `info_site`
+-- Cədvəl üçün cədvəl strukturu `info_site`
 --
 
 CREATE TABLE `info_site` (
@@ -286,7 +286,7 @@ CREATE TABLE `info_site` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `info_site`
+-- Sxemi çıxarılan cedvel `info_site`
 --
 
 INSERT INTO `info_site` (`id`, `icon_class`, `title_az`, `title_en`, `title_ru`, `count`, `count_side`) VALUES
@@ -298,7 +298,7 @@ INSERT INTO `info_site` (`id`, `icon_class`, `title_az`, `title_en`, `title_ru`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `languages`
+-- Cədvəl üçün cədvəl strukturu `languages`
 --
 
 CREATE TABLE `languages` (
@@ -310,7 +310,7 @@ CREATE TABLE `languages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `languages`
+-- Sxemi çıxarılan cedvel `languages`
 --
 
 INSERT INTO `languages` (`id`, `keyword`, `value_az`, `value_en`, `value_ru`) VALUES
@@ -345,7 +345,7 @@ INSERT INTO `languages` (`id`, `keyword`, `value_az`, `value_en`, `value_ru`) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu`
+-- Cədvəl üçün cədvəl strukturu `menu`
 --
 
 CREATE TABLE `menu` (
@@ -354,12 +354,12 @@ CREATE TABLE `menu` (
   `name_en` varchar(100) NOT NULL,
   `name_ru` varchar(100) NOT NULL,
   `slug` varchar(100) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1,
-  `rank` int(11) NOT NULL DEFAULT 0
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `rank` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `menu`
+-- Sxemi çıxarılan cedvel `menu`
 --
 
 INSERT INTO `menu` (`id`, `name_az`, `name_en`, `name_ru`, `slug`, `status`, `rank`) VALUES
@@ -374,7 +374,7 @@ INSERT INTO `menu` (`id`, `name_az`, `name_en`, `name_ru`, `slug`, `status`, `ra
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messages`
+-- Cədvəl üçün cədvəl strukturu `messages`
 --
 
 CREATE TABLE `messages` (
@@ -386,11 +386,11 @@ CREATE TABLE `messages` (
   `phone` varchar(255) NOT NULL,
   `message` longtext NOT NULL,
   `date` date NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 0
+  `status` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `messages`
+-- Sxemi çıxarılan cedvel `messages`
 --
 
 INSERT INTO `messages` (`id`, `service_id`, `service_name`, `fullname`, `email`, `phone`, `message`, `date`, `status`) VALUES
@@ -402,7 +402,7 @@ INSERT INTO `messages` (`id`, `service_id`, `service_name`, `fullname`, `email`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `newsletter`
+-- Cədvəl üçün cədvəl strukturu `newsletter`
 --
 
 CREATE TABLE `newsletter` (
@@ -412,7 +412,7 @@ CREATE TABLE `newsletter` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `newsletter`
+-- Sxemi çıxarılan cedvel `newsletter`
 --
 
 INSERT INTO `newsletter` (`id`, `mail`, `date`) VALUES
@@ -421,7 +421,7 @@ INSERT INTO `newsletter` (`id`, `mail`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `opinions`
+-- Cədvəl üçün cədvəl strukturu `opinions`
 --
 
 CREATE TABLE `opinions` (
@@ -432,7 +432,7 @@ CREATE TABLE `opinions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `opinions`
+-- Sxemi çıxarılan cedvel `opinions`
 --
 
 INSERT INTO `opinions` (`id`, `username`, `image`, `opinion`) VALUES
@@ -442,7 +442,7 @@ INSERT INTO `opinions` (`id`, `username`, `image`, `opinion`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `projects`
+-- Cədvəl üçün cədvəl strukturu `projects`
 --
 
 CREATE TABLE `projects` (
@@ -457,23 +457,23 @@ CREATE TABLE `projects` (
   `keywords_en` varchar(1500) NOT NULL,
   `keywords_ru` varchar(1500) NOT NULL,
   `date` date NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1,
-  `is_deleted` tinyint(1) NOT NULL DEFAULT 0,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `slug` varchar(500) NOT NULL,
-  `view` int(11) NOT NULL DEFAULT 0,
+  `view` int(11) NOT NULL DEFAULT '0',
   `image` varchar(1500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `projects`
+-- Sxemi çıxarılan cedvel `projects`
 --
 
 INSERT INTO `projects` (`id`, `title_az`, `title_en`, `title_ru`, `description_az`, `description_en`, `description_ru`, `keywords_az`, `keywords_en`, `keywords_ru`, `date`, `status`, `is_deleted`, `created_at`, `slug`, `view`, `image`) VALUES
 (1, 'title_az1', 'title_en1', 'title_ru1', 'desc_az1', 'desc_en1', 'desc_ru1', '', '', '', '2022-01-10', 1, 0, '2022-01-10 05:58:26', 'project1', 0, '/uploads/images/projects/1c26abc708-LayihE-adi-1-yeni-layihE-1-1-test-en.jpg'),
 (2, 'Layihə adi 1 yeni layihə 1-1 test', 'Layihə adi 1 yeni layihə 1-1 test en', 'Layihə adi 1 yeni layihə 1-1 test ru', 'Information Of Project\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam\r\n\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna', 'Information Of Project\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam\r\n\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna', 'Information Of Project\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam\r\n\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna', '', '', '', '2022-01-10', 1, 0, '2022-01-10 10:40:06', 'slug1', 0, '/uploads/images/projects/1c26abc708-LayihE-adi-1-yeni-layihE-1-1-test-en.jpg'),
 (6, 'Layihə adi 2 yeni layihə 1-1 test', 'Layihə adi 2 yeni layihə 1-1 test en', 'Layihə adi 2 yeni layihə 1-1 test ru', 'Information Of Project\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam\r\n\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna', 'Information Of Project\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam\r\n\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna', 'Information Of Project\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam\r\n\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna', '', '', '', '2022-01-10', 1, 0, '2022-01-10 10:40:06', 'slug2', 0, '/uploads/images/projects/1c26abc708-LayihE-adi-1-yeni-layihE-1-1-test-en.jpg'),
-(7, 'Layihə adi 3 yeni layihə 1-1 test', 'Layihə adi 3 yeni layihə 1-1 test en', 'Layihə adi 3 yeni layihə 1-1 test ru', 'Information Of Project\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam\r\n\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna', 'Information Of Project\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam\r\n\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna', 'Information Of Project\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam\r\n\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna', '', '', '', '2022-01-10', 1, 0, '2022-01-10 10:40:06', 'slug3', 0, '/uploads/images/projects/1c26abc708-LayihE-adi-1-yeni-layihE-1-1-test-en.jpg'),
+(7, 'Layihə adi 3 yeni layihə 1-1 test', 'Layihə adi 3 yeni layihə 1-1 test en', 'Layihə adi 3 yeni layihə 1-1 test ru', 'Information Of Project\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam\r\n\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna', 'Information Of Project\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam\r\n\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna', 'Information Of Project\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam\r\n\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna', 'key1,key2,key3', 'key1,key2,key3', 'key1,key2,key3', '2022-01-10', 1, 0, '2022-01-10 10:40:06', 'slug3', 0, '/uploads/images/projects/1c26abc708-LayihE-adi-1-yeni-layihE-1-1-test-en.jpg'),
 (8, 'Layihə adi 4 yeni layihə 1-1 test', 'Layihə adi 4 yeni layihə 1-1 test en', 'Layihə adi 4 yeni layihə 1-1 test ru', 'Information Of Project\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam\r\n\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna', 'Information Of Project\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam\r\n\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna', 'Information Of Project\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam\r\n\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna', '', '', '', '2022-01-10', 1, 0, '2022-01-10 10:40:06', 'slug4', 0, '/uploads/images/projects/1c26abc708-LayihE-adi-1-yeni-layihE-1-1-test-en.jpg'),
 (9, 'Layihə adi 5 yeni layihə 1-1 test', 'Layihə adi 5 yeni layihə 1-1 test en', 'Layihə adi 5 yeni layihə 1-1 test ru', 'Information Of Project\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam\r\n\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna', 'Information Of Project\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam\r\n\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna', 'Information Of Project\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam\r\n\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna', '', '', '', '2022-01-10', 1, 0, '2022-01-10 10:40:06', 'slug5', 0, '/uploads/images/projects/1c26abc708-LayihE-adi-1-yeni-layihE-1-1-test-en.jpg'),
 (10, 'Layihə adi 6 yeni layihə 1-1 test', 'Layihə adi 6 yeni layihə 1-1 test en', 'Layihə adi 6 yeni layihə 1-1 test ru', 'Information Of Project\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam\r\n\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna', 'Information Of Project\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam\r\n\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna', 'Information Of Project\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam\r\n\r\n\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna', '', '', '', '2022-01-10', 1, 0, '2022-01-10 10:40:06', 'slug6', 0, '/uploads/images/projects/1c26abc708-LayihE-adi-1-yeni-layihE-1-1-test-en.jpg'),
@@ -486,7 +486,7 @@ INSERT INTO `projects` (`id`, `title_az`, `title_en`, `title_ru`, `description_a
 -- --------------------------------------------------------
 
 --
--- Table structure for table `qalereya`
+-- Cədvəl üçün cədvəl strukturu `qalereya`
 --
 
 CREATE TABLE `qalereya` (
@@ -494,12 +494,12 @@ CREATE TABLE `qalereya` (
   `title_az` varchar(500) NOT NULL,
   `title_en` varchar(500) NOT NULL,
   `title_ru` varchar(500) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
   `image` varchar(1500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `qalereya`
+-- Sxemi çıxarılan cedvel `qalereya`
 --
 
 INSERT INTO `qalereya` (`id`, `title_az`, `title_en`, `title_ru`, `status`, `image`) VALUES
@@ -513,7 +513,7 @@ INSERT INTO `qalereya` (`id`, `title_az`, `title_en`, `title_ru`, `status`, `ima
 -- --------------------------------------------------------
 
 --
--- Table structure for table `seo_settings`
+-- Cədvəl üçün cədvəl strukturu `seo_settings`
 --
 
 CREATE TABLE `seo_settings` (
@@ -532,7 +532,7 @@ CREATE TABLE `seo_settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `seo_settings`
+-- Sxemi çıxarılan cedvel `seo_settings`
 --
 
 INSERT INTO `seo_settings` (`id`, `page`, `title_az`, `title_en`, `title_ru`, `description_az`, `description_en`, `description_ru`, `keywords_az`, `keywords_en`, `keywords_ru`, `image`) VALUES
@@ -546,7 +546,7 @@ INSERT INTO `seo_settings` (`id`, `page`, `title_az`, `title_en`, `title_ru`, `d
 -- --------------------------------------------------------
 
 --
--- Table structure for table `services`
+-- Cədvəl üçün cədvəl strukturu `services`
 --
 
 CREATE TABLE `services` (
@@ -560,17 +560,17 @@ CREATE TABLE `services` (
   `keywords_az` varchar(1500) NOT NULL,
   `keywords_en` varchar(1500) NOT NULL,
   `keywords_ru` varchar(1500) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
-  `is_deleted` tinyint(1) NOT NULL DEFAULT 0,
-  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL DEFAULT '1',
   `slug` varchar(500) NOT NULL,
-  `view` int(11) NOT NULL DEFAULT 0,
+  `view` int(11) NOT NULL DEFAULT '0',
   `icon` varchar(1000) NOT NULL,
   `image` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `services`
+-- Sxemi çıxarılan cedvel `services`
 --
 
 INSERT INTO `services` (`id`, `title_az`, `title_en`, `title_ru`, `description_az`, `description_en`, `description_ru`, `keywords_az`, `keywords_en`, `keywords_ru`, `created_at`, `is_deleted`, `status`, `slug`, `view`, `icon`, `image`) VALUES
@@ -584,7 +584,7 @@ INSERT INTO `services` (`id`, `title_az`, `title_en`, `title_ru`, `description_a
 -- --------------------------------------------------------
 
 --
--- Table structure for table `settings`
+-- Cədvəl üçün cədvəl strukturu `settings`
 --
 
 CREATE TABLE `settings` (
@@ -604,7 +604,7 @@ CREATE TABLE `settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `settings`
+-- Sxemi çıxarılan cedvel `settings`
 --
 
 INSERT INTO `settings` (`id`, `site_title_az`, `site_title_en`, `site_title_ru`, `description_az`, `description_en`, `description_ru`, `tags_az`, `tags_en`, `tags_ru`, `site_status`, `image`, `favicon`) VALUES
@@ -613,7 +613,7 @@ INSERT INTO `settings` (`id`, `site_title_az`, `site_title_en`, `site_title_ru`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `slider`
+-- Cədvəl üçün cədvəl strukturu `slider`
 --
 
 CREATE TABLE `slider` (
@@ -625,14 +625,14 @@ CREATE TABLE `slider` (
   `description_en` varchar(2000) NOT NULL,
   `description_ru` varchar(2000) NOT NULL,
   `link` varchar(1500) NOT NULL,
-  `link_status` tinyint(1) NOT NULL DEFAULT 1,
-  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `link_status` tinyint(1) NOT NULL DEFAULT '1',
+  `status` tinyint(1) NOT NULL DEFAULT '1',
   `rank` int(11) NOT NULL,
   `image` varchar(1500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `slider`
+-- Sxemi çıxarılan cedvel `slider`
 --
 
 INSERT INTO `slider` (`id`, `title_az`, `title_en`, `title_ru`, `description_az`, `description_en`, `description_ru`, `link`, `link_status`, `status`, `rank`, `image`) VALUES
@@ -642,7 +642,7 @@ INSERT INTO `slider` (`id`, `title_az`, `title_en`, `title_ru`, `description_az`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `social`
+-- Cədvəl üçün cədvəl strukturu `social`
 --
 
 CREATE TABLE `social` (
@@ -653,7 +653,7 @@ CREATE TABLE `social` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `social`
+-- Sxemi çıxarılan cedvel `social`
 --
 
 INSERT INTO `social` (`id`, `name`, `icon`, `link`) VALUES
@@ -666,127 +666,127 @@ INSERT INTO `social` (`id`, `name`, `icon`, `link`) VALUES
 --
 
 --
--- Indexes for table `about`
+-- Cədvəl üçün indekslər `about`
 --
 ALTER TABLE `about`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `administration`
+-- Cədvəl üçün indekslər `administration`
 --
 ALTER TABLE `administration`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `blog`
+-- Cədvəl üçün indekslər `blog`
 --
 ALTER TABLE `blog`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `brands`
+-- Cədvəl üçün indekslər `brands`
 --
 ALTER TABLE `brands`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `category`
+-- Cədvəl üçün indekslər `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `contacts`
+-- Cədvəl üçün indekslər `contacts`
 --
 ALTER TABLE `contacts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `content`
+-- Cədvəl üçün indekslər `content`
 --
 ALTER TABLE `content`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `gallery`
+-- Cədvəl üçün indekslər `gallery`
 --
 ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `info_msg`
+-- Cədvəl üçün indekslər `info_msg`
 --
 ALTER TABLE `info_msg`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `info_site`
+-- Cədvəl üçün indekslər `info_site`
 --
 ALTER TABLE `info_site`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `languages`
+-- Cədvəl üçün indekslər `languages`
 --
 ALTER TABLE `languages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `menu`
+-- Cədvəl üçün indekslər `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `messages`
+-- Cədvəl üçün indekslər `messages`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `newsletter`
+-- Cədvəl üçün indekslər `newsletter`
 --
 ALTER TABLE `newsletter`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `opinions`
+-- Cədvəl üçün indekslər `opinions`
 --
 ALTER TABLE `opinions`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `projects`
+-- Cədvəl üçün indekslər `projects`
 --
 ALTER TABLE `projects`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `seo_settings`
+-- Cədvəl üçün indekslər `seo_settings`
 --
 ALTER TABLE `seo_settings`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `services`
+-- Cədvəl üçün indekslər `services`
 --
 ALTER TABLE `services`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `settings`
+-- Cədvəl üçün indekslər `settings`
 --
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `slider`
+-- Cədvəl üçün indekslər `slider`
 --
 ALTER TABLE `slider`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `social`
+-- Cədvəl üçün indekslər `social`
 --
 ALTER TABLE `social`
   ADD PRIMARY KEY (`id`);
@@ -796,127 +796,127 @@ ALTER TABLE `social`
 --
 
 --
--- AUTO_INCREMENT for table `about`
+-- Cədvəl üçün AUTO_INCREMENT `about`
 --
 ALTER TABLE `about`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `administration`
+-- Cədvəl üçün AUTO_INCREMENT `administration`
 --
 ALTER TABLE `administration`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `blog`
+-- Cədvəl üçün AUTO_INCREMENT `blog`
 --
 ALTER TABLE `blog`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `brands`
+-- Cədvəl üçün AUTO_INCREMENT `brands`
 --
 ALTER TABLE `brands`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `category`
+-- Cədvəl üçün AUTO_INCREMENT `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `contacts`
+-- Cədvəl üçün AUTO_INCREMENT `contacts`
 --
 ALTER TABLE `contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `content`
+-- Cədvəl üçün AUTO_INCREMENT `content`
 --
 ALTER TABLE `content`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `gallery`
+-- Cədvəl üçün AUTO_INCREMENT `gallery`
 --
 ALTER TABLE `gallery`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
--- AUTO_INCREMENT for table `info_msg`
+-- Cədvəl üçün AUTO_INCREMENT `info_msg`
 --
 ALTER TABLE `info_msg`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `info_site`
+-- Cədvəl üçün AUTO_INCREMENT `info_site`
 --
 ALTER TABLE `info_site`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `languages`
+-- Cədvəl üçün AUTO_INCREMENT `languages`
 --
 ALTER TABLE `languages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT for table `menu`
+-- Cədvəl üçün AUTO_INCREMENT `menu`
 --
 ALTER TABLE `menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `messages`
+-- Cədvəl üçün AUTO_INCREMENT `messages`
 --
 ALTER TABLE `messages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `newsletter`
+-- Cədvəl üçün AUTO_INCREMENT `newsletter`
 --
 ALTER TABLE `newsletter`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `opinions`
+-- Cədvəl üçün AUTO_INCREMENT `opinions`
 --
 ALTER TABLE `opinions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `projects`
+-- Cədvəl üçün AUTO_INCREMENT `projects`
 --
 ALTER TABLE `projects`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `seo_settings`
+-- Cədvəl üçün AUTO_INCREMENT `seo_settings`
 --
 ALTER TABLE `seo_settings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `services`
+-- Cədvəl üçün AUTO_INCREMENT `services`
 --
 ALTER TABLE `services`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `settings`
+-- Cədvəl üçün AUTO_INCREMENT `settings`
 --
 ALTER TABLE `settings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `slider`
+-- Cədvəl üçün AUTO_INCREMENT `slider`
 --
 ALTER TABLE `slider`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `social`
+-- Cədvəl üçün AUTO_INCREMENT `social`
 --
 ALTER TABLE `social`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
