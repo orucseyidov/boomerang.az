@@ -16,7 +16,7 @@
                   <div class="profolio-show">
                     <div class="content-title text-left tf-text-hv">
                       <h4><?=$value['title'] ?></h4>
-                      <a href="<?=$link ?>" class="tftitle-style2">Ətraflı məlumat alın</a>
+                      <a href="<?= $link; ?>" class="tftitle-style2"><?= $langs['read_more_inf']; ?></a>
                     </div>
                     <div class="btn-tab">
                       <a href="<?=$link ?>">

@@ -25,8 +25,8 @@ class Blog_model extends GO_Model {
 	public function blog_single($slug){
 			$this->db->select('
 				title_'.$this->dil.' as title,
-				tags_'.$this->dil.' as tags,
 				description_'.$this->dil.' as description,
+				tags_'.$this->dil.' as tags,
 				image,id,view,date,slug
 			');
 	        $this->db->from('blog');

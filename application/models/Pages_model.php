@@ -19,7 +19,6 @@ class Pages_model extends GO_Model {
 	        return $query->row_array();
 	}
 
-
 	public function projects(){
 		$this->db->select('
 			title_'.$this->dil.' as title,

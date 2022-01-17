@@ -17,6 +17,18 @@ class Home_model extends GO_Model {
         $this->db->from("about");
         $query  = $this->db->get();
         return $query->row_array();
+    }
+    
+	public function sliders(){
+		$this->db->select('
+			title_'.$this->dil.' as title,
+			description_'.$this->dil.' as description,
+			image,link
+        ');
+        $this->db->from("slider");
+        $this->db->where("status",1);
+        $this->db->order_by("id","DESC");
+		return $this->db->get()->result_array();
 	}
 
 	public function services(){
@@ -53,7 +65,4 @@ class Home_model extends GO_Model {
         $this->db->order_by("category.rank","asc");
         return $this->db->get()->result_array();
     }
-
-    
-
 }

@@ -73,14 +73,15 @@
         </div>
         <div class="col-sm-3 footer-widget-style1">
           <div class="subscribe">
-            <div class="title-ft">Subscribe</div>
-            <form action="#" class="form-email">
-              <input type="text" class="email-here" placeholder="Email" required />
-              <button class="font-style border-corner themesflat-button-style2 btn-style-4">
-                <span class="btn-title">Subscribe</span>
+            <div class="title-ft"><?= $content['subscribe_home']['title'] ?></div>
+            <div class="subscribe_msg"></div> <!-- col-sm-12 -->
+            <form action="" id="subscribe" class="form-email">
+              <input type="text" class="email-here" name="mail" placeholder="Email" required />
+              <button class="font-style border-corner themesflat-button-style2 btn-style-4" id="btn-subs">
+                <span class="btn-title"><?= $content['subscribe_home']['title'] ?></span>
               </button>
             </form>
-            <p> Get the latest updates via email. Any time you may unsubscribe </p>
+            <?= $content['subscribe_home']['desc'] ?>
           </div>
         </div>
       </div>

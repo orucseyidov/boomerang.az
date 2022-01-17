@@ -36,6 +36,35 @@
         });
         return false;
     });
+
+    $('body').on('submit', '#subscribe', function(e){
+        e.preventDefault();
+        $(".loadrequest").css("display","flex");
+        $(".subscribe_msg").html("");
+        $('#btn-subs').prop("disabled", true);
+        var form = $(this);
+        $.ajax({
+            type: "post",
+            url:  'Process/subscribe',
+            data: form.serialize(),
+            success : function(response){
+                var data = JSON.parse(response);
+                if(data.status=="success"){
+                    $(".tb-my-input").val("");
+                    $("textarea").val("");
+                }
+                $(".subscribe_msg").html(data.msg).css("color",data.color);
+                $(".loadrequest").css("display","none");
+                $('#btn-subs').prop("disabled", false);
+            },
+            error : function(err){
+                $(".loadrequest").css("display","none");
+                alert("Sistem xətası");
+                $('#btn-subs').prop("disabled", false);
+            }
+        });
+        return false;
+    });
 </script>
 
 <script type="text/javascript">

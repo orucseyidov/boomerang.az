@@ -17,7 +17,6 @@ class Process_model extends GO_Model {
 	    return true;
 	}
 
-
 	public function status_change($table,$id,$data){
 		$this->db->where('id', $id);
 	    $this->db->update($table, $data);
@@ -36,7 +35,6 @@ class Process_model extends GO_Model {
 	    return true;
 	}
 
-
 	public function parent_folders($id){
         $this->db->select('id');
         $this->db->from('folders');
@@ -44,16 +42,20 @@ class Process_model extends GO_Model {
         return $this->db->get()->result_array();
     }
 
-
-
     public function prds(){
         $this->db->select('id');
         $this->db->from('products');;
         return $this->db->get()->result_array();
-    }
-
-
-
+	}
+	
+	public function is_subscriber($mail){
+		$this->db->where('mail',$mail);
+		$query = $this->db->get('newsletter');
+		if ($query->num_rows() > 0){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
 }
-
-

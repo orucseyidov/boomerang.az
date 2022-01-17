@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/shortcodes.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/color.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/animate.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css?v=<?=time() ?>" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.css'>

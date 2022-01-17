@@ -165,6 +165,36 @@ class Process extends GO_Controller {
 
 		echo json_encode($data);
 	}
+	
+	public function subscribe(){
+		$data = array();
+		$mail = filter(strip_tags($this->input->post('mail','trim')));
+		if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+			$data['status'] = 'error';
+			$data['msg']	= 'Email daxil edin.';
+			$data['color']	= 'red';
+		} else{
+			if($this->process->is_subscriber($mail)==true){
+				$data['status'] = 'error';
+				$data['msg']	= 'Siz artıq abune olmusunuz.';
+				$data['color']	= 'red';
+			} else{
+				date_default_timezone_set('Asia/Baku');
+				$insertData = ['mail' => $mail, 'date' => date("Y-m-d H:i:s")];
+				if($this->process->insertData("newsletter",$insertData)){
+					$data['status'] = 'success';
+					$data['msg'] 	= 'Siz artıq abunəsiniz, təşəkkür edirik.';
+					$data['color']	= '#30fb54';	//light green
+				} else{
+					$data['status'] = 'error';
+					$data['msg']	= 'Sistem xətası baş verdi zəhmət olmasa səhifəni yeniləyib yenidən cəhd edin';
+					$data['color']	= 'red';
+				}
+			}
+		}
+		// sleep(5);
+		echo json_encode($data);
+	}
 
 	public function test(){
 		if ($this->sendMail("seyidovoruc@gmail.com","Subjecta","mesaj")) {
@@ -172,12 +202,9 @@ class Process extends GO_Controller {
 		}
 	}
 
-
-
 	public function mobileContentChnage(){
 		debug($_POST);
 	}
-
 
 	public function feedback(){
 		$data = array();
@@ -205,7 +232,6 @@ class Process extends GO_Controller {
 		}
 		echo json_encode($data);
 	}
-
 
 	public function addComment(){
 		$data = array();
@@ -249,8 +275,6 @@ class Process extends GO_Controller {
 		echo json_encode($data);
 	}
 
-
-
 	public function next_product(){
 		$prd = $this->process->prds();
 		$sql = '';
@@ -262,8 +286,6 @@ class Process extends GO_Controller {
 
 		debug($sql);
 	}
-
-
 
 	public function convert($img){
 		// $img 		= 'uploads/images/test/testimage.webp';
@@ -287,7 +309,6 @@ class Process extends GO_Controller {
 		}
 	}
 
-
 	public function imageTest(){
 		$yol = "./uploads/images/test";
 		foreach (scandir($yol) as $key => $value) {
@@ -300,14 +321,7 @@ class Process extends GO_Controller {
 		}
 	}
 
-
-
 	public function cache_test(){
 		$this->core->ip_change();
 	}
-
-
-
-	
-
 }

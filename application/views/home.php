@@ -3,26 +3,13 @@
     <div class="swiper-container home-silder">
       <!-- swiper slides -->
       <div class="swiper-wrapper">
+        <?php foreach($sliders as $s){ ?>
           <div class="swiper-slide" style="background-image: url(https://source.unsplash.com/random?sig=24);">
-              <h2>SIMPLE SWIPER</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.</p>
-              <a href="" class="btn btn-silder">Read More</a>
+              <h2><?= $s['title']; ?></h2>
+              <p><?= $s['description']; ?></p>
+              <a href="<?= (!empty($s['link'])) ? $s['link']: "javascript:void(0)"; ?>" class="btn btn-silder"><?= $langs['read_more']; ?></a>
           </div>
-          
-          <div class="swiper-slide" style="background-image: url(https://source.unsplash.com/random?sig=53);"> 
-              <h2>HELLO WORLD</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.</p>
-              <a href="" class="btn btn-silder">Read More</a>
-          </div>
-          
-          <div class="swiper-slide" style="background-image: url(https://source.unsplash.com/random?sig=52);">
-              <h2>Random Text 1</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.</p>
-              <a href="" class="btn btn-silder">Read More</a>
-          </div>
+        <?php } ?>
       </div>
       <!-- !swiper slides -->
       
@@ -380,7 +367,7 @@
                 </a>
               </span>
               <div class="title-blog tf-text-hv">
-                <a href="<?= base_url("blog/{$b['slug']}"); ?>"><?= cut(strip_tags($b['title']),57,0,55); ?></a>
+                <a href="<?= base_url("bloq/{$b['slug']}"); ?>"><?= cut(strip_tags($b['title']),57,0,55); ?></a>
               </div>
             </div>
           </div>

@@ -44,9 +44,9 @@
         </div>
         <div class="tag-socical">
           <div class="tag">
-            <ul>
+            <ul style="max-width: 400px;">
               <li class="text1">
-                <span>Related Tags :</span>
+                <span><?= $langs['tags_word']; ?> :</span>
               </li>
               <?php if (!empty($blog['tags'])): ?>
                 <?php foreach (explode(",",$blog['tags']) as $key => $value): ?>
@@ -59,23 +59,22 @@
             </ul>
           </div>
           <div class="socical">
-            <ul>
+            <ul class="social flex">
               <li class="text1">
-                <span>Share :</span>
+                <!-- <a href="javascript:void(0)"><span><?= $langs['share_word']; ?> :</span></a> -->
+                <span><?= $langs['share_word']; ?> :&#160</span>
               </li>
-              <li class="topbar-socials">
-                <!-- AddToAny BEGIN -->
+              <li class="icon">
                 <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-                <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-                <a class="a2a_button_whatsapp"></a>
-                <a class="a2a_button_facebook"></a>
-                <a class="a2a_button_twitter"></a>
-                <a class="a2a_button_email"></a>
-                <a class="a2a_button_facebook_messenger"></a>
-                <a class="a2a_button_copy_link"></a>
+                  <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                  <a class="a2a_button_whatsapp"></a>
+                  <a class="a2a_button_facebook"></a>
+                  <a class="a2a_button_twitter"></a>
+                  <a class="a2a_button_email"></a>
+                  <a class="a2a_button_facebook_messenger"></a>
+                  <a class="a2a_button_copy_link"></a>
                 </div>
                 <script async src="https://static.addtoany.com/menu/page.js"></script>
-                <!-- AddToAny END -->
               </li>
             </ul>
           </div>

@@ -22,6 +22,7 @@ class Home extends GO_Controller {
 		$this->data['category']			= $this->home->get_category();
 		$this->data['about']			= $this->home->about();
 		$this->data['opinions']			= $this->core->get_select_all("opinions");
+		$this->data['sliders']			= $this->home->sliders();
 		$this->data['services'] 		= $this->core->limit_in_sidebar("services",3);
 		$this->data['all_services'] 	= $this->home->services();
 		$this->data['projects'] 		= $this->core->limit_in_sidebar("projects",10);
