@@ -355,14 +355,14 @@
             </div>
             <div class="meta-blog-style2">
               <span class="entry-calendar">
-                <a href="<?= base_url("blog/{$b['slug']}"); ?>">
+                <a href="<?= base_url("bloq/{$b['slug']}"); ?>">
                   <?= date("d.m.Y", strtotime($b['date'])); ?>
                 </a>
               </span>
             </div>
             <div class="content-blog-style2 bg-color">
               <span class="admin tf-text-hv">
-                <a href="<?= base_url("blog/{$b['slug']}"); ?>">
+                <a href="<?= base_url("bloq/{$b['slug']}"); ?>">
                   <i class="far fa-eye"></i><?= $b['view']; ?>
                 </a>
               </span>
