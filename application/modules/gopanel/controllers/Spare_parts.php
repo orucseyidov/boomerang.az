@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Services extends Gopanel {
+class Spare_parts extends Gopanel {
 	
 	function __construct(){
 		parent::__construct();
@@ -8,7 +8,7 @@ class Services extends Gopanel {
 		$this->load->helper("filter");
 		$this->load->helper("seflink");
 		$this->load->helper("file_upload");
-		$this->data['btitle']	= ' Xidmətlər';
+		$this->data['btitle']	= ' Ehtiyyat hissələri';
 	}
 
 	public function index(){
@@ -21,18 +21,8 @@ class Services extends Gopanel {
 		if (isset($_POST['token'])) {
 			unset($_POST['token']);
 			
-			if (empty($_POST['date'])){
-				$_POST['date'] = date("Y-m-d");
-			}
+			$_POST['slug'] = seflink($_POST['title_az']);
 
-			if(isset($_POST['slug']) && empty($_POST['slug'])){
-				$_POST['slug'] = seflink($_POST['title_az']);
-			}
-			else{
-				$_POST['slug'] = $_POST['slug'] . "-" . uniqid();
-			}
-
-			$_POST['icon'] = file_upload($_FILES['icon'],'/uploads/images/'.$this->table.'/',$_POST['slug']);
 			$_POST['image'] = file_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$_POST['slug']);
 
 			if ($this->core->add($this->table,$_POST)) {
@@ -59,24 +49,9 @@ class Services extends Gopanel {
 
 		if (isset($_POST['token'])) {
 			unset($_POST['token']);
+			
+			$_POST['slug'] = seflink($_POST['title_az']);
 
-			if(isset($_POST['slug']) && empty($_POST['slug'])){
-				$_POST['slug'] = seflink($_POST['title_az']);
-			}
-			else{
-				if($this->data['values']['slug'] != $_POST['slug']){
-					$_POST['slug'] = $_POST['slug'] . "-" . uniqid();
-				}
-			}
-
-			if (isset($_FILES['icon']) && strlen($_FILES['icon']['name'])>1) {
-				$img = seflink($_POST['slug']);
-				$_POST['icon'] = image_upload($_FILES['icon'],'/uploads/images/'.$this->table.'/',$img);
-			}
-			else{
-				unset($_POST['icon']);
-            }
-            
 			if (isset($_FILES['image']) && strlen($_FILES['image']['name'])>1) {
 				$img = seflink($_POST['slug']);
 				$_POST['image'] = image_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$img);

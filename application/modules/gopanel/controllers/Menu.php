@@ -22,7 +22,7 @@ class Menu extends Gopanel {
 		if (isset($_POST['token'])) {
 			unset($_POST['token']);
 			if (isset($_POST['slug']) && empty($_POST['slug'])) {
-				$_POST['slug'] = seflink($_POST['name_en']);
+				$_POST['slug'] = seflink($_POST['name_az']);
 			}
 			if ($id = $this->core->add($this->table,$_POST)) {
 				$this->session->set_flashdata('success', "Məlumat Uğurla Əlavə edildi");
@@ -50,7 +50,7 @@ class Menu extends Gopanel {
 			unset($_POST['token']);
 
 			if (isset($_POST['slug']) && empty($_POST['slug'])) {
-				$_POST['slug'] = seflink($_POST['name_en']);
+				$_POST['slug'] = seflink($_POST['name_az']);
 			}
 
 			if ($this->core->update($this->table,$id,$_POST)) {

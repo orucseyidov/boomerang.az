@@ -26,13 +26,13 @@ class Projects extends Gopanel {
 			}
 
 			if(isset($_POST['slug']) && empty($_POST['slug'])){
-				$_POST['slug'] = seflink($_POST['title_en']);
+				$_POST['slug'] = seflink($_POST['title_az']);
 			}
 			else{
 				$_POST['slug'] = $_POST['slug'] . "-" . uniqid();
 			}
 
-			$_POST['image'] = file_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$_POST['title_en']);
+			$_POST['image'] = file_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$_POST['slug']);
 
 			if ($this->core->add($this->table,$_POST)) {
 				$this->session->set_flashdata('success', "Məlumat Uğurla Əlavə edildi");
@@ -60,7 +60,7 @@ class Projects extends Gopanel {
 			unset($_POST['token']);
 			
 			if(isset($_POST['slug']) && empty($_POST['slug'])){
-				$_POST['slug'] = seflink($_POST['title_en']);
+				$_POST['slug'] = seflink($_POST['title_az']);
 			}
 			else{
 				if($this->data['values']['slug'] != $_POST['slug']){
@@ -69,7 +69,7 @@ class Projects extends Gopanel {
 			}
 
 			if (isset($_FILES['image']) && strlen($_FILES['image']['name'])>1) {
-				$img = seflink($_POST['title_en']);
+				$img = seflink($_POST['slug']);
 				$_POST['image'] = image_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$img);
 			}
 			else{

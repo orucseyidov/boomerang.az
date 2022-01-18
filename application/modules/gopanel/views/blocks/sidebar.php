@@ -92,6 +92,19 @@
 
                 <li>
                     <a href="javascript:void(0);" class="waves-effect">
+                        <i class="fas fa-home"></i> <span> Ana Səhifə</span>
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="/gopanel/slider/manage">
+                                <i class="fab fa-slideshare"></i> Slayder
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect">
                         <i class="fas fa-list-ol"></i><span> Kateqoriyalar</span>
                     </a>
                     <ul class="submenu">
@@ -102,14 +115,11 @@
 
                 <li>
                     <a href="javascript:void(0);" class="waves-effect">
-                        <i class="fas fa-home"></i> <span> Ana Səhifə</span>
+                        <i class="fas fa-tools"></i><span> Ehtiyyat hissələri</span>
                     </a>
                     <ul class="submenu">
-                        <li>
-                            <a href="/gopanel/slider/manage">
-                                <i class="fab fa-slideshare"></i> Slayder
-                            </a>
-                        </li>
+                        <li><a href="/gopanel/spare_parts/add"><i class="fas fa-plus"></i> Əlavə et</a></li>
+                        <li><a href="/gopanel/spare_parts/manage"><i class="fas fa-fas fa-table"></i> İdarə et</a></li>
                     </ul>
                 </li>
 

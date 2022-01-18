@@ -23,7 +23,7 @@ class Qalereya extends Gopanel {
 		if (isset($_POST['token'])) {
 			unset($_POST['token']);
 
-			$img = seflink($_POST['title_en']);
+			$img = seflink($_POST['title_az']);
 
 			$_POST['image'] = file_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$img);
 
@@ -53,7 +53,7 @@ class Qalereya extends Gopanel {
 			unset($_POST['token']);
 
 			if (isset($_FILES['image']) && strlen($_FILES['image']['name'])>1) {
-				$img = seflink($_POST['title_en']);
+				$img = seflink($_POST['title_az']);
 				$_POST['image'] = image_upload($_FILES['image'],'/uploads/images/'.$this->table.'/',$img);
 			}
 			else{

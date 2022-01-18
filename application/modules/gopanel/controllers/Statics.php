@@ -34,7 +34,7 @@ class Statics extends Gopanel {
 		if (isset($_POST['token'])) {
 			if ($_POST['token'] == $this->token) {
 				if (isset($_FILES['image']) && strlen($_FILES['image']['name'])>1) {
-					$_POST['image'] = file_upload($_FILES['image'],'/uploads/images/statics/',$_POST['title_en']);
+					$_POST['image'] = file_upload($_FILES['image'],'/uploads/images/statics/',seflink($_POST['title_az']));
 				}
 				else{
 					unset($_POST['image']);
@@ -62,7 +62,7 @@ class Statics extends Gopanel {
 		if (isset($_POST['token'])) {
 			if ($_POST['token'] == $this->token) {
 				if (isset($_FILES['image']) && strlen($_FILES['image']['name'])>1) {
-					$_POST['image'] = file_upload($_FILES['image'],'/uploads/images/statics/',$_POST['title_en']);
+					$_POST['image'] = file_upload($_FILES['image'],'/uploads/images/statics/',seflink($_POST['title_az']));
 				}
 				else{
 					unset($_POST['image']);
@@ -93,7 +93,7 @@ class Statics extends Gopanel {
 			unset($_POST['token']);
 
 			if (isset($_FILES['image']) && strlen($_FILES['image']['name'])>1) {
-				$_POST['image'] = file_upload($_FILES['image'],'/uploads/images/statics/',$_POST['site_title_en']);
+				$_POST['image'] = file_upload($_FILES['image'],'/uploads/images/statics/',seflink($_POST['site_title_az']));
 			}
 			else{
 				unset($_POST['image']);
