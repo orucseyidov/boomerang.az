@@ -86,20 +86,25 @@
                                     </select>
                                 </div>
 
-                                
-
-
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                                    <label>Saytın Əsas Logosu</label>
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                    <label>Saytın Əsas Logosu (header)</label>
                                     <small class="pull-right imgnotfiy">Ölçü 268 x 80</small>
-                                    <input type="file" name="image" class="filestyle" data-buttonname="btn-secondary" data-buttonText="Şəkil Seçi" data-classIcon="fas fa-file-import" data-buttonBefore="false">
-                                    <a class="imgarea" target="_blank" href="<?=$values['image'] ?>">
-                                        <img style="max-width: 250px;" src="<?=base_url($values['image']) ?>">
+                                    <input type="file" name="header_image" class="filestyle" data-buttonname="btn-secondary" data-buttonText="Şəkil Seçi" data-classIcon="fas fa-file-import" data-buttonBefore="false">
+                                    <a class="imgarea" target="_blank" href="<?=$values['header_image'] ?>">
+                                        <img style="max-width: 250px;" src="<?=base_url($values['header_image']) ?>">
                                     </a>
                                 </div>
 
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+                                    <label>Saytın Əsas Logosu (footer)</label>
+                                    <small class="pull-right imgnotfiy">Ölçü 268 x 80</small>
+                                    <input type="file" name="footer_image" class="filestyle" data-buttonname="btn-secondary" data-buttonText="Şəkil Seçi" data-classIcon="fas fa-file-import" data-buttonBefore="false">
+                                    <a class="imgarea" target="_blank" href="<?=$values['footer_image'] ?>">
+                                        <img style="max-width: 250px;" src="<?=base_url($values['footer_image']) ?>">
+                                    </a>
+                                </div>
 
-                                <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                                <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                     <label>Saytın Favikonu</label>
                                     <small class="pull-right imgnotfiy">Ölçü 16 x 16</small>
                                     <input type="file" name="favicon" class="filestyle" data-buttonname="btn-secondary" data-buttonText="Şəkil Seçi" data-classIcon="fas fa-file-import" data-buttonBefore="false">

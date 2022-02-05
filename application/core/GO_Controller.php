@@ -18,7 +18,7 @@ class GO_Controller extends MX_Controller {
 		// unset($_SESSION['ip']);
 		$this->load->model("Core","core");
 		$this->load->helper("all");
-		$this->dil = isset($this->session->dil) ? $this->session->dil : 'en';
+		$this->dil = isset($this->session->dil) ? $this->session->dil : 'az';
 		$this->token();
 		$this->device = $this->detect();
 		$this->settings = $this->get_siet_settings();
@@ -51,7 +51,8 @@ class GO_Controller extends MX_Controller {
 			$this->data['altlink'] 			= false;
 			$this->data['footerdata']   	= !isset($data['footerdata']) ? '' : $data['footerdata'];
 			$this->data['headdata'] 		= !isset($data['headdata']) ? '' : $data['headdata'];
-			$this->data['logo']     		= $settings['image'];
+			$this->data['header_logo']      = $settings['header_image'];
+			$this->data['footer_logo']     	= $settings['footer_image'];
 			$this->data['lang'] 			= $this->lang;
 			$this->data['settings'] 		= $settings;
 			$this->data['social'] 			= $this->core->social();
@@ -81,7 +82,7 @@ class GO_Controller extends MX_Controller {
 
 		$this->data['key']  = !empty($this->data['key']) ? $this->data['key'] : $settings['tags'];
 		
-		$this->data['ogimage'] = !empty($this->data['ogimage']) ? $this->data['ogimage'] : $settings['image'];
+		$this->data['ogimage'] = !empty($this->data['ogimage']) ? $this->data['ogimage'] : $settings['header_image'];
 
 	}
 

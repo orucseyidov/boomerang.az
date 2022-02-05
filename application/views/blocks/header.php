@@ -33,7 +33,7 @@
         <div class="logo logo-style2">
           <a href="
 						<?= base_url(); ?>">
-            <img src="/assets/images/LogoDark.png" data-retina="/assets/images/LogoDark@2x.png" alt="images">
+            <img src="<?= $header_logo; ?>" data-retina="<?= $header_logo; ?>" alt="images">
           </a>
         </div>
         <div class="content-menu d-lg-flex">

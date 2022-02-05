@@ -81,11 +81,13 @@ $route['bloq/(:any)']				= 'Blog/index/$1';
 
 
 //Products
-$route['mehsullar']						= 'Products/index';
-$route['mehsullar/(:any)']				= 'Products/index/$1';
-$route['mehsullar/(:any)/(:any)']		= 'Products/index/$1';
+$route['mehsullar']					= 'Products/index';
+$route['mehsullar/(:any)']			= 'Products/index/$1';
+$route['mehsullar/(:any)/(:any)']	= 'Products/index/$1';
 
-
+// ehtiyyat-hisseleri (spare-parts)
+$route['ehtiyat-hisseleri']		    = 'Pages/spare_parts';
+$route['ehtiyat-hisseleri/(:any)']	= 'Pages/spare_parts_single/$1';
 
 // Ajax route
 $route['order']						= 'Process/order';

@@ -1,0 +1,25 @@
+[30-Jan-2022 18:21:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mb_internal_encoding() in /hostimul/kdjzqbap/public_html/assets/gopanel/ckeditor/filemanager/config/config.php:7
+Stack trace:
+#0 /hostimul/kdjzqbap/public_html/assets/gopanel/ckeditor/filemanager/dialog.php(4): include()
+#1 {main}
+  thrown in /hostimul/kdjzqbap/public_html/assets/gopanel/ckeditor/filemanager/config/config.php on line 7
+[30-Jan-2022 18:21:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mb_internal_encoding() in /hostimul/kdjzqbap/public_html/assets/gopanel/ckeditor/filemanager/config/config.php:7
+Stack trace:
+#0 /hostimul/kdjzqbap/public_html/assets/gopanel/ckeditor/filemanager/dialog.php(4): include()
+#1 {main}
+  thrown in /hostimul/kdjzqbap/public_html/assets/gopanel/ckeditor/filemanager/config/config.php on line 7
+[30-Jan-2022 18:25:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mb_internal_encoding() in /hostimul/kdjzqbap/public_html/assets/gopanel/ckeditor/filemanager/config/config.php:7
+Stack trace:
+#0 /hostimul/kdjzqbap/public_html/assets/gopanel/ckeditor/filemanager/dialog.php(4): include()
+#1 {main}
+  thrown in /hostimul/kdjzqbap/public_html/assets/gopanel/ckeditor/filemanager/config/config.php on line 7
+[30-Jan-2022 18:26:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mb_internal_encoding() in /hostimul/kdjzqbap/public_html/assets/gopanel/ckeditor/filemanager/config/config.php:7
+Stack trace:
+#0 /hostimul/kdjzqbap/public_html/assets/gopanel/ckeditor/filemanager/dialog.php(4): include()
+#1 {main}
+  thrown in /hostimul/kdjzqbap/public_html/assets/gopanel/ckeditor/filemanager/config/config.php on line 7
+[30-Jan-2022 18:26:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mb_internal_encoding() in /hostimul/kdjzqbap/public_html/assets/gopanel/ckeditor/filemanager/config/config.php:7
+Stack trace:
+#0 /hostimul/kdjzqbap/public_html/assets/gopanel/ckeditor/filemanager/dialog.php(4): include()
+#1 {main}
+  thrown in /hostimul/kdjzqbap/public_html/assets/gopanel/ckeditor/filemanager/config/config.php on line 7

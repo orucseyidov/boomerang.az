@@ -17,7 +17,8 @@ class Core extends GO_Model {
 			description_'.$this->dil.' as description,
 			tags_'.$this->dil.' as tags,
 			site_status,
-			image,
+			header_image,
+			footer_image,
 			favicon
 		');
 		$this->db->from('settings');
