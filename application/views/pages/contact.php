@@ -30,7 +30,7 @@
           </li>
           <li class="content-style content-contact-us">
             <h6 class="tftitle-style3"><?= $langs['our_phone']; ?></h6>
-            <p><?= $contacts['phone'] . "<br />" . $contacts['mobile']; ?></p>
+            <p><?= $contacts['phone'] . "<br />" . $contacts['mobile'] . "<br />" . $contacts['whatsapp']; ?></p>
           </li>
         </ul>
       </div>

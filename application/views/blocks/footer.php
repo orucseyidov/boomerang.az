@@ -1,4 +1,4 @@
-<footer id="footer" class="footer footer-h2" style="margin-top: 30px;">
+﻿<footer id="footer" class="footer footer-h2" style="margin-top: 30px;">
   <div class="overlay-ft"></div>
   <div class="themesflat-spacer clearfix" data-desktop="110" data-mobile="80" data-smobile="80"></div>
   <div class="container">
@@ -54,6 +54,9 @@
                 </div>
                 <div class="text">
                   <span><?= $contacts['mobile']; ?></span>
+                </div>
+                <div class="text">
+                  <span><?= $contacts['whatsapp']; ?></span>
                 </div>
               </div>
             </div>
