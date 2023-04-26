@@ -32,7 +32,7 @@ date_default_timezone_set('Asia/Baku');
 
 
 // $config['base_url'] = 'https://boomerang.loc/';
-$config['base_url'] = 'http://'.$_SERVER['SERVER_NAME'];
+$config['base_url'] = 'https://'.$_SERVER['SERVER_NAME'];
 
 /*
 |--------------------------------------------------------------------------
@@ -109,7 +109,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = false;
+$config['enable_hooks'] = true;
 
 /*
 |--------------------------------------------------------------------------

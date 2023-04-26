@@ -10,7 +10,7 @@
               <img src="logo/Logolight.png" alt="images" data-retina="logo/Logolight@2x.png">
             </a> -->
             <a href="<?= base_url(); ?>">
-                <img src="<?= $logo; ?>" data-retina="<?= $logo; ?>" alt="images">
+                <img src="<?= $footer_logo; ?>" data-retina="<?= $logo; ?>" alt="images">
             </a>
           </div>
           <p><?= $settings['description']; ?></p>
@@ -55,6 +55,9 @@
                 <div class="text">
                   <span><?= $contacts['mobile']; ?></span>
                 </div>
+                <div class="text">
+                  <span><?= $contacts['whatsapp']; ?></span>
+                </div>
               </div>
             </div>
           </div>
@@ -89,10 +92,9 @@
     <div id="botom">
       <div class="bottom-wrap text-center">
         <div id="copyright">
-          <a href="#">
-            <span> © Themesflat</span>
+          <a href="https://goweb.az/">
+            <span class="color-botom">2022 | © Development Goweb Creative Agency</span>
           </a>
-          <span class="color-botom">2020 | All Rights Reserved</span>
         </div>
       </div>
     </div>

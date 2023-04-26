@@ -18,7 +18,19 @@ class Home_model extends GO_Model {
         $query  = $this->db->get();
         return $query->row_array();
     }
-    
+
+	public function spare_parts($limit=null){
+		$this->db->select('
+			title_'.$this->dil.' as title,
+			id,created_at,slug,image
+		');
+        $this->db->from("spare_parts");
+        $this->db->where("status",1);
+		$this->db->order_by("rank","desc");
+		$this->db->limit($limit);
+		return $this->db->get()->result_array();
+    }
+
 	public function sliders(){
 		$this->db->select('
 			title_'.$this->dil.' as title,

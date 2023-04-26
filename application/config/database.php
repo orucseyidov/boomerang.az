@@ -75,9 +75,9 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'boomerang',
+	'username' => 'kdjzqbap_user',
+	'password' => 'u]N6g1Lm&n!u',
+	'database' => 'kdjzqbap_site',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -93,3 +93,6 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
+
+//$db['default']['dbdriver'] = 'mysql';

@@ -30,7 +30,6 @@ class Pages extends GO_Controller {
 		$this->render("/pages/about",$this->data);
 	}
 
-
 	public function projects(){
 		$this->data['projects'] = $this->pages->projects();
 		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
@@ -38,18 +37,49 @@ class Pages extends GO_Controller {
 		$this->render("/pages/projects",$this->data);
 	}
 
-
 	public function project_single($slug){
 		$slug 		= filter($slug);
 		$project 	= $this->pages->project_single($slug);
 		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
-		$this->data['title'] 			 = $project['title'];
-		$this->data['desc'] 			 = mb_substr(strip_tags($project['description']), 0,300);
+		$this->data['title']			 = $project['title'];
+		$this->data['btitle']			 = $this->data['title'];
+		$this->data['desc']				 = mb_substr(strip_tags($project['description']), 0,300);
+		$this->data['bdesc']			 = mb_substr(strip_tags($project['description']), 0,300);
+		$this->data['ogimage']			 = base_url($project['image']);
+		$this->data['bgimage']			 = $this->data['ogimage'];
 		$this->data['project'] 			 = $project;
+		$this->data['slug'] 			 = $this->pages->menu_by_slug($this->uri->segment(1))['name'];
 		$this->data['projects'] 		 = $this->core->limit_in_sidebar("projects",10);
+		$this->data['project_images']	 = $this->pages->project_images($project['id']);
 		$this->render("/pages/project-detail",$this->data);
 	}
 
+	public function spare_parts(){
+		$this->data['spare_parts'] = $this->pages->spare_parts();
+		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
+		// debug($this->data);
+		$this->render("/pages/spare-parts",$this->data);
+	}
+
+
+	public function spare_parts_single($slug){
+		$slug 		= filter($slug);
+		$spare_part 	= $this->pages->spare_part_single($slug);
+		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
+		$this->data['title']			 = $spare_part['title'];
+		$this->data['btitle']			 = $this->data['title'];
+		$this->data['desc']				 = mb_substr(strip_tags($spare_part['description']), 0,300);
+		$this->data['bdesc']			 = mb_substr(strip_tags($spare_part['description']), 0,300);
+		$this->data['ogimage']			 = base_url($spare_part['image']);
+		$this->data['bgimage']			 = $this->data['ogimage'];
+		$this->data['spare_part'] 		 = $spare_part;
+		$this->data['slug'] 			 = $this->pages->menu_by_slug($this->uri->segment(1))['name'];
+		$this->data['slidebar_services'] = $this->core->limit_in_sidebar("services",5);
+		$this->data['slidebar_projects'] = $this->core->limit_in_sidebar("projects",3);
+		$this->data['slidebar_blogs'] 	 = $this->core->limit_in_sidebar("blog",3);
+		
+		$this->render("/pages/spare-part-detail",$this->data);
+	}
 
 	public function products(){
 		// $this->data['products'] = $this->pages->products();
@@ -65,8 +95,6 @@ class Pages extends GO_Controller {
 		$this->render("/pages/contact",$this->data);
 	}
 
-	
-
 	public function services(){
 		$this->data['services'] 		= $this->home->services();
 		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
@@ -77,14 +105,19 @@ class Pages extends GO_Controller {
 	public function service_single($slug){
 		$service = $this->pages->service_single($slug);
 		$this->getSeoInfo(filter(strip_tags(trim($this->uri->segment(1)))));
-		$this->data['title'] 			 = $service['title'];
-		$this->data['desc'] 			 = mb_substr(strip_tags($service['description']), 0,300);
-		$this->data['service'] 			 = $service;
+		$this->data['title']			 = $service['title'];
+		$this->data['btitle']			 = $this->data['title'];
+		$this->data['desc']				 = mb_substr(strip_tags($service['description']), 0,300);
+		$this->data['bdesc']			 = mb_substr(strip_tags($service['description']), 0,300);
+		$this->data['ogimage']			 = base_url($service['image']);
+		$this->data['bgimage']			 = $this->data['ogimage'];
+		$this->data['service']	 		 = $service;
 		$this->data['all_services'] 	 = $this->home->services();
 		$this->data['slidebar_services'] = $this->core->limit_in_sidebar("services",5);
 		$this->data['slidebar_projects'] = $this->core->limit_in_sidebar("projects",3);
 		$this->data['slidebar_blogs'] 	 = $this->core->limit_in_sidebar("blog",3);
 		$this->data['blogs'] 			 = $this->home->services();
+		$this->data['slug'] 			 = $this->pages->menu_by_slug($this->uri->segment(1))['name'];
 		$this->render("/pages/service-details",$this->data);
 	}
 
@@ -130,9 +163,6 @@ class Pages extends GO_Controller {
 		// debug($this->data);
 		$this->render("/pages/blog-standard",$this->data);
 	}
-	
-	
-	
 	
 
 	// public function services(){

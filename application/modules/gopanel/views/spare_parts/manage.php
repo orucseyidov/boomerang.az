@@ -33,6 +33,7 @@
                         <table id="datatable" class="table table-bordered dt-responsive" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
                                 <tr>
+                                    <th><i class="fas fa-expand-arrows-alt"></i></th>
                                     <th>№</th>
                                     <th>Şəkil</th>
                                     <th>Başlığ</th>
@@ -48,6 +49,7 @@
                                 $editlink = base_url("gopanel/").$class."/edit/?id=".$value['id'];
                             ?>
                                 <tr id="ord-<?=$value['id']?>">
+                                    <td class="sort-td"><i class="fas fa-arrows-alt-v"></i></td>
                                     <td><?=$counter++ ?></td>
                                     <td>
                                         <a target="_blank" href="<?=$value['image'] ?>">

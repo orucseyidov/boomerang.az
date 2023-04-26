@@ -266,7 +266,7 @@
                             <div class="gallery-block-three col-lg-4 col-md-4 col-sm-12">
                                 <div class="inner-box">
                                     <figure class="image-box">
-                                        <img class="lazy lazy-loaded" src="/assets/img/lazy.gif" data-src="<?=$value['image'] ?>" alt="<?=$title ?>">
+                                        <img class="lazy lazy-loaded" src="<?=$value['image'] ?>" data-src="<?=$value['image'] ?>" alt="<?=$title ?>">
                                         <!--Overlay Box-->
                                         <div class="overlay-box">
                                             <div class="overlay-inner">

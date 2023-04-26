@@ -46,6 +46,7 @@
                             <?php
                             foreach ($manage as $key => $value): 
                                 $editlink = base_url("gopanel/").$class."/edit/?id=".$value['id'];
+                                $images = base_url("{$app}/gallery/manage/?parent={$value['id']}&section={$table}&size=600x600");
                             ?>
                                 <tr id="ord-<?=$value['id']?>">
                                     <td><?=$counter++ ?></td>
@@ -75,6 +76,10 @@
                                     </td>
                                     <td>
                                         <div class="manage">
+                                            <a class="btn btn-warning" href="<?=$images?>" data-toggle="tooltip" data-placement="top" title="Digər şəkillər" >
+                                                <i class="fas fa-images"></i>
+                                            </a>
+
                                             <a class="btn btn-success" href="<?=$editlink?>" data-toggle="tooltip" data-placement="top" title="Məlumatı Yenilə" ><i class="fas fa-edit"></i></a>
                                             <a class="btn btn-danger delete" href="" unit_id="<?=$value['id']?>" table_name="<?=$table ?>" data-toggle="tooltip" data-placement="top" title="Məlumatı Sil" ><i class="fas fa-trash-alt"></i></a>
                                         </div>

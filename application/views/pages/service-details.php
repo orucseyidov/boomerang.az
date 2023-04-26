@@ -1,17 +1,4 @@
-<div class="page-title page-title-inner padding-bottom9">
-  <div class="overlay-page-tile"></div>
-  <div class="page-title-content">
-    <div class="container">
-      <div class="blog-title color-white">
-        <h2><?= $langs['service_details_word']; ?></h2>
-        <span>
-          <a href="<?= base_url(); ?>" class="hv-color-st1 color-white"><?= $langs['home_word'] . " "; ?></a>
-          <?= $langs['service_details_word']; ?>
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
+<?php $this->load->view("blocks/breadcrumb-details") ?>
 <section class="service-details">
   <div class="themesflat-spacer clearfix" data-desktop="117" data-mobile="60" data-smobile="50"></div>
   <div class="container">

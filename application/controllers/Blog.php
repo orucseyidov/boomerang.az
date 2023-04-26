@@ -56,16 +56,17 @@ class Blog extends GO_Controller {
 		$slug 	= filter(strip_tags(trim($this->uri->segment(2))));
 		$blog 	= $this->blog->blog_single($slug);
 		//----------------------------------------------------------------------
-		$this->data['btitle']			 = $this->data['title'];
 		$this->data['title']			 = $blog['title'];
-		$this->data['bdesc']			 = mb_substr(strip_tags($blog['description']), 0,300);
+		$this->data['btitle']			 = $this->data['title'];
 		$this->data['desc']				 = mb_substr(strip_tags($blog['description']), 0,300);
-		$this->data['bgimage']			 = $this->data['ogimage'];
+		$this->data['bdesc']			 = mb_substr(strip_tags($blog['description']), 0,300);
 		$this->data['ogimage']			 = base_url($blog['image']);
+		$this->data['bgimage']			 = $this->data['ogimage'];
 		$this->data['blog']				 = $blog;
 		$this->data['slidebar_services'] = $this->core->limit_in_sidebar("services",5);
 		$this->data['slidebar_projects'] = $this->core->limit_in_sidebar("projects",3);
 		$this->data['slidebar_blogs'] 	 = $this->core->limit_in_sidebar("blog",3);
+		$this->data['slug'] 			 = $this->pages->menu_by_slug($this->uri->segment(1))['name'];
 
 		$this->render("pages/blog-details",$this->data);
 		$this->core->view_update("blog",$this->data['blog']['id']);

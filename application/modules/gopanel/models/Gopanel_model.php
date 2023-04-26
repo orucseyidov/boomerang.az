@@ -134,6 +134,16 @@ class Gopanel_model extends GO_Model {
         return $this->db->get()->result_array();
 	}
 
+	public function get_spare_parts(){
+		$this->db->select('*,
+			title_'.$this->dil.' as title,
+			description_'.$this->dil.' as description,
+			keywords_'.$this->dil.' as keywords
+		');
+        $this->db->from("spare_parts");
+		$this->db->order_by("rank","asc");
+		return $this->db->get()->result_array();
+	}
 
 	public function get_delete_product_id($product){
 		$this->db->select('*');

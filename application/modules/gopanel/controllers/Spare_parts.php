@@ -39,7 +39,7 @@ class Spare_parts extends Gopanel {
 
 	public function manage(){
 		$this->data['datatable'] = true;
-		$this->data['manage'] 	 = $this->gopanel->get_select_all($this->table);
+		$this->data['manage'] 	 = $this->gopanel->get_spare_parts();
 		$this->render($this->table.'/manage',$this->data);
 	}
 

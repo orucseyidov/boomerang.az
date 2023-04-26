@@ -1,5 +1,5 @@
-<?php $this->load->view("blocks/breadcrumb") ?>
-<div class="themesflat-spacer  clearfix" data-desktop="120" data-mobile="60" data-smobile="50"></div>
+<?php $this->load->view("blocks/breadcrumb-details") ?>
+<div class="themesflat-spacer clearfix" data-desktop="120" data-mobile="60" data-smobile="50"></div>
 <section class="case-studio-details">
   <div class="container">
     <div class="meta-post">
@@ -14,12 +14,12 @@
           <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt</p>
         </div> -->
         <div class="tf-post">
-          <div class="tftitle-style4"> Name </div>
+          <div class="tftitle-style4"> <?= $langs['name_word']; ?> </div>
           <p><?=$project['title'] ?></p>
         </div>
         <div class="tf-post">
-          <div class="tftitle-style4"> Date </div>
-          <p><?=$project['date'] ?></p>
+          <div class="tftitle-style4"> <?= $langs['date_word']; ?> </div>
+          <p><?= date("d.m.Y", strtotime($project['date'])); ?></p>
         </div>
       </div>
     </div>
@@ -35,6 +35,20 @@
             <?=$project['description'] ?>
           </div>
         </div>
+
+        <div class="row">
+          <div class="what-we-do-style what-we-do-style2">
+            <div class="themesflat-spacer clearfix" data-desktop="43" data-mobile="43" data-smobile="43"></div>
+            <?php foreach($project_images as $p) { ?>
+              <div class="image-box spare-parts-img">
+                <div class="image">
+                  <img src="<?= $p['image']; ?>" alt="<?= $project['title']; ?>">
+                </div>
+              </div>
+            <?php } ?>
+          </div>
+        </div>
+
       </div>
     </div>
     <div class="themesflat-spacer clearfix" data-desktop="77" data-mobile="40" data-smobile="30"></div>

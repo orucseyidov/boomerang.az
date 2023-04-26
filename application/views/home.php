@@ -3,8 +3,11 @@
     <div class="swiper-container home-silder">
       <!-- swiper slides -->
       <div class="swiper-wrapper">
-        <?php foreach($sliders as $s){ ?>
-          <div class="swiper-slide" style="background-image: url(https://source.unsplash.com/random?sig=24);">
+        <?php 
+            foreach($sliders as $s){
+
+        ?>
+          <div class="swiper-slide" style="background-image: url(<?=!empty($s['image']) ? $s['image'] : 'https://source.unsplash.com/random?sig=24' ?>);">
               <h2><?= $s['title']; ?></h2>
               <p><?= $s['description']; ?></p>
               <a href="<?= (!empty($s['link'])) ? $s['link']: "javascript:void(0)"; ?>" class="btn btn-silder"><?= $langs['read_more']; ?></a>
@@ -144,7 +147,7 @@
 
   .productgroup .title ul li.head {
       background: rgb(66, 139, 202);
-      background: rgba(12, 122, 199, 0.78);
+      background-color: #434e6e;
       font-size: 16px;
 
   }
@@ -174,8 +177,10 @@
 
       <div class="row productgroup">
           <?php 
+          $counter = 0;
             foreach ($category as $key => $value){
-              if ($value['parent'] == 0) {
+              $counter++;
+              if ($value['parent'] == 0 && $counter != 6) {
                 $link1 = base_url("mehsullar/".$value['slug']);
           ?>
           <div class="col-md-4" title="<?=$value['title'] ?>">
@@ -217,10 +222,92 @@
       </div>
 
     </div>
-    <div class="themesflat-spacer clearfix" data-desktop="259" data-mobile="60" data-smobile="50"></div>
+    <div class="themesflat-spacer clearfix" data-desktop="100" data-mobile="60" data-smobile="50"></div> <!-- data-desktop="259" -->
   </div>
 </section>
 
+<section class="blog-post bg-color-style2" style="padding-top: 20px;">
+  <div class="container">
+    <div class="blog-post-content clearfix">
+      <div class="title-section padding-left6 wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+        <div class="flat-title"><?= $langs['spare_parts']; ?></div>
+      </div>
+      <div class="btn-blog">
+        <a href="/ehtiyat-hisseleri" class="themesflat-button-style2 btn-style-4">
+          <span class="btn-title"><?= $langs['see_all']; ?></span>
+        </a>
+      </div>
+    </div>
+    <div class="blog-new tf-blog-new-style wow fadeInUp  animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInUp;">
+      <div class="flat-carousel-box data-effect clearfix" data-zero="0" data-gap="30" data-column="3" data-column2="2" data-column3="1" data-column4="1" data-dots="false" data-auto="true" data-nav="false" data-loop="true">
+        <div class="owl-carousel owl-loaded owl-drag">
+          <div class="owl-stage-outer">
+            <div class="owl-stage" style="transform: translate3d(-1200px, 0px, 0px); transition: all 0s ease 0s; width: 3600px;">
+              <?php foreach($spare_parts as $key => $value){
+                $mid_value = count($spare_parts)/2;
+                $exit = $key-$mid_value;
+                if($key == $mid_value || $exit == 1 || $exit == -1){
+                  $class = "active";
+                } else {
+                  $class = "cloned";
+                }?>
+                <div class="owl-item active <?php //echo $class; ?>" style="width: 370px; margin-right: 30px;">
+                  <div class="image-box">
+                    <div class="image">
+                      <img src="<?= $value['image']; ?>" alt="<?= $value['image']; ?>">
+                    </div>
+                    <div class="meta-blog padding-bottom18">
+                      <div class="post-calendar">
+                        <span class="inner">
+                          <span class="entry-calendar">
+                            <span class="day"><?= date("d.m.Y", strtotime($value['created_at'])); ?>, </span>
+                            <!-- <span class="month"><?php //echo date("Y", strtotime($value['created_at'])); ?></span> -->
+                          </span>
+                        </span>
+                      </div>
+                      <div class="content-blog">
+                        <!-- <ul class="post-meta">
+                          <li class="author">
+                            <a href="/ehtiyat-hisseleri/<?php //echo $value['slug']; ?>">
+                              <i class="far fa-user"></i>BY ADMIN </a>
+                          </li>
+                          <li class="date">
+                            <span>
+                              <a href="/ehtiyat-hisseleri/<?php //echo $value['slug']; ?>">
+                                <i class="far fa-folder-open"></i>Air transport </a>
+                            </span>
+                          </li>
+                        </ul> -->
+                        <div class="title-blog">
+                          <a href="/ehtiyat-hisseleri/<?= $value['slug']; ?>"><?= $value['title']; ?></a>
+                        </div>
+                        <div class="flat-read-more">
+                          <span>
+                            <i class="fas fa-arrow-alt-circle-right"></i>
+                            <a href="/ehtiyat-hisseleri/<?= $value['slug']; ?>"><?= $langs['read_more']; ?></a>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <?php } ?>
+            </div>
+          </div>
+          <div class="owl-nav disabled">
+            <button type="button" role="presentation" class="owl-prev">
+              <span aria-label="Previous">‹</span>
+            </button>
+            <button type="button" role="presentation" class="owl-next">
+              <span aria-label="Next">›</span>
+            </button>
+          </div>
+          <div class="owl-dots disabled"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="about2 bg-color-style2">
   <div class="container">
@@ -263,7 +350,7 @@
   <div class="tf-partners partners-style2">
     <div class="banners-z">
       <div class="flat-carousel-box data-effect clearfix" data-zero="0" data-gap="0" data-column="4" data-column2="2" data-column3="1" data-dots="false" data-auto="true" data-nav="false" data-loop="true">
-        <div class="owl-carousel owl-loaded owl-drag">
+        <div class="owl-carousel owl-loaded owl-drag" id="projects-slider">
           <?php foreach($projects as $p) { ?>
             <div class="image-profolio style2">
               <div class="image">

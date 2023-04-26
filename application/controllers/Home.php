@@ -20,6 +20,7 @@ class Home extends GO_Controller {
 		// $this->data['slider']					= $this->home->slider();
 		$this->data['info_site']		= $this->core->get_info_site();
 		$this->data['category']			= $this->home->get_category();
+		$this->data['spare_parts']		= $this->home->spare_parts(10);
 		$this->data['about']			= $this->home->about();
 		$this->data['opinions']			= $this->core->get_select_all("opinions");
 		$this->data['sliders']			= $this->home->sliders();

@@ -41,72 +41,72 @@
   </div>
   <div class="themesflat-spacer clearfix" data-desktop="89" data-mobile="60" data-smobile="50"></div>
 </section>
-<section class="tf-windows-service bg-color-style2">
-  <div class="themesflat-spacer clearfix" data-desktop="120" data-mobile="60" data-smobile="50"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-7">
-        <div class="tf-list-service">
-          <div class="title-section wow fadeInDown">
-            <div class="sub-title">WELCOME TO janelas</div>
-            <div class="flat-title">We Are Windows & Doors Professionals</div>
-          </div>
-          <div class="tf-box-service flex">
-            <div class="list-window bg-white">
-              <h3>
-                <a href="<?= base_url("windows"); ?>">Windows</a>
-              </h3>
-              <ul>
-                <li>
-                  <span>Bibendum gravida</span>
-                </li>
-                <li>
-                  <span>Ultricies curabitur </span>
-                </li>
-                <li>
-                  <span>Imperdiet suspendisse </span>
-                </li>
-                <li>
-                  <span>Imperdiet vel auctor </span>
-                </li>
-                <li>
-                  <span>Est condimentum non </span>
-                </li>
-              </ul>
-            </div>
-            <div class="list-service bg-white">
-              <h3>
-                <a href="<?= base_url("doors"); ?>">Doors</a>
-              </h3>
-              <ul>
-                <li>
-                  <span>Consectetur dapibus lobortis </span>
-                </li>
-                <li>
-                  <span>Nisl mollis </span>
-                </li>
-                <li>
-                  <span>Mauris gravida ultricies </span>
-                </li>
-                <li>
-                  <span>Tincidunt quis amet </span>
-                </li>
-                <li>
-                  <span>Mauris vulputate nulla </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-5">
-        <div class="image-hover wow fadeInRight animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-          <div class="image">
-            <img class="boder-style" src="/assets/images/Services/img1service.jpg" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="themesflat-spacer clearfix" data-desktop="120" data-mobile="40" data-smobile="30"></div>
-</section>
+<!--<section class="tf-windows-service bg-color-style2">-->
+<!--  <div class="themesflat-spacer clearfix" data-desktop="120" data-mobile="60" data-smobile="50"></div>-->
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-7">-->
+<!--        <div class="tf-list-service">-->
+<!--          <div class="title-section wow fadeInDown">-->
+<!--            <div class="sub-title">WELCOME TO janelas</div>-->
+<!--            <div class="flat-title">We Are Windows & Doors Professionals</div>-->
+<!--          </div>-->
+<!--          <div class="tf-box-service flex">-->
+<!--            <div class="list-window bg-white">-->
+<!--              <h3>-->
+<!--                <a href="<?= base_url("windows"); ?>">Windows</a>-->
+<!--              </h3>-->
+<!--              <ul>-->
+<!--                <li>-->
+<!--                  <span>Bibendum gravida</span>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                  <span>Ultricies curabitur </span>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                  <span>Imperdiet suspendisse </span>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                  <span>Imperdiet vel auctor </span>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                  <span>Est condimentum non </span>-->
+<!--                </li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--            <div class="list-service bg-white">-->
+<!--              <h3>-->
+<!--                <a href="<?= base_url("doors"); ?>">Doors</a>-->
+<!--              </h3>-->
+<!--              <ul>-->
+<!--                <li>-->
+<!--                  <span>Consectetur dapibus lobortis </span>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                  <span>Nisl mollis </span>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                  <span>Mauris gravida ultricies </span>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                  <span>Tincidunt quis amet </span>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                  <span>Mauris vulputate nulla </span>-->
+<!--                </li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-md-5">-->
+<!--        <div class="image-hover wow fadeInRight animated" data-wow-delay="0ms" data-wow-duration="1500ms">-->
+<!--          <div class="image">-->
+<!--            <img class="boder-style" src="/assets/images/Services/img1service.jpg" alt="">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="themesflat-spacer clearfix" data-desktop="120" data-mobile="40" data-smobile="30"></div>-->
+<!--</section>-->

@@ -8,7 +8,7 @@ class GO_Model extends CI_Model {
 	public $dil;
 
 	public function __construct(){
-		$this->dil = isset($this->session->dil) ? $this->session->dil : 'en';
+		$this->dil = isset($this->session->dil) ? $this->session->dil : 'az';
 		parent::__construct();
 
 	}

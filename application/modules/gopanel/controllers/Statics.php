@@ -92,8 +92,15 @@ class Statics extends Gopanel {
 		if (isset($_POST['token']) && $_POST['token'] == $this->token) {
 			unset($_POST['token']);
 
-			if (isset($_FILES['image']) && strlen($_FILES['image']['name'])>1) {
-				$_POST['image'] = file_upload($_FILES['image'],'/uploads/images/statics/',seflink($_POST['site_title_az']));
+			if (isset($_FILES['header_image']) && strlen($_FILES['header_image']['name'])>1) {
+				$_POST['header_image'] = file_upload($_FILES['header_image'],'/uploads/images/statics/',seflink($_POST['site_title_az']));
+			}
+			else{
+				unset($_POST['image']);
+			}
+
+			if (isset($_FILES['footer_image']) && strlen($_FILES['footer_image']['name'])>1) {
+				$_POST['footer_image'] = file_upload($_FILES['footer_image'],'/uploads/images/statics/',seflink($_POST['site_title_az']));
 			}
 			else{
 				unset($_POST['image']);
@@ -147,6 +154,11 @@ class Statics extends Gopanel {
 		if (isset($_POST['token'])) {
 			if ($_POST['token'] == $this->token) {
 				unset($_POST['token']);
+
+				if (isset($_POST['map']) && !empty($_POST['map'])) {
+					$_POST['map'] = addslashes($_POST['map']);
+				}
+
 				if ($this->core->update($this->table,$this->id,$_POST)) {
 					$this->session->set_flashdata('success', "Məlumat Uğurla Dəyişdirildi!");
 					$this->data['values'] 	= $this->core->get_values($this->table,$this->id);

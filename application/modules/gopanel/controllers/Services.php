@@ -21,10 +21,6 @@ class Services extends Gopanel {
 		if (isset($_POST['token'])) {
 			unset($_POST['token']);
 			
-			if (empty($_POST['date'])){
-				$_POST['date'] = date("Y-m-d");
-			}
-
 			if(isset($_POST['slug']) && empty($_POST['slug'])){
 				$_POST['slug'] = seflink($_POST['title_az']);
 			}
